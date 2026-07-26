@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanidad en Cristo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/vistas.css
+  ">
 </head>
 <body>
-    
+  <header class="hero">
+    <nav class="navbar">
+      <a href="#" class="brand">
+        <span class="brand-mark"></span>
+        <span>SanidadConCristo</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-wrapper" id="navWrapper">
+        <ul class="nav-links">
+          <li><a href="#">Psicólogos Online</a></li>
+          <li><a href="#">Centros seleccionados</a></li>
+          <li><a href="#">Artículos</a></li>
+          <li><a href="#">Consultorio</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#" class="login-link">Registrarse</a>
+          <a href="#" class="btn btn-sm btn-primary">Iniciar sesión</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <p class="hero-kicker">Atención psicológica online</p>
+      <h1>¡ENCUENTRA LA SANIDAD EN <span>CRISTO!</span></h1>
+      <p class="hero-text">
+        Acudimos psicólogos cristianos y el mejor servicio para acompañarte.
+      </p>
+
+      <form class="search-card" id="searchForm">
+        <div class="field">
+          <label for="especialidad">Especialidad</label>
+          <select id="especialidad" name="especialidad">
+            <option value="">Selecciona</option>
+            <option>Ansiedad</option>
+            <option>Depresión</option>
+            <option>Terapia de pareja</option>
+            <option>Orientación familiar</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modalidad">Modalidad</label>
+          <select id="modalidad" name="modalidad">
+            <option value="">Online o presencial</option>
+            <option>Online</option>
+            <option>Presencial</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-search">Buscar</button>
+      </form>
+
+      <p class="hero-note">
+        ENCUENTRA UN ESPECIALISTA DE CONFIANZA PARA AYUDARTE A FORTALECER TU FE.
+      </p>
+    </section>
+
+    <div class="hero-shape hero-shape-left"></div>
+    <div class="hero-shape hero-shape-center"></div>
+    <div class="hero-shape hero-shape-right"></div>
+  </header>
+
+  <div class="message" id="messageBox" aria-live="polite"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
