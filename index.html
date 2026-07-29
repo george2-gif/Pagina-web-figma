@@ -1,55 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña -->
   <title>Sanidad en Cristo</title>
+
+  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/vistas.css
-  ">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/vistas.css">
 </head>
 <body>
+
+  <!-- Encabezado principal -->
   <header class="hero">
-    <nav class="navbar">
-      <div class="hero-image">
-  <img src="/assets/img/hero-bg.svg" alt="Fondo decorativo">
-</div>
-      <a href="#" class="brand">
-        <span class="brand-mark"></span>
+
+    <!-- Imagen de fondo de la primera sección -->
+    <div class="hero-image">
+      <img src="/assets/img/hero-bg.svg" alt="Fondo decorativo de la sección principal">
+    </div>
+
+    <!-- Capa encima de la imagen -->
+    <div class="hero-overlay"></div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar container">
+
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
         <span>SanidadConCristo</span>
       </a>
 
+      <!-- Botón hamburguesa para móvil -->
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <div class="nav-wrapper" id="navWrapper">
-        <ul class="nav-links">
+      <!-- Parte derecha de la navbar -->
+      <div class="nav-right" id="navRight">
+
+        <!-- Menú principal -->
+        <ul class="menu">
           <li><a href="#">Psicólogos Online</a></li>
           <li><a href="#">Centros seleccionados</a></li>
           <li><a href="#">Artículos</a></li>
           <li><a href="#">Consultorio</a></li>
         </ul>
 
-        <div class="nav-actions">
-          <a href="#" class="login-link">Registrarse</a>
-          <a href="#" class="btn btn-sm btn-primary">Iniciar sesión</a>
+        <!-- Acciones -->
+        <div class="acciones">
+          <a href="#" class="registro">Registrarse</a>
+          <a href="#" class="btn-login">Iniciar sesión</a>
         </div>
       </div>
     </nav>
 
-    <section class="hero-content">
+    <!-- Contenido principal -->
+    <section class="hero-content container">
+
+      <!-- Texto pequeño -->
       <p class="hero-kicker">Atención psicológica online</p>
-      <h1>¡ENCUENTRA LA SANIDAD EN <span>CRISTO!</span></h1>
+
+      <!-- Título principal -->
+      <h1 class="hero-title">
+        ¡ENCUENTRA LA SANIDAD EN <span>CRISTO!</span>
+      </h1>
+
+      <!-- Descripción -->
       <p class="hero-text">
         Acudimos psicólogos cristianos y el mejor servicio para acompañarte.
       </p>
 
+      <!-- Buscador -->
       <form class="search-card" id="searchForm">
+
         <div class="field">
           <label for="especialidad">Especialidad</label>
           <select id="especialidad" name="especialidad">
@@ -70,21 +103,35 @@
           </select>
         </div>
 
-        <button type="submit" class="btn btn-search">Buscar</button>
+        <button class="btn-search" type="submit">Buscar</button>
       </form>
 
+      <!-- Texto pequeño inferior -->
       <p class="hero-note">
         ENCUENTRA UN ESPECIALISTA DE CONFIANZA PARA AYUDARTE A FORTALECER TU FE.
       </p>
     </section>
-
-    <div class="hero-shape hero-shape-left"></div>
-    <div class="hero-shape hero-shape-center"></div>
-    <div class="hero-shape hero-shape-right"></div>
   </header>
 
+  <!-- Contenido principal -->
+  <main>
+    <section class="tratamientos container">
+      <h2>Tratamientos Psicológicos</h2>
+      <p>Espacios pensados para ayudarte.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 SanidadConCristo</p>
+    </div>
+  </footer>
+
+  <!-- Caja de mensajes -->
   <div class="message" id="messageBox" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <!-- JS -->
+  <script src="/javascript/vistas.js"></script>
 </body>
 </html>
