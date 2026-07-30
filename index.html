@@ -1,87 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanidad en Cristo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/vistas.css
-  ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/vistas.css">
+    <title>Sanidad en Cristo</title>
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar">
-      <a href="#" class="brand">
-        <span class="brand-mark"></span>
-        <span>SanidadConCristo</span>
-      </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-wrapper" id="navWrapper">
-        <ul class="nav-links">
-          <li><a href="#">Psicólogos Online</a></li>
-          <li><a href="#">Centros seleccionados</a></li>
-          <li><a href="#">Artículos</a></li>
-          <li><a href="#">Consultorio</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <a href="#" class="login-link">Registrarse</a>
-          <a href="#" class="btn btn-sm btn-primary">Iniciar sesión</a>
+    <!-- CABECERA / NAVBAR -->
+    <header>
+        <div class="logo">
+            <!-- Asume icono aquí -->
+            SanidadenCristo
         </div>
-      </div>
-    </nav>
-
-    <section class="hero-content">
-      <p class="hero-kicker">Atención psicológica online</p>
-      <h1>¡ENCUENTRA LA SANIDAD EN <span>CRISTO!</span></h1>
-      <p class="hero-text">
-        Acudimos psicólogos cristianos y el mejor servicio para acompañarte.
-      </p>
-
-      <form class="search-card" id="searchForm">
-        <div class="field">
-          <label for="especialidad">Especialidad</label>
-          <select id="especialidad" name="especialidad">
-            <option value="">Selecciona</option>
-            <option>Ansiedad</option>
-            <option>Depresión</option>
-            <option>Terapia de pareja</option>
-            <option>Orientación familiar</option>
-          </select>
+        <nav>
+            <a href="#">Psicólogos Online</a>
+            <a href="#">Centros seleccionados</a>
+            <a href="#">Artículos</a>
+            <a href="#">Consultorio</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#">Registrarse</a>
+            <a href="#" class="btn-login">Iniciar sesión</a>
         </div>
+    </header>
 
-        <div class="field">
-          <label for="modalidad">Modalidad</label>
-          <select id="modalidad" name="modalidad">
-            <option value="">Online o presencial</option>
-            <option>Online</option>
-            <option>Presencial</option>
-          </select>
+    <!-- BANNER PRINCIPAL (HERO) -->
+    <section class="hero">
+    <!-- Se eliminó el <figure> con la <img> de aquí -->
+    <h1>¡ENCUENTRA LA <span>SANIDAD EN CRISTO!</span></h1>
+    <p>¡Nuestros psicólogos están dispuestos a darte el mejor servicio!</p>
+    
+    <div class="search-box">
+        <input type="text" placeholder="Todas las especialidades">
+        <div class="divider"></div>
+        <input type="text" placeholder="Todas las ciudades">
+        <button>Buscar</button>
+    </div>
+</section>
+
+    <!-- SECCIÓN TRATAMIENTOS (GRID) -->
+    <section class="tratamientos">
+        <h2>Tratamientos Psicológicos</h2>
+        <p>Terapias psicológicas más solicitadas por los usuarios</p>
+
+        <div class="grid-container">
+            <!-- Tarjeta grande -->
+            <div class="card card-large">
+                <div>
+                    <h3>Psicólogo Online</h3>
+                    <p>Encuentra a tu psicólogo sin salir de casa.</p>
+                    <a href="#" class="btn-teal">VER LISTA DE PSICÓLOGOS</a>
+                </div>
+            </div>
+            
+            <div class="card card-2"><h3>Depresión</h3></div>
+            <div class="card card-3"><h3>Ansiedad</h3></div>
+            <div class="card card-4"><h3>Autoestima</h3></div>
+            <div class="card card-5"><h3>Logopedia</h3></div>
+            <div class="card card-6"><h3>Bullying</h3></div>
+            <div class="card card-7"><h3>TDAH</h3></div>
         </div>
-
-        <button type="submit" class="btn btn-search">Buscar</button>
-      </form>
-
-      <p class="hero-note">
-        ENCUENTRA UN ESPECIALISTA DE CONFIANZA PARA AYUDARTE A FORTALECER TU FE.
-      </p>
     </section>
 
-    <div class="hero-shape hero-shape-left"></div>
-    <div class="hero-shape hero-shape-center"></div>
-    <div class="hero-shape hero-shape-right"></div>
-  </header>
+    <!-- SECCIÓN CIUDADES -->
+    <section class="ciudades">
+        <h2>Encuentra Psicólogos en tu Ciudad</h2>
+        <p>Psicólogos cerca de ti</p>
 
-  <div class="message" id="messageBox" aria-live="polite"></div>
+        <div class="pills-container">
+            <a href="#" class="pill">Psicólogos Sonsonate</a>
+            <a href="#" class="pill">Psicólogos San Salvador</a>
+            <a href="#" class="pill">Psicólogos Santa Ana</a>
+            <a href="#" class="pill">Psicólogos Santa Tecla</a>
+            <a href="#" class="pill">Psicólogos San Miguel</a>
+            <a href="#" class="pill">Psicólogos La Libertad</a>
+        </div>
+        <a href="#" class="ver-mas">VER MÁS</a>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section class="sobre-nosotros">
+        <h2>Sobre<br>SanidadconCristo</h2>
+        <p>SanidadenCristo te ayuda a encontrar el psicólogo o psiquiatra que necesitas. Si requieres ayuda psicológica, busca un profesional calificado cerca de tu localización.</p>
+        <p>Nuestro objetivo es conectarte con una selección de los mejores psicólogos, en formato presencial o independientemente de donde estés. Los psicólogos en SanidadenCristo están evaluados por nuestro Comité.</p>
+        <a href="#" class="ver-mas">QUIÉNES SOMOS</a>
+
+        <div class="quote">
+            "Vengan a mí todos ustedes que están cansados y agobiados, y yo les daré descanso."
+            <span>- MATEO 11:28</span>
+        </div>
+    </section>
+
+    <!-- BANNER DISCLAIMER -->
+    <div class="banner-info">
+        El contenido de esta página es de carácter informativo. SanidadconCristo no ofrece consejo médico, diagnóstico ni tratamiento. 
+        <a href="#">Leer aviso legal</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">SanidadenCristo</div>
+                <p>Cookies Policy</p>
+                <p>Políticas y Condiciones / Términos de uso</p>
+                <p>Tratamiento de datos personales</p>
+            </div>
+            <div class="footer-col">
+                <h4>PARA PROFESIONALES</h4>
+                <a href="#">Date de alta</a>
+                <a href="#">Inicia sesión</a>
+                <a href="#">Publicar</a>
+            </div>
+            <div class="footer-col">
+                <h4>ACERCA DEL PORTAL</h4>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Políticas de privacidad</a>
+            </div>
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctanos</a>
+                <a href="#">Ayuda</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 SanidadenCristo. Todos los derechos reservados.
+        </div>
+    </footer>
+
 </body>
 </html>
