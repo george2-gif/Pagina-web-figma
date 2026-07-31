@@ -1,0 +1,31 @@
+<svg width="1600" height="700" viewBox="0 0 1600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <g opacity="0.95">
+    <path d="M49 523C140 450 267 371 430 373C565 374 643 436 761 447C891 459 994 394 1128 377C1322 353 1488 427 1600 512V700H0V600C16 575 31 548 49 523Z" fill="url(#shape1)"/>
+    <path d="M0 615C82 552 184 496 327 494C462 492 549 551 680 565C818 581 906 539 1046 514C1246 478 1444 543 1600 640V700H0V615Z" fill="url(#shape2)"/>
+    <path d="M138 480C203 432 301 392 413 403C515 413 575 470 671 486C770 503 840 462 935 430C1050 392 1182 379 1301 421C1414 461 1512 528 1600 592V700H0V636C39 588 83 521 138 480Z" fill="url(#shape3)"/>
+    <path d="M894 343C954 303 1042 290 1120 311C1186 328 1242 373 1303 383C1383 397 1455 356 1539 364C1560 366 1581 371 1600 378V700H946C923 659 906 614 902 570C894 487 946 431 946 387C946 369 936 355 894 343Z" fill="url(#shape4)" opacity="0.8"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF5F6"/>
+      <stop offset="1" stop-color="#E7EFF0"/>
+    </linearGradient>
+    <linearGradient id="shape1" x1="800" y1="373" x2="800" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFEFE"/>
+      <stop offset="1" stop-color="#DDE7E8"/>
+    </linearGradient>
+    <linearGradient id="shape2" x1="800" y1="494" x2="800" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6EEEE"/>
+      <stop offset="1" stop-color="#CFDADB"/>
+    </linearGradient>
+    <linearGradient id="shape3" x1="800" y1="400" x2="800" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFA"/>
+      <stop offset="1" stop-color="#D8E3E4"/>
+    </linearGradient>
+    <linearGradient id="shape4" x1="1272" y1="299" x2="1272" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF4F5"/>
+      <stop offset="1" stop-color="#D7E1E2"/>
+    </linearGradient>
+  </defs>
+</svg>
