@@ -26,20 +26,26 @@
         </div>
     </header>
 
-     <main>
+  
         <!-- BANNER PRINCIPAL (HERO) -->
-        <section class="hero">
-            <div class="hero-contenido">
-                <h1>¡ENCUENTRA LA <span>SANIDAD EN CRISTO!</span></h1>
-                <p>¡Nuestros psicólogos están dispuestos a darte el mejor servicio!</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Todas las especialidades">
-                    <div class="divider"></div>
-                    <input type="text" placeholder="Todas las ciudades">
-                    <button type="button">Buscar</button>
-                </div>
-            </div>
-        </section>
+       <section class="hero">
+    <!-- La imagen se carga de forma nativa desde el HTML -->
+    <img src="assets/img/imagen-de-fondo.png" alt="Fondo Sanidad en Cristo" class="hero-bg-img">
+    
+    <!-- Capa oscura/degradada (reemplaza al linear-gradient del CSS) -->
+    <div class="hero-overlay"></div>
+
+    <div class="hero-contenido">
+        <h1>¡ENCUENTRA LA <span>SANIDAD EN CRISTO!</span></h1>
+        <p>¡Nuestros psicólogos están dispuestos a darte el mejor servicio!</p>
+        <div class="search-box">
+            <input type="text" placeholder="Todas las especialidades">
+            <div class="divider"></div>
+            <input type="text" placeholder="Todas las ciudades">
+            <button type="button">Buscar</button>
+        </div>
+    </div>
+</section>
 
         <!-- SECCIÓN TRATAMIENTOS (GRID) -->
         <section class="tratamientos">
@@ -99,7 +105,7 @@
             El contenido de esta página es de carácter informativo. SanidadconCristo no ofrece consejo médico, diagnóstico ni tratamiento. 
             <a href="#">Leer aviso legal</a>
         </div>
-    </main>
+  
 
     <!-- FOOTER -->
     <footer>

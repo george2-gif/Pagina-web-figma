@@ -74,28 +74,49 @@
         }
 
         /* --- HERO SECTION --- */
-      .hero {
-  /* 1. Imagen de fondo con capa oscura integrada */
-  background-image: linear-gradient(rgba(227, 236, 233, 0.45), rgba(227, 236, 233, 0.6)), 
-                    url('/assets/img/imagen-de-fondo.png');
-  
-  /* 2. Control del comportamiento del fondo */
-  background-size: cover;       /* Se adapta al ancho/alto sin deformarse */
-  background-position: center;  /* Mantiene el centro de la imagen visible */
-  background-repeat: no-repeat; /* Evita el efecto mosaico */
+     /* Contenedor principal usando Grid para apilar elementos */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  min-height: 70vh;             
+  text-align: center;
+          
+  overflow: hidden; /* Evita desbordamientos */
+}
 
-  /* 3. Estructura y adaptabilidad del contenido */
-  min-height: 70vh;             /* Altura adaptativa respecto a la pantalla */
+/* Forzamos a que todos los hijos ocupen el mismo espacio exacto */
+.hero-bg-img,
+.hero-overlay,
+.hero-contenido {
+  grid-area: 1 / 1; /* Ocupan la misma celda, apilándose en capas */
+  width: 100%;
+  height: 100%;
+}
+
+/* Comportamiento de la imagen como si fuera fondo */
+.hero-bg-img {
+  object-fit: cover;     /* Se adapta al espacio sin deformarse (como background-size: cover) */
+  object-position: center; /* Mantiene el centro visible */
+}
+
+/* Capa de color/degradado encima de la imagen */
+.hero-overlay {
+  background: linear-gradient(rgba(97, 230, 185, 0.45), rgba(24, 96, 155, 0.6));
+  z-index: 1; /* Se sitúa sobre la imagen */
+}
+
+/* Contenedor de tus textos y buscador */
+.hero-contenido {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 40px 20px;           /* Colchón para que no toque los bordes en móvil */
-  
-  /* 4. Estilos de texto */
   color: #0F172A;
+  z-index: 2; /* Se sitúa arriba del degradado para que sea legible y clickeable */
 }
+
 
         .hero h1 {
             font-size: 2.5rem;
