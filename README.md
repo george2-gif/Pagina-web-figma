@@ -1,6 +1,6 @@
 # Pagina-web-figma
-repositorio presenta una página web enfocada en la parte psicológica  y espiritual para las personas
+Este repositorio presenta una página web enfocada en la parte psicológica  y espiritual para las personas.
 # Integrantes:
-# Gabriela Yasmin Larin Cea
-# Saida Mayte Hernandez Hernandez
+# Gabriela Yasmín Larín Cea
+# Saida Mayte Hernández Hernández
 # Jorge Ernesto Bachez Olan
