@@ -1,6 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ==============================================
+       0. MENÚ RESPONSIVE
+       ============================================== */
+    const header = document.querySelector('header');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    if (header && menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            const menuAbierto = header.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', String(menuAbierto));
+        });
+
+        header.querySelectorAll('nav a, .auth-buttons a').forEach(link => {
+            link.addEventListener('click', () => {
+                header.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    /* ==============================================
        1. CAMBIO DE REDES SOCIALES AL PASAR EL CURSOR
        =============================================== */
     const iconosSociales = document.querySelectorAll('.icono-social img');

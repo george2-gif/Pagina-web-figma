@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crea tu cuenta en Sanidad con Cristo.">
+  <title>Crear cuenta | Sanidad con Cristo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/vista5.css">
+</head>
+<body>
+  <header class="signup-header">
+    <nav class="signup-nav" aria-label="Navegación principal">
+      <a class="brand" href="vista2.html#inicio">
+         <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
+        <span>Sanidad con Cristo</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="main-menu" id="main-menu">
+        <ul>
+           <li><a href="vista2.html#psicologos">Psicólogos Online</a></li>
+           <li><a href="vista6.html#centros">Centros seleccionados</a></li>
+           <li><a href="vista7.html#articulos">Artículos</a></li>
+           <li><a href="vista2.html#consultorio">Consultorio</a></li>
+        </ul>
+        <div class="account-actions">
+          <a href="vista5.html#registro">Registrarse</a>
+          <a class="login-button" href="vista5.html#login">Iniciar sesión</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="signup-main" id="inicio">
+    <div class="signup-layout">
+      <section class="quote-panel" aria-label="Mensaje de bienvenida">
+        <img src="../assets/img/image_768ae4d.png" alt="Espacio acogedor con plantas y una silla">
+        <div class="quote-overlay"></div>
+        <div class="quote-copy">
+          <h1>Comienza tu viaje de<br>restauración.</h1>
+          <p>"Venid a mí todos los que estáis<br>trabajados y cargados, y yo os haré<br>descansar."</p>
+        </div>
+      </section>
+
+      <section class="register-panel" id="registro">
+        <div class="register-heading">
+          <h2>Crear Cuenta</h2>
+          <p>Únete a nuestra comunidad de sanidad integral.</p>
+        </div>
+
+        <form class="register-form" action="#" method="post">
+          <div class="field">
+            <label for="full-name">Nombre Completo</label>
+            <div class="input-wrap">
+              <i class="fa-regular fa-user" aria-hidden="true"></i>
+              <input id="full-name" name="full-name" type="text" placeholder="Tu nombre" autocomplete="name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo Electrónico</label>
+            <div class="input-wrap">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <input id="email" name="email" type="email" placeholder="ejemplo@correo.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="password-fields">
+            <div class="field">
+              <label for="password">Contraseña</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="new-password" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="password-confirmation">Confirmar</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                <input id="password-confirmation" name="password-confirmation" type="password" placeholder="••••••••" autocomplete="new-password" required>
+              </div>
+            </div>
+          </div>
+
+          <label class="terms-check">
+            <input id="terms" name="terms" type="checkbox" required>
+            <span class="checkmark" aria-hidden="true"></span>
+            <span>Acepto los <a href="#terminos">Términos de Servicio</a> y la <a href="#privacidad">Política de Privacidad.</a></span>
+          </label>
+
+          <button class="create-button" type="submit">Crear Cuenta</button>
+          <p class="form-status" id="register-status" role="status"></p>
+           <p class="existing-account" id="login">¿Ya tienes una cuenta? <a href="vista5.html#login">Inicia Sesión</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="signup-footer" id="consultorio">
+    <div class="footer-grid">
+      <div class="footer-brand">
+         <a class="footer-logo" href="vista2.html#inicio">
+           <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
+          <span>SanidadconCristo</span>
+        </a>
+         <a href="vista7.html#articulos">Quiénes somos</a>
+         <a href="vista7.html#articulos">Aviso legal y Condiciones Generales de Uso</a>
+         <a href="vista7.html#articulos">Protección de Datos</a>
+         <a href="vista7.html#articulos">Condiciones de servicio para usuarios</a>
+         <a href="vista7.html#articulos">Condiciones de servicio para profesionales</a>
+      </div>
+
+      <div class="footer-column">
+        <h2>PARA PROFESIONALES</h2>
+         <a href="vista6.html#centros">Añade tu centro</a>
+         <a href="vista6.html#centros">Acceso centros</a>
+         <a href="vista6.html#centros">Anúnciate</a>
+         <a href="vista2.html#consultorio">¿Necesitas ayuda?</a>
+        <h2 class="follow-title">SÍGUENOS:</h2>
+        <div class="social-links">
+          <a href="#facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column regional-links" id="centros">
+        <h2>NUESTRA RED REGIONAL</h2>
+        <div class="regional-grid">
+           <a href="vista6.html#centros"><i class="fa-solid fa-flag"></i>SanidadconCristo.com.ar</a>
+           <a href="vista6.html#centros"><i class="fa-solid fa-flag"></i>SanidadconCristo.com</a>
+           <a href="vista6.html#centros"><i class="fa-solid fa-flag"></i>PsicologosOnline.cl</a>
+           <a href="vista6.html#centros"><i class="fa-solid fa-flag"></i>Psico.mx</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span>
+      <span class="secure-payments">PAGOS SEGUROS <i class="fa-regular fa-credit-card" aria-hidden="true"></i><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainMenu = document.querySelector('.main-menu');
+    const registerForm = document.querySelector('.register-form');
+    const password = document.querySelector('#password');
+    const passwordConfirmation = document.querySelector('#password-confirmation');
+    const registerStatus = document.querySelector('#register-status');
+    const closeMenu = () => {
+      mainMenu.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      document.body.classList.remove('menu-open');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    mainMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.signup-nav')) closeMenu();
+    });
+
+    registerForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (password.value !== passwordConfirmation.value) {
+        passwordConfirmation.setCustomValidity('Las contraseñas no coinciden.');
+        passwordConfirmation.reportValidity();
+        passwordConfirmation.setCustomValidity('');
+        return;
+      }
+
+      registerStatus.textContent = 'Formulario validado. Para guardar la cuenta falta conectar un servidor.';
+      registerStatus.classList.add('is-visible');
+    });
+  </script>
+</body>
+</html>

@@ -34,6 +34,7 @@
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
+    overflow-x: hidden;
 }
 
 a {
@@ -48,6 +49,23 @@ ul {
 img {
     max-width: 100%;
     display: block;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 h1 {
@@ -83,6 +101,11 @@ header, .navbar {
     align-items: center;
     gap: 15px;
     cursor: pointer;
+    min-width: 0;
+}
+
+.logo a:last-child {
+    white-space: nowrap;
 }
 
 .logo-dot {
@@ -96,6 +119,26 @@ header, .navbar {
 nav, .menu {
     display: flex;
     gap: 25px;
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+    background: var(--color-blanco);
+    cursor: pointer;
+}
+
+.menu-toggle span:not(.sr-only) {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--color-texto);
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 nav a, .menu a {
@@ -170,6 +213,10 @@ nav a:hover, .menu a:hover {
     max-width: 900px;
 }
 
+.hero-contenido {
+    width: 100%;
+}
+
 .hero h1 {
     color: #0F172A;
     font-size: clamp(1.3rem, 4.5vw, 3.2rem);
@@ -234,6 +281,7 @@ nav a:hover, .menu a:hover {
     flex: 1;
     /* OBLIGATORIO: Esto le dice al menú flotante dónde debe anclarse y pintarse */
     position: relative; 
+    min-width: 0;
 }
 
 .field-icon {
@@ -784,6 +832,7 @@ h3 + p {
 
 .footer-col {
     flex: 1;
+    min-width: 0;
 }
 
 .footer-col.col-ancha {
@@ -899,6 +948,7 @@ h3 + p {
     color: #94a3b8;
     font-size: 0.82rem;
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
 .item-pais a:hover {
@@ -930,6 +980,7 @@ h3 + p {
     color: #94A3B8;
     margin: 0;
     font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
 .pagos-seguros {
@@ -948,13 +999,18 @@ h3 + p {
 }
 
 /* =========================================
-   11. RESPONSIVE DESIGN (Corregido)
+   11. RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 980px) {
+    header, .navbar {
+        padding-inline: 4%;
+    }
+
     .search-box {
         flex-direction: column;
         border-radius: 20px;
         padding: 15px;
+        gap: 4px;
     }
 
     .search-field {
@@ -972,8 +1028,53 @@ h3 + p {
 }
 
 @media (max-width: 900px) {
+    header, .navbar {
+        flex-wrap: wrap;
+        row-gap: 12px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
     nav, .menu, .auth-buttons, .acciones, .nav-right {
         display: none;
+    }
+
+    header.menu-open nav,
+    header.menu-open .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px solid #eef2f7;
+    }
+
+    header.menu-open nav a,
+    header.menu-open .menu a {
+        padding: 12px 4px;
+        border-bottom: 1px solid #eef2f7;
+    }
+
+    header.menu-open .auth-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 4px;
+    }
+
+    header.menu-open .menu-toggle span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    header.menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    header.menu-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
     }
 
     .grid-tratamientos {
@@ -982,6 +1083,49 @@ h3 + p {
 }
 
 @media (max-width: 768px) {
+    header, .navbar {
+        padding: 12px 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 56px 16px 48px;
+    }
+
+    .hero h1 {
+        margin-top: 0;
+        font-size: clamp(1.55rem, 7vw, 2.4rem);
+    }
+
+    .hero p {
+        max-width: 34rem;
+        margin-bottom: 22px;
+    }
+
+    .hero-extra {
+        margin-top: 22px;
+    }
+
+    .hero-extra p {
+        line-height: 1.5;
+    }
+
+    .tratamientos,
+    .ciudades,
+    .sobre-nosotros {
+        padding: 44px 16px;
+    }
+
+    .tratamientos-header h2,
+    .ciudades h2 {
+        font-size: clamp(1.45rem, 5vw, 1.9rem);
+    }
+
+    .tratamientos-header p {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
     .grid-ciudades {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1001,11 +1145,60 @@ h3 + p {
         gap: 16px;
         text-align: center;
     }
+
+    .sitio-footer {
+        padding: 44px 20px 24px;
+    }
+
+    .footer-superior {
+        gap: 28px;
+    }
+
+    .pagos-seguros {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 600px) {
+    .logo {
+        gap: 8px;
+        font-size: 1rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .auth-buttons {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        padding: 12px;
+    }
+
+    .search-field input {
+        min-width: 0;
+        padding: 11px 6px;
+        font-size: 0.9rem;
+    }
+
+    .search-box button,
+    .btn-search {
+        min-height: 46px;
+        margin-top: 8px;
+    }
+
+    .dropdown-menu {
+        max-height: 190px;
+    }
+
     .grid-tratamientos {
         grid-template-columns: 1fr;
+        gap: 14px;
+        padding-top: 12px;
     }
 
     .card.card-large {
@@ -1013,7 +1206,74 @@ h3 + p {
         height: 250px;
     }
 
+    .grid-tratamientos > .card-center {
+        height: 210px;
+    }
+
+    .card {
+        height: 175px;
+        padding: 20px;
+    }
+
+    .grid-tratamientos .card-large .card-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .btn-tratamiento {
+        max-width: 100%;
+        font-size: 0.68rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .caja-cita {
+        padding: 24px 16px;
+    }
+
+    .texto-cita {
+        font-size: 1rem;
+    }
+
+    .banner-aviso {
+        padding-inline: 16px;
+    }
+
+    .footer-col h3 {
+        margin-bottom: 14px;
+    }
+
     .footer-grid {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 380px) {
+    header .logo a:last-child {
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 1.45rem;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 901px) {
+    header {
+        position: sticky;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
