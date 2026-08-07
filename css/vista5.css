@@ -1,3 +1,6 @@
+/* Estilos de registro y creación de cuenta. */
+
+/* 1. Variables y estilos base. */
 :root {
   --ink: #1c2023;
   --body-text: #3e4a4c;
@@ -30,13 +33,13 @@ body::before {
   position: fixed;
   z-index: 9;
   inset: 0;
-  background: rgba(16, 29, 36, .24);
+  background: rgba(16, 29, 36, 0.24);
   content: "";
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
 
 body.menu-open {
@@ -58,10 +61,11 @@ input {
   font: inherit;
 }
 
+/* 2. Encabezado y navegación de registro. */
 .signup-header {
-  background: rgba(248, 250, 251, .98);
+  background: rgba(248, 250, 251, 0.98);
   border-bottom: 1px solid #dce2e4;
-  box-shadow: 0 2px 6px rgba(25, 38, 42, .18);
+  box-shadow: 0 2px 6px rgba(25, 38, 42, 0.18);
   position: relative;
   z-index: 10;
 }
@@ -110,6 +114,7 @@ input {
 
 .main-menu,
 .main-menu ul,
+/* Acciones de cuenta de la navegación. */
 .account-actions {
   align-items: center;
   display: flex;
@@ -164,7 +169,9 @@ input {
   display: block;
   height: 2px;
   margin: 5px 0;
-  transition: transform .2s ease, opacity .2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
   width: 25px;
 }
 
@@ -180,10 +187,20 @@ input {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* 3. Panel visual y formulario de registro. */
+/* Estructura general de la pantalla de registro. */
 .signup-main {
   background:
-    radial-gradient(circle at 95% 31%, rgba(209, 255, 252, .78), transparent 24%),
-    radial-gradient(circle at 7% 83%, rgba(225, 233, 255, .44), transparent 23%),
+    radial-gradient(
+      circle at 95% 31%,
+      rgba(209, 255, 252, 0.78),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 7% 83%,
+      rgba(225, 233, 255, 0.44),
+      transparent 23%
+    ),
     var(--page);
   padding: 138px 0 174px;
 }
@@ -197,6 +214,8 @@ input {
   max-width: 1122px;
 }
 
+/* 4. Panel de bienvenida. */
+/* Imagen y mensaje de bienvenida. */
 .quote-panel {
   height: 917px;
   overflow: hidden;
@@ -210,7 +229,11 @@ input {
 }
 
 .quote-overlay {
-  background: linear-gradient(180deg, rgba(0, 33, 28, 0) 43%, rgba(10, 31, 28, .63) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 33, 28, 0) 43%,
+    rgba(10, 31, 28, 0.63) 100%
+  );
   inset: 0;
   position: absolute;
 }
@@ -225,7 +248,7 @@ input {
 .quote-copy h1 {
   font-size: 35px;
   font-weight: 600;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
   line-height: 1.2;
 }
 
@@ -235,6 +258,8 @@ input {
   margin-top: 22px;
 }
 
+/* 5. Campos y acciones del formulario. */
+/* Panel que contiene el formulario. */
 .register-panel {
   margin-top: 104px;
 }
@@ -252,6 +277,7 @@ input {
   margin-top: 10px;
 }
 
+/* Campos, contraseñas y validación visual. */
 .register-form {
   margin-top: 49px;
 }
@@ -270,10 +296,10 @@ input {
 
 .input-wrap {
   align-items: center;
-  background: rgba(246, 248, 249, .82);
+  background: rgba(246, 248, 249, 0.82);
   border: 2px solid #e7ebed;
   border-radius: 15px;
-  box-shadow: 0 15px 28px rgba(36, 58, 61, .07);
+  box-shadow: 0 15px 28px rgba(36, 58, 61, 0.07);
   display: flex;
   height: 69px;
   padding: 0 16px;
@@ -304,7 +330,7 @@ input {
 
 .input-wrap:focus-within {
   border-color: #8bcfc9;
-  box-shadow: 0 0 0 3px rgba(0, 135, 127, .1);
+  box-shadow: 0 0 0 3px rgba(0, 135, 127, 0.1);
 }
 
 .password-fields {
@@ -377,7 +403,7 @@ input {
   background: var(--teal);
   border: 0;
   border-radius: 36px;
-  box-shadow: 0 13px 18px rgba(0, 84, 79, .19);
+  box-shadow: 0 13px 18px rgba(0, 84, 79, 0.19);
   color: #fff;
   cursor: pointer;
   font-size: 20px;
@@ -411,6 +437,8 @@ input {
   text-align: center;
 }
 
+/* 6. Pie de página. */
+/* Pie de página, enlaces y redes sociales. */
 .signup-footer {
   background: var(--footer);
   color: #91a0b6;
@@ -422,7 +450,10 @@ input {
 .footer-grid {
   display: grid;
   gap: 50px;
-  grid-template-columns: minmax(310px, 1fr) minmax(330px, 1fr) minmax(500px, 2.2fr);
+  grid-template-columns: minmax(310px, 1fr) minmax(330px, 1fr) minmax(
+      500px,
+      2.2fr
+    );
   margin: 0 auto;
   max-width: 1925px;
 }
@@ -527,6 +558,7 @@ input {
   font-size: 22px;
 }
 
+/* 7. Ajustes responsive. */
 @media (max-width: 1500px) {
   .signup-nav {
     padding-left: 35px;
@@ -678,7 +710,7 @@ input {
     background: #f8fafb;
     border: 1px solid #dce4e5;
     border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(22, 41, 44, .15);
+    box-shadow: 0 12px 28px rgba(22, 41, 44, 0.15);
     display: none;
     flex-direction: column;
     gap: 16px;

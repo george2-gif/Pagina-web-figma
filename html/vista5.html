@@ -13,9 +13,10 @@
   <link rel="stylesheet" href="../css/vista5.css">
 </head>
 <body>
+  <!-- Encabezado con navegación y acciones de cuenta. -->
   <header class="signup-header">
     <nav class="signup-nav" aria-label="Navegación principal">
-      <a class="brand" href="vista2.html#inicio">
+      <a class="brand" href="../index.html#inicio">
          <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
         <span>Sanidad con Cristo</span>
       </a>
@@ -26,10 +27,10 @@
 
       <div class="main-menu" id="main-menu">
         <ul>
-           <li><a href="vista2.html#psicologos">Psicólogos Online</a></li>
+           <li><a href="../index.html#tratamientos">Psicólogos Online</a></li>
            <li><a href="vista6.html#centros">Centros seleccionados</a></li>
            <li><a href="vista7.html#articulos">Artículos</a></li>
-           <li><a href="vista2.html#consultorio">Consultorio</a></li>
+           <li><a href="vista8.html#reserva">Consultorio</a></li>
         </ul>
         <div class="account-actions">
           <a href="vista5.html#registro">Registrarse</a>
@@ -39,6 +40,7 @@
     </nav>
   </header>
 
+  <!-- Contenido principal: registro de nuevos usuarios. -->
   <main class="signup-main" id="inicio">
     <div class="signup-layout">
       <section class="quote-panel" aria-label="Mensaje de bienvenida">
@@ -104,10 +106,11 @@
     </div>
   </main>
 
+  <!-- Pie de página institucional. -->
   <footer class="signup-footer" id="consultorio">
     <div class="footer-grid">
       <div class="footer-brand">
-         <a class="footer-logo" href="vista2.html#inicio">
+          <a class="footer-logo" href="../index.html#inicio">
            <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
           <span>SanidadconCristo</span>
         </a>
@@ -123,7 +126,7 @@
          <a href="vista6.html#centros">Añade tu centro</a>
          <a href="vista6.html#centros">Acceso centros</a>
          <a href="vista6.html#centros">Anúnciate</a>
-         <a href="vista2.html#consultorio">¿Necesitas ayuda?</a>
+          <a href="vista8.html#reserva">¿Necesitas ayuda?</a>
         <h2 class="follow-title">SÍGUENOS:</h2>
         <div class="social-links">
           <a href="#facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -149,6 +152,7 @@
     </div>
   </footer>
 
+  <!-- Validación local del formulario y control del menú móvil. -->
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.querySelector('.main-menu');

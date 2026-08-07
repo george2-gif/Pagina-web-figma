@@ -1,3 +1,6 @@
+/* Estilos de la biblioteca de artículos. */
+
+/* 1. Variables y estilos base. */
 :root {
   --ink: #1b1f21;
   --body-text: #3b484a;
@@ -30,13 +33,13 @@ body::before {
   position: fixed;
   z-index: 4;
   inset: 0;
-  background: rgba(16, 29, 36, .24);
+  background: rgba(16, 29, 36, 0.24);
   content: "";
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
 
 body.menu-open {
@@ -58,14 +61,14 @@ input {
   font: inherit;
 }
 
-/* Barra superior */
+/* 2. Barra superior y navegación. */
 .site-header {
   position: relative;
   z-index: 5;
   height: 58px;
-  background: rgba(250, 251, 252, .98);
+  background: rgba(250, 251, 252, 0.98);
   border-bottom: 1px solid #d9dfe2;
-  box-shadow: 0 2px 5px rgba(22, 39, 45, .16);
+  box-shadow: 0 2px 5px rgba(22, 39, 45, 0.16);
 }
 
 .navbar {
@@ -170,7 +173,9 @@ input {
   height: 2px;
   margin: 4px;
   background: var(--navy);
-  transition: transform .2s ease, opacity .2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -185,14 +190,23 @@ input {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Encabezado */
+/* 3. Encabezado de recursos. */
+/* Introducción de la biblioteca. */
 .intro {
   min-height: 364px;
   padding: 20px 20px 40px;
   text-align: center;
   background:
-    radial-gradient(circle at 8% 54%, rgba(232, 243, 245, .42), transparent 20%),
-    radial-gradient(circle at 94% 36%, rgba(235, 243, 249, .48), transparent 21%),
+    radial-gradient(
+      circle at 8% 54%,
+      rgba(232, 243, 245, 0.42),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 94% 36%,
+      rgba(235, 243, 249, 0.48),
+      transparent 21%
+    ),
     var(--page);
 }
 
@@ -223,7 +237,8 @@ input {
   line-height: 1.56;
 }
 
-/* Buscador y filtros */
+/* 4. Buscador y filtros de artículos. */
+/* Buscador y filtros de artículos. */
 .resource-search {
   display: flex;
   align-items: center;
@@ -234,7 +249,7 @@ input {
   padding: 14px 20px;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 13px 28px rgba(27, 57, 65, .08);
+  box-shadow: 0 13px 28px rgba(27, 57, 65, 0.08);
 }
 
 .search-form {
@@ -294,7 +309,7 @@ input {
   color: #435052;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
   background: #f0f2f3;
   border: 0;
@@ -308,7 +323,8 @@ input {
   background: #006c68;
 }
 
-/* Tarjetas */
+/* 5. Tarjetas de artículos. */
+/* Cuadrícula de tarjetas de artículos. */
 .articles {
   width: min(100% - 40px, 990px);
   margin: 74px auto 0;
@@ -326,7 +342,7 @@ input {
   overflow: hidden;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 10px 22px rgba(22, 46, 54, .07);
+  box-shadow: 0 10px 22px rgba(22, 46, 54, 0.07);
 }
 
 .article-card img {
@@ -350,6 +366,7 @@ input {
   padding: 35px 31px 25px;
 }
 
+/* Metadatos, etiquetas y contenido de cada tarjeta. */
 .article-meta,
 .category {
   color: #007c75;
@@ -379,7 +396,7 @@ input {
   margin: 18px 0 15px;
   font-size: 27px;
   line-height: 1.27;
-  letter-spacing: -.75px;
+  letter-spacing: -0.75px;
 }
 
 .featured-content > p {
@@ -430,7 +447,7 @@ input {
   margin: 0 0 13px;
   font-size: 21px;
   line-height: 1.3;
-  letter-spacing: -.45px;
+  letter-spacing: -0.45px;
 }
 
 .excerpt {
@@ -472,7 +489,8 @@ input {
   font-size: 20px;
 }
 
-/* Paginación */
+/* 6. Paginación. */
+/* Navegación entre páginas de recursos. */
 .pagination {
   display: flex;
   align-items: center;
@@ -511,7 +529,8 @@ input {
   color: var(--teal);
 }
 
-/* Pie de página */
+/* 7. Pie de página. */
+/* Pie de página institucional. */
 .site-footer {
   min-height: 424px;
   padding: 52px 27px 20px;
@@ -621,10 +640,11 @@ input {
   margin: 53px auto 0;
   padding-top: 22px;
   font-size: 8px;
-  letter-spacing: .9px;
+  letter-spacing: 0.9px;
   border-top: 1px solid #293136;
 }
 
+/* 8. Ajustes responsive. */
 @media (max-width: 1180px) {
   .navbar {
     gap: 22px;
@@ -675,7 +695,7 @@ input {
     background: #fff;
     border: 1px solid #dce4e5;
     border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(22, 41, 44, .15);
+    box-shadow: 0 12px 28px rgba(22, 41, 44, 0.15);
   }
 
   .nav-links.is-open a {

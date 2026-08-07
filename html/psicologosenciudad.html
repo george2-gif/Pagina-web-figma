@@ -8,26 +8,28 @@
   <link rel="stylesheet" href="../css/psicologosenciudad.css">
 </head>
 <body>
+  <!-- Encabezado y navegación principal. -->
   <header class="site-header">
     <nav class="navbar page-width" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Sanidad con Cristo">
         <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
         <span>Sanidad con Cristo</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="city-nav">
         <a class="nav-link active" href="#inicio">Psicólogos Online</a>
         <a class="nav-link" href="#presencia">Centros seleccionados</a>
-        <a class="nav-link" href="#articulos">Artículos</a>
+        <a class="nav-link" href="vista7.html#articulos">Artículos</a>
         <a class="nav-link" href="#consultorio">Consultorio</a>
       </div>
       <div class="account-links">
-        <a class="register-link" href="#registrarse">Registrarse</a>
-        <a class="login-button" href="#iniciar-sesion">Iniciar sesión</a>
+        <a class="register-link" href="vista5.html#registro">Registrarse</a>
+        <a class="login-button" href="vista5.html#login">Iniciar sesión</a>
       </div>
-      <button class="menu-button" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="city-nav"><span></span><span></span><span></span></button>
     </nav>
   </header>
 
+  <!-- Buscador y directorio nacional de consultorios. -->
   <main>
     <section class="hero" id="inicio">
       <div class="hero-inner page-width">
@@ -139,29 +141,52 @@
       <div class="callout-content">
         <h2>¿No encuentras tu ciudad?</h2>
         <p>Ofrecemos terapias psicológicas online para que puedas recibir sanidad desde cualquier<br class="desktop-only"> lugar del mundo con la misma calidez y profesionalismo.</p>
-        <a class="callout-button" href="#psicologia-online">Explorar Psicología Online</a>
+         <a class="callout-button" href="encontrandolapaz.html#inicio">Explorar Psicología Online</a>
       </div>
     </section>
   </main>
 
+  <!-- Pie de página institucional. -->
   <footer class="site-footer" id="articulos">
     <div class="footer-main page-width">
       <div class="footer-brand-column">
          <a class="footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span> SanidadconCristo</a>
         <div class="footer-links">
-          <a href="#quienes-somos">Quiénes somos</a><a href="#aviso">Aviso legal y Condiciones Generales de Uso</a><a href="#datos">Protección de Datos</a><a href="#usuarios">Condiciones de servicio para usuarios</a><a href="#profesionales">Condiciones de servicio para profesionales</a>
+           <a href="#articulos">Quiénes somos</a><a href="#articulos">Aviso legal y Condiciones Generales de Uso</a><a href="#articulos">Protección de Datos</a><a href="#articulos">Condiciones de servicio para usuarios</a><a href="#articulos">Condiciones de servicio para profesionales</a>
         </div>
       </div>
       <div class="footer-column">
-        <h3>Para profesionales</h3><a href="#centro">Añade tu centro</a><a href="#acceso">Acceso centros</a><a href="#anunciate">Anúnciate</a><a href="#ayuda">¿Necesitas ayuda?</a>
-        <h3 class="social-title">Síguenos:</h3><div class="socials"><a href="#facebook" aria-label="Facebook">f</a><a href="#twitter" aria-label="Twitter">♥</a><a href="#instagram" aria-label="Instagram">◎</a></div>
+         <h3>Para profesionales</h3><a href="vista6.html#centros">Añade tu centro</a><a href="vista6.html#centros">Acceso centros</a><a href="vista6.html#centros">Anúnciate</a><a href="#articulos">¿Necesitas ayuda?</a>
+         <h3 class="social-title">Síguenos:</h3><div class="socials"><a href="#articulos" aria-label="Facebook">f</a><a href="#articulos" aria-label="Twitter">♥</a><a href="#articulos" aria-label="Instagram">◎</a></div>
       </div>
       <div class="footer-column regional-column">
         <h3>Nuestra red regional</h3>
-        <div class="regional-links"><a href="#argentina"><span>⚑</span>SanidadconCristo.com.ar</a><a href="#colombia"><span>⚑</span>SanidadconCristo.com</a><a href="#chile"><span>⚑</span>PsicologosOnline.cl</a><a href="#mexico"><span>⚑</span>Psico.mx</a></div>
+         <div class="regional-links"><a href="#articulos"><span>⚑</span>SanidadconCristo.com.ar</a><a href="#articulos"><span>⚑</span>SanidadconCristo.com</a><a href="#articulos"><span>⚑</span>PsicologosOnline.cl</a><a href="#articulos"><span>⚑</span>Psico.mx</a></div>
       </div>
     </div>
     <div class="footer-bottom page-width"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span class="payments">PAGOS SEGUROS: <b>▤</b><b>♜</b></span></div>
   </footer>
+
+  <!-- Abre, cierra y restablece el menú de navegación en móvil. -->
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navigation = document.querySelector('#city-nav');
+
+    const closeMenu = () => {
+      navigation.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menú');
+    };
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    navigation.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 </body>
 </html>

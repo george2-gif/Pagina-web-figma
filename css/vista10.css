@@ -1,2 +1,5 @@
-/* The directory layout is shared with the neighboring city directories. */
+/*
+ * La página de San Salvador comparte todos los estilos con el directorio
+ * de Sonsonate. Solo cambia el contenido HTML de la ciudad y sus perfiles.
+ */
 @import url("./vista9.css");

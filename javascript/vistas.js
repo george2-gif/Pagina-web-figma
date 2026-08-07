@@ -1,175 +1,168 @@
+/*
+ * Funcionalidad de la página principal.
+ * Cada bloque comprueba que sus elementos existan para que el script pueda
+ * cargarse sin errores aunque una sección no esté presente.
+ */
 document.addEventListener("DOMContentLoaded", () => {
+    inicializarMenu();
+    inicializarRedesSociales();
+    inicializarBuscadores();
+    inicializarTarjetas();
+});
 
-    /* ==============================================
-       0. MENÚ RESPONSIVE
-       ============================================== */
-    const header = document.querySelector('header');
-    const menuToggle = document.querySelector('.menu-toggle');
+/* Abre y cierra la navegación principal en pantallas pequeñas. */
+function inicializarMenu() {
+    const header = document.querySelector("header");
+    const menuToggle = document.querySelector(".menu-toggle");
 
-    if (header && menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            const menuAbierto = header.classList.toggle('menu-open');
-            menuToggle.setAttribute('aria-expanded', String(menuAbierto));
-        });
+    if (!header || !menuToggle) return;
 
-        header.querySelectorAll('nav a, .auth-buttons a').forEach(link => {
-            link.addEventListener('click', () => {
-                header.classList.remove('menu-open');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
-
-    /* ==============================================
-       1. CAMBIO DE REDES SOCIALES AL PASAR EL CURSOR
-       =============================================== */
-    const iconosSociales = document.querySelectorAll('.icono-social img');
-
-    iconosSociales.forEach(img => {
-        const rutaBlanca = img.src; 
-        const rutaColor = rutaBlanca.replace('.svg', '-color.svg');
-
-        img.parentElement.addEventListener('mouseenter', () => {
-            img.src = rutaColor;
-        });
-
-        img.parentElement.addEventListener('mouseleave', () => {
-            img.src = rutaBlanca;
-        });
+    menuToggle.addEventListener("click", () => {
+        const menuAbierto = header.classList.toggle("menu-open");
+        menuToggle.setAttribute("aria-expanded", String(menuAbierto));
     });
 
-    /* ==============================================
-       2. MENÚ DESPLEGABLE Y FILTRADO
-       =============================================== */
+    header.querySelectorAll("nav a, .auth-buttons a").forEach((link) => {
+        link.addEventListener("click", () => {
+            header.classList.remove("menu-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
+/* Cambia los iconos sociales por su versión de color al pasar el cursor. */
+function inicializarRedesSociales() {
+    document.querySelectorAll(".icono-social img").forEach((image) => {
+        const rutaOriginal = image.src;
+        const rutaDeColor = rutaOriginal.replace(".svg", "-color.svg");
+        const enlace = image.parentElement;
+
+        if (!enlace) return;
+
+        enlace.addEventListener("mouseenter", () => {
+            image.src = rutaDeColor;
+        });
+
+        enlace.addEventListener("mouseleave", () => {
+            image.src = rutaOriginal;
+        });
+    });
+}
+
+/* Controla los dos menús de opciones del buscador principal. */
+function inicializarBuscadores() {
     const searchFields = document.querySelectorAll(".search-field");
 
-    searchFields.forEach(field => {
+    searchFields.forEach((field) => {
         const input = field.querySelector("input");
         const menu = field.querySelector(".dropdown-menu");
-        
+
         if (!input || !menu) return;
 
-        const listItems = menu.querySelectorAll("li");
+        const options = [...menu.querySelectorAll("li")];
 
-        // Mostrar menú al enfocar
         input.addEventListener("focus", () => {
-            cerrarTodosLosMenus();
+            cerrarMenus();
             menu.classList.add("show-menu");
         });
 
-        // Filtrar opciones en tiempo real
         input.addEventListener("input", () => {
-            const query = input.value.toLowerCase().trim();
+            const query = input.value.trim().toLowerCase();
+
             menu.classList.add("show-menu");
-
-            listItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(query) ? "" : "none";
+            options.forEach((option) => {
+                const matches = option.textContent.toLowerCase().includes(query);
+                option.hidden = !matches;
             });
         });
 
-        // Seleccionar una opción
-        menu.addEventListener("click", (e) => {
-            if (e.target.tagName === "LI") {
-                input.value = e.target.textContent.trim();
-                menu.classList.remove("show-menu");
-                
-                // Restablece visibilidad de opciones para la próxima apertura
-                listItems.forEach(item => item.style.display = "");
-            }
-        });
-    });
+        menu.addEventListener("click", (event) => {
+            const option = event.target.closest("li");
 
-    // Cerrar menús al hacer clic fuera
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".search-field")) {
-            cerrarTodosLosMenus();
-        }
-    });
+            if (!option) return;
 
-    function cerrarTodosLosMenus() {
-        document.querySelectorAll(".dropdown-menu").forEach(menu => {
+            input.value = option.textContent.trim();
             menu.classList.remove("show-menu");
-        });
-    }
-
-    /* ==============================================
-       3. RESULTADOS DEL BOTÓN BUSCAR
-       =============================================== */
-    const botonBuscar = document.querySelector('.btn-search');
-    const inputEspecialidad = document.getElementById('input-especialidades');
-    const inputCiudad = document.getElementById('input-ciudades');
-
-    if (botonBuscar && inputEspecialidad && inputCiudad) {
-        botonBuscar.addEventListener('click', () => {
-            const especialidadSeleccionada = inputEspecialidad.value.trim();
-            const ciudadSeleccionada = inputCiudad.value.trim();
-
-            if (especialidadSeleccionada === "" && ciudadSeleccionada === "") {
-                alert("Por favor, selecciona una especialidad o una ciudad para buscar.");
-                return;
-            }
-
-            const urlBusqueda = `resultados.html?especialidad=${encodeURIComponent(especialidadSeleccionada)}&ciudad=${encodeURIComponent(ciudadSeleccionada)}`;
-            
-            window.location.href = urlBusqueda;
-        });
-    }
-
-});
-/* ==============================================
-       4. FUNCIONALIDAD DE LAS TARJETAS GRID (REPARADO)
-   ============================================== */
-document.addEventListener("DOMContentLoaded", function () {
-    const tarjetas = document.querySelectorAll('.grid-tratamientos .card');
-
-    tarjetas.forEach(tarjeta => {
-        const tituloHtml = tarjeta.querySelector('h3');
-        const esGrande = tituloHtml && tituloHtml.innerText.trim().toLowerCase() === 'psicología online';
-
-        if (esGrande) {
-            // Tarjeta grande: Flecha normal y NO hace nada al hacer clic
-            tarjeta.style.cursor = 'default';
-            tarjeta.addEventListener('click', function (e) {
-                // Si hicieron clic en el botón verde, no hacemos nada aquí
-                if (e.target.closest('.btn-tratamiento')) return;
-                
-                console.log("Clic visual en tarjeta grande (sin redirección)");
+            options.forEach((item) => {
+                item.hidden = false;
             });
-        } else {
-            // Tarjetas normales: Cursor de manita y redirección normal
-            tarjeta.style.cursor = 'pointer';
-            tarjeta.addEventListener('click', function () {
-                if (tituloHtml) {
-                    redirigirPorCategoria(tituloHtml.innerText);
-                }
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".search-field")) cerrarMenus();
+    });
+
+    const searchButton = document.querySelector(".btn-search");
+    const specialtyInput = document.querySelector("#input-especialidades");
+    const cityInput = document.querySelector("#input-ciudades");
+
+    if (!searchButton || !specialtyInput || !cityInput) return;
+
+    searchButton.addEventListener("click", () => {
+        const specialty = specialtyInput.value.trim();
+        const city = cityInput.value.trim();
+
+        if (!specialty && !city) {
+            alert("Por favor, selecciona una especialidad o una ciudad para buscar.");
+            return;
+        }
+
+        const params = new URLSearchParams({
+            especialidad: specialty,
+            ciudad: city,
+        });
+
+        window.location.href = `html/vista9.html?${params}`;
+    });
+}
+
+/* Oculta todos los menús desplegables del buscador. */
+function cerrarMenus() {
+    document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+        menu.classList.remove("show-menu");
+    });
+}
+
+/* Activa la navegación de las tarjetas de tratamientos. */
+function inicializarTarjetas() {
+    const cards = document.querySelectorAll(".grid-tratamientos .card");
+
+    cards.forEach((card) => {
+        const title = card.querySelector("h3");
+        const titleText = title?.textContent.trim() ?? "";
+        const isOnlineCard = titleText.toLowerCase() === "psicología online";
+
+        card.style.cursor = isOnlineCard ? "default" : "pointer";
+
+        if (!isOnlineCard) {
+            card.addEventListener("click", () => {
+                redirigirPorCategoria(titleText);
             });
         }
     });
 
-    // Botón verde independiente
-    const botonOnline = document.querySelector('.btn-tratamiento');
-    if (botonOnline) {
-        botonOnline.style.cursor = 'pointer';
-        botonOnline.addEventListener('click', function (event) {
-            event.stopPropagation();
-            window.location.href = 'resultados.html?modalidad=online';
-        });
-    }
-});
+    const onlineButton = document.querySelector(".btn-tratamiento");
 
-// Tu función auxiliar (se queda exactamente igual)
-function redirigirPorCategoria(textoTitulo) {
-    const categoria = textoTitulo.trim().toLowerCase();
-    let urlDestino = '';
-    if (categoria === 'depresión') urlDestino = 'resultados.html?especialidad=depresion';
-    else if (categoria === 'ansiedad') urlDestino = 'resultados.html?especialidad=ansiedad';
-    else if (categoria === 'autoestima') urlDestino = 'resultados.html?especialidad=autoestima';
-    else if (categoria === 'ludopatía') urlDestino = 'resultados.html?especialidad=ludopatia';
-    else if (categoria === 'bullying') urlDestino = 'resultados.html?especialidad=bullying';
-    else if (categoria === 'tdah') urlDestino = 'resultados.html?especialidad=tdah';
+    onlineButton?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        window.location.href = "html/vista9.html?modalidad=online";
+    });
+}
 
-    if (urlDestino !== '') {
-        window.location.href = urlDestino;
-    }
+/* Construye la URL de resultados correspondiente a una categoría. */
+function redirigirPorCategoria(title) {
+    const categories = {
+        depresión: "depresion",
+        ansiedad: "ansiedad",
+        autoestima: "autoestima",
+        ludopatía: "ludopatia",
+        bullying: "bullying",
+        tdah: "tdah",
+    };
+    const category = categories[title.trim().toLowerCase()];
+
+    if (!category) return;
+
+    window.location.href = `html/vista9.html?especialidad=${category}`;
 }

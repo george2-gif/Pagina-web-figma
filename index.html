@@ -7,23 +7,23 @@
     <title>Sanidad con Cristo</title>
 </head>
 <body>
-
+    <!-- Encabezado y navegación principal. -->
     <header>
         <div class="logo">
-            <a href="/">
+            <a href="index.html" aria-label="Sanidad con Cristo, inicio">
                 <img src="assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
             </a>
-            <a href="/">Sanidad con Cristo</a>
+            <a href="index.html">Sanidad con Cristo</a>
         </div>
         <nav id="menu-principal">
-            <a href="#">Psicólogos Online</a>
-            <a href="#">Centros seleccionados</a>
-            <a href="#">Artículos</a>
-            <a href="#">Consultorio</a>
+            <a href="html/vista9.html#inicio">Psicólogos Online</a>
+            <a href="html/vista6.html#centros">Centros seleccionados</a>
+            <a href="html/vista7.html#articulos">Artículos</a>
+            <a href="html/vista8.html#reserva">Consultorio</a>
         </nav>
         <div class="auth-buttons">
-            <a href="#">Registrarse</a>
-            <a href="#" class="btn-login">Iniciar sesión</a>
+            <a href="html/vista5.html#registro">Registrarse</a>
+            <a href="html/vista5.html#login" class="btn-login">Iniciar sesión</a>
         </div>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
             <span></span>
@@ -33,8 +33,9 @@
         </button>
     </header>
 
+    <!-- Buscador principal. -->
     <section class="hero">
-        <img src="assets/img/imagen-de-fondo.png" alt="Fondo Sanidad en Cristo" class="hero-bg-img">
+        <img src="assets/img/fondo-degradado.svg" alt="" class="hero-bg-img">
         <div class="hero-overlay"></div>
 
         <div class="hero-contenido">
@@ -101,23 +102,22 @@
         </div>
     </section>
 
-    <section class="tratamientos">
+    <!-- Tratamientos disponibles. -->
+    <section class="tratamientos" id="tratamientos">
         <div class="tratamientos-header">
             <h2>Tratamientos Psicológicos</h2>
             <p>Terapias psicológicas más solicitadas por los usuarios</p>
         </div>
         <div class="grid-tratamientos">
-              <!-- 1. Psicología Online -->
             <div class="card card-large" style="background-image: url('assets/img/imagen-1.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
                     <h3>Psicología Online</h3>
                     <p>Encuentra apoyo desde cualquier lugar del país.</p>
-                    <a href="#" class="btn-tratamiento">ENCUENTRA PSICÓLOGOS ONLINE</a>
+                    <a href="html/vista9.html#inicio" class="btn-tratamiento">ENCUENTRA PSICÓLOGOS ONLINE</a>
                 </div>
             </div>
 
-              <!-- 2. Depresión -->
             <div class="card card-center" style="background-image: url('assets/img/imagen-2.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -125,7 +125,6 @@
                 </div>
             </div>
 
-              <!-- 3. Ansiedad -->
             <div class="card card-center" style="background-image: url('assets/img/imagen-3.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -133,7 +132,6 @@
                 </div>
             </div>
 
-              <!-- 4. Autoestima -->
             <div class="card" style="background-image: url('assets/img/imagen-4.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -141,7 +139,6 @@
                 </div>
             </div>
 
-              <!-- 5. Ludopatía -->
             <div class="card" style="background-image: url('assets/img/imagen-7.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -149,7 +146,6 @@
                 </div>
             </div>
 
-              <!-- 6. Bullying -->
             <div class="card" style="background-image: url('assets/img/imagen-5.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -157,7 +153,6 @@
                 </div>
             </div>
             
-              <!-- 7. TDAH -->
             <div class="card" style="background-image: url('assets/img/imagen-6.png');">
                 <div class="card-overlay"></div>
                 <div class="card-content">
@@ -167,26 +162,28 @@
         </div>
     </section>
 
+    <!-- Directorio de ciudades. -->
     <section class="ciudades">
         <h2>Encuentra Psicólogos en tu Ciudad</h2>
         <p>Consigue ayuda psicológica cerca de ti.</p>
 
         <div class="grid-ciudades">
-            <a href="#" class="pill">Psicólogos Sonsonate</a>
-            <a href="#" class="pill">Psicólogos San Salvador</a>
-            <a href="#" class="pill">Psicólogos Santa Ana</a>
-            <a href="#" class="pill">Psicólogos Santa Tecla</a>
-            <a href="#" class="pill">Psicólogos San Miguel</a>
-            <a href="#" class="pill">Psicólogos La Libertad</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos Sonsonate</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos San Salvador</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos Santa Ana</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos Santa Tecla</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos San Miguel</a>
+            <a href="html/psicologosenciudad.html#presencia" class="pill">Psicólogos La Libertad</a>
         </div>
-        <a href="#" class="ver-mas">Ver más &gt;</a>
+        <a href="html/psicologosenciudad.html#presencia" class="ver-mas">Ver más &gt;</a>
     </section>
 
-    <section class="sobre-nosotros">
+    <!-- Información institucional y cita bíblica. -->
+    <section class="sobre-nosotros" id="sobre-nosotros">
         <h2>Sobre<br>SanidadconCristo</h2>
         <p class="sobre-descripcion">SanidadenCristo te ayuda a encontrar los psicólogos y psicoterapeutas que necesitas. Si requieres ayuda psicológica, busca a un profesional calificado cerca de ti en nuestra web.</p>
         <p class="sobre-descripcion">Nuestro objetivo es conectarte con una selección de los mejores psicólogos independientemente de donde estés. Los psicólogos en SanidadenCristo están evaluados por nuestro Comité.</p>
-        <a href="#" class="link-quienes">Quiénes somos</a>
+        <a href="#sobre-nosotros" class="link-quienes">Quiénes somos</a>
 
         <div class="caja-cita">
             <blockquote class="texto-cita">
@@ -196,11 +193,13 @@
         </div>
     </section>
 
-    <div class="banner-aviso">
+    <!-- Aviso informativo y legal. -->
+    <div class="banner-aviso" id="aviso">
         <p>El contenido de esta página es de carácter informativo. SanidadconCristo no ofrece consejo médico, diagnóstico ni tratamiento.</p>
-        <a href="#" class="link-aviso">Ver más información</a>
+        <a href="#aviso" class="link-aviso">Ver más información</a>
     </div>
 
+    <!-- Pie de página con enlaces institucionales y de contacto. -->
     <footer class="sitio-footer">
         <div class="footer-superior">
             <div class="footer-col">
@@ -211,48 +210,48 @@
                     <strong>Sanidad con Cristo</strong>
                 </div>
                 <ul class="footer-links">
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Aviso legal y Condiciones Generales de Uso</a></li>
-                    <li><a href="#">Protección de Datos</a></li>
-                    <li><a href="#">Condiciones de servicio para usuarios</a></li>
-                    <li><a href="#">Condiciones de servicio para profesionales</a></li>
+                    <li><a href="#sobre-nosotros">Quiénes somos</a></li>
+                    <li><a href="#aviso">Aviso legal y Condiciones Generales de Uso</a></li>
+                    <li><a href="#aviso">Protección de Datos</a></li>
+                    <li><a href="#aviso">Condiciones de servicio para usuarios</a></li>
+                    <li><a href="#aviso">Condiciones de servicio para profesionales</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>PARA PROFESIONALES</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Añade tu centro</a></li>
-                    <li><a href="#">Acceso centros</a></li>
-                    <li><a href="#">Anúnciate</a></li>
-                    <li><a href="#">¿Necesitas ayuda?</a></li>
+                    <li><a href="html/vista6.html#centros">Añade tu centro</a></li>
+                    <li><a href="html/vista6.html#centros">Acceso centros</a></li>
+                    <li><a href="html/vista6.html#centros">Anúnciate</a></li>
+                    <li><a href="html/vista8.html#reserva">¿Necesitas ayuda?</a></li>
                 </ul>
                 <h3 class="titulo-siguenos">SÍGUENOS:</h3>
-                <div class="redes-sociales">
-                    <a href="#" class="icono-social fb"><img src="assets/ico/facebook.svg" alt="Facebook"></a>
-                    <a href="#" class="icono-social tw"><img src="assets/ico/twitter.svg" alt="Twitter"></a>
-                    <a href="#" class="icono-social ig"><img src="assets/ico/instagram.svg" alt="Instagram"></a>
+                <div class="redes-sociales" id="redes-sociales">
+                    <a href="#redes-sociales" class="icono-social fb"><img src="assets/ico/facebook.svg" alt="Facebook"></a>
+                    <a href="#redes-sociales" class="icono-social tw"><img src="assets/ico/twitter.svg" alt="Twitter"></a>
+                    <a href="#redes-sociales" class="icono-social ig"><img src="assets/ico/instagram.svg" alt="Instagram"></a>
                 </div>
             </div>
 
             <div class="footer-col col-ancha">
                 <h3>NUESTRA RED REGIONAL</h3>
-                <div class="grid-red-regional">
+                <div class="grid-red-regional" id="red-regional">
                     <div class="item-pais">
                         <span class="bandera ar"><img src="assets/ico/bandera-1.svg" alt="Argentina"></span>
-                        <a href="#">SanidadconCristo.com.ar</a>
+                        <a href="#red-regional">SanidadconCristo.com.ar</a>
                     </div>
                     <div class="item-pais">
                         <span class="bandera cl"><img src="assets/ico/bandera-1.svg" alt="Chile"></span>
-                        <a href="#">PsicologosOnline.cl</a>
+                        <a href="#red-regional">PsicologosOnline.cl</a>
                     </div>
                     <div class="item-pais"> 
                         <span class="bandera mx"><img src="assets/ico/bandera-1.svg" alt="Internacional"></span>
-                        <a href="#">SanidadconCristo.com</a>
+                        <a href="#red-regional">SanidadconCristo.com</a>
                     </div>
                     <div class="item-pais">
                         <span class="bandera mx"><img src="assets/ico/bandera-1.svg" alt="México"></span>
-                        <a href="#">Psico.mx</a>
+                        <a href="#red-regional">Psico.mx</a>
                     </div>
                 </div>
             </div>

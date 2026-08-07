@@ -1,3 +1,6 @@
+/* Estilos de la página de consultorio principal. */
+
+/* 1. Variables y estilos base. */
 :root {
   --therapy-ink: #1d242d;
   --therapy-muted: #69747a;
@@ -31,13 +34,13 @@ body::before {
   position: fixed;
   z-index: 4;
   inset: 0;
-  background: rgba(16, 29, 36, .24);
+  background: rgba(16, 29, 36, 0.24);
   content: "";
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
 
 body.menu-open {
@@ -59,6 +62,7 @@ img {
   max-width: 100%;
 }
 
+/* 2. Encabezado y navegación. */
 .therapy-container {
   margin: 0 auto;
   max-width: 1080px;
@@ -164,7 +168,9 @@ img {
   display: block;
   height: 2px;
   margin: 4px 0;
-  transition: transform .2s ease, opacity .2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
   width: 22px;
 }
 
@@ -180,6 +186,7 @@ img {
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* 3. Hero del consultorio. */
 .therapy-hero {
   padding: 58px 0 0;
 }
@@ -202,14 +209,14 @@ img {
   display: inline-block;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: .55px;
+  letter-spacing: 0.55px;
   padding: 6px 12px;
 }
 
 .therapy-hero h1 {
   font-size: 52px;
   letter-spacing: -1px;
-  line-height: .98;
+  line-height: 0.98;
   margin-top: 12px;
 }
 
@@ -256,7 +263,13 @@ img {
 }
 
 .therapy-hero-visual {
-  background: radial-gradient(circle at 50% 50%, #78dce0 0, #295f61 13%, #102928 36%, #0b1515 75%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    #78dce0 0,
+    #295f61 13%,
+    #102928 36%,
+    #0b1515 75%
+  );
   border-radius: 16px;
   height: 360px;
   overflow: visible;
@@ -264,17 +277,23 @@ img {
 }
 
 .therapy-glow {
-  background: radial-gradient(circle, rgba(160, 255, 255, .8) 0, rgba(92, 213, 215, .18) 23%, transparent 63%);
+  background: radial-gradient(
+    circle,
+    rgba(160, 255, 255, 0.8) 0,
+    rgba(92, 213, 215, 0.18) 23%,
+    transparent 63%
+  );
   inset: 0;
   position: absolute;
 }
 
+/* Aviso de privacidad y confidencialidad. */
 .therapy-confidentiality {
   align-items: center;
   background: #fff;
   border-radius: 10px;
   bottom: -11px;
-  box-shadow: 0 8px 22px rgba(28, 44, 48, .15);
+  box-shadow: 0 8px 22px rgba(28, 44, 48, 0.15);
   display: flex;
   gap: 12px;
   left: -12px;
@@ -312,17 +331,19 @@ img {
   margin-top: 3px;
 }
 
+/* 4. Beneficios del servicio. */
 .therapy-benefits {
   padding: 58px 0 0;
 }
 
+/* Encabezado reutilizable de las secciones. */
 .therapy-section-heading {
   text-align: center;
 }
 
 .therapy-section-heading h2 {
   font-size: 28px;
-  letter-spacing: -.4px;
+  letter-spacing: -0.4px;
 }
 
 .therapy-section-heading p,
@@ -333,6 +354,7 @@ img {
   margin-top: 9px;
 }
 
+/* Cuadrícula y variantes de las tarjetas de beneficios. */
 .therapy-benefit-grid {
   display: grid;
   gap: 16px;
@@ -391,9 +413,10 @@ img {
   width: 240px;
 }
 
+/* Iconos de las tarjetas de beneficios. */
 .therapy-icon {
   align-items: center;
-  background: rgba(185, 250, 242, .22);
+  background: rgba(185, 250, 242, 0.22);
   border-radius: 6px;
   color: #fff;
   display: inline-flex;
@@ -413,6 +436,7 @@ img {
   color: #2672d4;
 }
 
+/* Tipografía interna de las tarjetas. */
 .therapy-benefit-card h3 {
   font-size: 16px;
   margin-top: 14px;
@@ -431,10 +455,12 @@ img {
   color: #fff;
 }
 
+/* 5. Proceso de atención. */
 .therapy-process {
   padding: 58px 0 0;
 }
 
+/* Encabezado y pasos del proceso de atención. */
 .therapy-process-heading {
   align-items: end;
   display: flex;
@@ -459,6 +485,7 @@ img {
   margin-top: 36px;
 }
 
+/* Número e icono de cada paso. */
 .therapy-step-top {
   align-items: center;
   display: flex;
@@ -469,7 +496,7 @@ img {
   align-items: center;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 7px 20px rgba(28, 58, 62, .1);
+  box-shadow: 0 7px 20px rgba(28, 58, 62, 0.1);
   color: var(--therapy-teal);
   display: inline-flex;
   font-size: 16px;
@@ -497,6 +524,7 @@ img {
   max-width: 285px;
 }
 
+/* 6. Llamado a la acción. */
 .therapy-cta {
   background: linear-gradient(135deg, #007c72, #008c82);
   border-radius: 16px;
@@ -509,8 +537,9 @@ img {
   width: min(1080px, calc(100% - 48px));
 }
 
+/* Decoración y contenido del llamado a la acción. */
 .therapy-cta-shape {
-  border: 55px solid rgba(133, 220, 212, .27);
+  border: 55px solid rgba(133, 220, 212, 0.27);
   border-radius: 50%;
   height: 300px;
   position: absolute;
@@ -565,6 +594,7 @@ img {
   vertical-align: -1px;
 }
 
+/* 7. Pie de página. */
 .therapy-footer {
   background: var(--therapy-footer);
   color: #8a9297;
@@ -574,6 +604,7 @@ img {
   padding: 42px 0 18px;
 }
 
+/* Columnas y enlaces del pie de página. */
 .therapy-footer-main {
   display: grid;
   gap: 30px;
@@ -606,7 +637,7 @@ img {
 .therapy-footer h3 {
   color: #fff;
   font-size: 11px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   margin-bottom: 7px;
 }
 
@@ -614,6 +645,7 @@ img {
   margin-top: 14px;
 }
 
+/* Redes sociales y enlaces regionales. */
 .therapy-socials {
   display: flex;
   gap: 8px;
@@ -650,12 +682,13 @@ img {
   border-top: 1px solid #303437;
   display: flex;
   justify-content: space-between;
-  letter-spacing: .25px;
+  letter-spacing: 0.25px;
   margin-top: 30px;
   padding-top: 12px;
   width: min(1414px, calc(100% - 26px));
 }
 
+/* 8. Ajustes responsive. */
 @media (max-width: 900px) {
   .therapy-nav-links ul {
     gap: 18px;
@@ -689,7 +722,7 @@ img {
     background: #fff;
     border: 1px solid var(--therapy-line);
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(18, 42, 44, .12);
+    box-shadow: 0 10px 30px rgba(18, 42, 44, 0.12);
     display: none;
     flex-direction: column;
     gap: 15px;

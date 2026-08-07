@@ -1,3 +1,6 @@
+/* Estilos del directorio de centros seleccionados. */
+
+/* 1. Variables y estilos base. */
 :root {
   --ink: #171b1e;
   --navy: #40516b;
@@ -24,13 +27,13 @@ body::before {
   position: fixed;
   z-index: 4;
   inset: 0;
-  background: rgba(16, 29, 36, .24);
+  background: rgba(16, 29, 36, 0.24);
   content: "";
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
 
 body.menu-open {
@@ -52,7 +55,7 @@ input {
   font: inherit;
 }
 
-/* Navegacion */
+/* 2. Navegación y encabezado. */
 .site-header {
   position: relative;
   z-index: 5;
@@ -164,7 +167,9 @@ input {
   height: 2px;
   margin: 4px;
   background: var(--navy);
-  transition: transform .2s ease, opacity .2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -179,13 +184,13 @@ input {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Encabezado */
+/* 3. Hero de centros seleccionados. */
+/* Encabezado visual del directorio. */
 .hero {
   height: 317px;
   background:
     radial-gradient(circle at 4% 43%, #dceff0 0, transparent 23%),
-    radial-gradient(circle at 96% 68%, #e3eff7 0, transparent 20%),
-    #f7f9fa;
+    radial-gradient(circle at 96% 68%, #e3eff7 0, transparent 20%), #f7f9fa;
 }
 
 .hero-inner {
@@ -224,7 +229,8 @@ h1 {
   line-height: 1.65;
 }
 
-/* Buscador */
+/* 4. Buscador y directorio de centros. */
+/* Buscador principal de centros. */
 .search-band {
   display: flex;
   align-items: center;
@@ -270,7 +276,8 @@ h1 {
   opacity: 1;
 }
 
-/* Tarjetas */
+/* 5. Tarjetas de centros. */
+/* Cuadrícula de resultados y tarjetas. */
 .directory {
   padding: 56px 0 102px;
   background: #f7f9fa;
@@ -285,6 +292,7 @@ h1 {
 }
 
 .center-card,
+/* Tarjeta de asistencia personalizada. */
 .help-card {
   overflow: hidden;
   border-radius: 9px;
@@ -305,22 +313,31 @@ h1 {
 }
 
 .photo-one {
-  background-image: url('../assets/img/vista2-room.svg');
+  background-image: url("../assets/img/vista2-room.svg");
   background-position: center 55%;
   filter: saturate(0.82) brightness(1.2);
 }
 
 .photo-one::after {
   position: absolute;
-  content: '';
+  content: "";
   inset: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.55), transparent 35%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.55),
+    transparent 35%
+  );
 }
 
 .photo-two {
   background:
     linear-gradient(90deg, rgba(26, 18, 8, 0.9), transparent 50%),
-    radial-gradient(ellipse at 63% 10%, #ffcf55 0, #a65e19 19%, transparent 37%),
+    radial-gradient(
+      ellipse at 63% 10%,
+      #ffcf55 0,
+      #a65e19 19%,
+      transparent 37%
+    ),
     linear-gradient(150deg, #2f2112 0 43%, #a66d2b 43% 45%, #23180e 46%);
 }
 
@@ -330,9 +347,11 @@ h1 {
   left: 62px;
   width: 42px;
   height: 74px;
-  content: '';
+  content: "";
   background: #312416;
-  box-shadow: 16px 25px 0 #21170c, 26px 42px 0 #1b130c;
+  box-shadow:
+    16px 25px 0 #21170c,
+    26px 42px 0 #1b130c;
   opacity: 0.9;
 }
 
@@ -342,21 +361,21 @@ h1 {
   left: 190px;
   width: 22px;
   height: 65px;
-  content: '';
+  content: "";
   background: #ffdd67;
   box-shadow: 0 0 26px 12px rgba(255, 191, 55, 0.4);
   opacity: 0.85;
 }
 
 .photo-three {
-  background-image: url('../assets/img/image_768ae4d.png');
+  background-image: url("../assets/img/image_768ae4d.png");
   background-position: 58% 41%;
 }
 
 .photo-four {
   background-image:
     linear-gradient(120deg, rgba(14, 76, 73, 0.25), rgba(73, 123, 112, 0.18)),
-    url('../assets/img/vista2-room.svg');
+    url("../assets/img/vista2-room.svg");
   background-position: center 57%;
   filter: saturate(0.7) hue-rotate(5deg);
 }
@@ -443,7 +462,7 @@ h1 {
   min-height: 160px;
 }
 
-/* Bloque de ayuda */
+/* 6. Bloque de asistencia personalizada. */
 .help-card {
   display: flex;
   grid-column: span 2;
@@ -494,7 +513,8 @@ h1 {
   color: rgba(0, 123, 115, 0.55);
 }
 
-/* Llamado final */
+/* 7. Llamado final. */
+/* Mensaje final y acciones del directorio. */
 .closing-cta {
   min-height: 330px;
   padding: 103px 20px 75px;
@@ -545,7 +565,8 @@ h1 {
   background: #006e67;
 }
 
-/* Pie de pagina */
+/* 8. Pie de página. */
+/* Pie de página con enlaces institucionales. */
 .site-footer {
   min-height: 294px;
   padding: 39px 24px 18px;
@@ -655,6 +676,7 @@ h1 {
   border-top: 1px solid #283036;
 }
 
+/* 9. Ajustes responsive. */
 @media (max-width: 1000px) {
   .navbar {
     gap: 18px;
@@ -706,7 +728,7 @@ h1 {
     background: #fff;
     border: 1px solid #dce4e5;
     border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(22, 41, 44, .15);
+    box-shadow: 0 12px 28px rgba(22, 41, 44, 0.15);
   }
 
   .nav-links.is-open a {

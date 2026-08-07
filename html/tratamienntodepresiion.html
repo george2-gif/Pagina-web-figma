@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/tratamienntodepresiion.css">
 </head>
 <body>
+  <!-- Encabezado y navegación principal. -->
   <header class="site-header">
     <nav class="navbar container" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Sanidad con Cristo, inicio">
@@ -23,7 +24,7 @@
       </button>
 
       <div class="nav-menu" id="main-menu">
-        <a href="vista2.html#psicologos">Psicólogos Online</a>
+        <a href="vista9.html#inicio">Psicólogos Online</a>
         <a href="vista6.html#centros">Centros seleccionados</a>
         <a href="vista7.html#articulos">Artículos</a>
         <a href="psicologosenciudad.html#consultorio">Consultorio</a>
@@ -35,10 +36,18 @@
     </nav>
   </header>
 
+  <!-- Contenido clínico y espiritual sobre la depresión. -->
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-image" role="img" aria-label="Paisaje tranquilo al amanecer"></div>
+      <!-- SOLUCIÓN A LA IMAGEN: 
+           Cambiamos la etiqueta <img> por un <div>. La clase .hero-image y el estilo en línea 
+           se encargan de ponerla como fondo absoluto detrás del texto -->
+      <div class="hero-image" style="background-image: url('/assets/img/Gemini_Generated_Image_vrc3k3vrc3k3vrc3 (1).png');"></div>
+      
+      <!-- Capa del degradado blanco -->
       <div class="hero-overlay"></div>
+      
+      <!-- Contenedor del texto (El CSS lo pone por encima con position:relative y z-index) -->
       <div class="container hero-content">
         <span class="eyebrow">Especialidad Clínica</span>
         <h1>Recuperando la Esperanza:<br><span>Tratamiento de la Depresión</span></h1>
@@ -59,7 +68,7 @@
         <div class="understanding-grid">
           <div class="understanding-copy">
             <p>La depresión es más que una simple tristeza pasajera; es una condición clínica que afecta la manera en que pensamos, sentimos y manejamos las actividades diarias. Desde una perspectiva espiritual, es un desierto donde el alma se siente agotada y distante de su propósito.</p>
-            <p>En <a href="vista2.html#inicio">Sanidad con Cristo</a>, entendemos que tu lucha tiene raíces tanto biológicas como emocionales y espirituales. Nuestro enfoque busca la sanidad del corazón herido mientras aplicamos protocolos científicos para restaurar el equilibrio mental.</p>
+            <p>En <a href="../index.html#inicio">Sanidad con Cristo</a>, entendemos que tu lucha tiene raíces tanto biológicas como emocionales y espirituales. Nuestro enfoque busca la sanidad del corazón herido mientras aplicamos protocolos científicos para restaurar el equilibrio mental.</p>
           </div>
           <img class="consultorio-image" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Consultorio luminoso con sillón verde y plantas" loading="lazy">
         </div>
@@ -135,10 +144,11 @@
     </section>
   </main>
 
+  <!-- Pie de página institucional. -->
   <footer class="site-footer" id="footer">
     <div class="container footer-main">
       <div class="footer-brand-column">
-         <a class="footer-brand" href="vista2.html#inicio"><span class="footer-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span> SanidadconCristo</a>
+         <a class="footer-brand" href="../index.html#inicio"><span class="footer-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span> SanidadconCristo</a>
         <p><a href="vista7.html#articulos">Quiénes somos</a><br><a href="vista7.html#articulos">Aviso legal y Condiciones Generales de Uso</a><br><a href="vista7.html#articulos">Protección de Datos</a><br><a href="vista7.html#articulos">Condiciones de servicio para usuarios</a><br><a href="vista7.html#articulos">Condiciones de servicio para profesionales</a></p>
       </div>
       <div class="footer-links">
@@ -166,6 +176,7 @@
     </div>
   </footer>
 
+  <!-- Control del menú móvil. -->
   <script>
     const menuButton = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.nav-menu');
