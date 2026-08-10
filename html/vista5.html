@@ -11,33 +11,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <link rel="stylesheet" href="../css/vista5.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
-  <!-- Encabezado con navegación y acciones de cuenta. -->
-  <header class="signup-header">
-    <nav class="signup-nav" aria-label="Navegación principal">
-      <a class="brand" href="../index.html#inicio">
-         <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
-        <span>Sanidad con Cristo</span>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
       </a>
-
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="main-menu" id="main-menu">
-        <ul>
-           <li><a href="../index.html#tratamientos">Psicólogos Online</a></li>
-           <li><a href="vista6.html#centros">Centros seleccionados</a></li>
-           <li><a href="vista7.html#articulos">Artículos</a></li>
-           <li><a href="vista8.html#reserva">Consultorio</a></li>
-        </ul>
-        <div class="account-actions">
-          <a href="vista5.html#registro">Registrarse</a>
-          <a class="login-button" href="vista5.html#login">Iniciar sesión</a>
-        </div>
-      </div>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
     </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
   </header>
 
   <!-- Contenido principal: registro de nuevos usuarios. -->
@@ -100,7 +100,36 @@
 
           <button class="create-button" type="submit">Crear Cuenta</button>
           <p class="form-status" id="register-status" role="status"></p>
-           <p class="existing-account" id="login">¿Ya tienes una cuenta? <a href="vista5.html#login">Inicia Sesión</a></p>
+          <p class="existing-account">¿Ya tienes una cuenta? <a href="#" id="show-login">Inicia Sesión</a></p>
+        </form>
+      </section>
+
+      <!-- Panel de inicio de sesión, el mismo estilo que el de registro. -->
+      <section class="register-panel" id="login" hidden>
+        <div class="register-heading">
+          <h2>Bienvenido de Nuevo</h2>
+          <p>Inicia sesión y continúa tu camino de sanidad integral.</p>
+        </div>
+
+        <form class="login-form" action="#" method="post">
+          <div class="field">
+            <label for="login-email">Correo Electrónico</label>
+            <div class="input-wrap">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <input id="login-email" name="email" type="email" placeholder="ejemplo@correo.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="login-password">Contraseña</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
+              <input id="login-password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required>
+            </div>
+          </div>
+
+          <button class="create-button" type="submit">Iniciar Sesión</button>
+          <p class="existing-account">¿No tienes una cuenta? <a href="#" id="show-register">Regístrate</a></p>
         </form>
       </section>
     </div>
@@ -152,46 +181,38 @@
     </div>
   </footer>
 
-  <!-- Validación local del formulario y control del menú móvil. -->
+  <!-- Validación local de los formularios de acceso y registro. -->
+  <script src="../javascript/menu-comun.js"></script>
+  <script src="../javascript/formularios.js"></script>
+
+  <!-- Cambio de panel entre registro e inicio de sesión según el ancla (#login o #registro). -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainMenu = document.querySelector('.main-menu');
-    const registerForm = document.querySelector('.register-form');
-    const password = document.querySelector('#password');
-    const passwordConfirmation = document.querySelector('#password-confirmation');
-    const registerStatus = document.querySelector('#register-status');
-    const closeMenu = () => {
-      mainMenu.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menú');
-      document.body.classList.remove('menu-open');
+    const registro = document.getElementById('registro');
+    const login = document.getElementById('login');
+    const showLogin = document.getElementById('show-login');
+    const showRegister = document.getElementById('show-register');
+
+    const mostrarPanel = (panel) => {
+      registro.hidden = panel !== registro;
+      login.hidden = panel !== login;
     };
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mainMenu.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      document.body.classList.toggle('menu-open', isOpen);
-    });
+    const aplicar = () => mostrarPanel(window.location.hash === '#login' ? login : registro);
 
-    mainMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    aplicar();
+    window.addEventListener('hashchange', aplicar);
+    document.addEventListener('DOMContentLoaded', aplicar);
 
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.signup-nav')) closeMenu();
-    });
-
-    registerForm.addEventListener('submit', (event) => {
+    showLogin.addEventListener('click', (event) => {
       event.preventDefault();
+      mostrarPanel(login);
+      history.replaceState(null, '', '#login');
+    });
 
-      if (password.value !== passwordConfirmation.value) {
-        passwordConfirmation.setCustomValidity('Las contraseñas no coinciden.');
-        passwordConfirmation.reportValidity();
-        passwordConfirmation.setCustomValidity('');
-        return;
-      }
-
-      registerStatus.textContent = 'Formulario validado. Para guardar la cuenta falta conectar un servidor.';
-      registerStatus.classList.add('is-visible');
+    showRegister.addEventListener('click', (event) => {
+      event.preventDefault();
+      mostrarPanel(registro);
+      history.replaceState(null, '', '#registro');
     });
   </script>
 </body>

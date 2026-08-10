@@ -6,27 +6,33 @@
   <meta name="description" content="Encuentra psicólogos y consultorios cerca de ti.">
   <title>Psicólogos en tu ciudad | Sanidad con Cristo</title>
   <link rel="stylesheet" href="../css/psicologosenciudad.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
-  <!-- Encabezado y navegación principal. -->
-  <header class="site-header">
-    <nav class="navbar page-width" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Sanidad con Cristo">
-        <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
-        <span>Sanidad con Cristo</span>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
       </a>
-      <div class="nav-links" id="city-nav">
-        <a class="nav-link active" href="#inicio">Psicólogos Online</a>
-        <a class="nav-link" href="#presencia">Centros seleccionados</a>
-        <a class="nav-link" href="vista7.html#articulos">Artículos</a>
-        <a class="nav-link" href="#consultorio">Consultorio</a>
-      </div>
-      <div class="account-links">
-        <a class="register-link" href="vista5.html#registro">Registrarse</a>
-        <a class="login-button" href="vista5.html#login">Iniciar sesión</a>
-      </div>
-      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="city-nav"><span></span><span></span><span></span></button>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
     </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
   </header>
 
   <!-- Buscador y directorio nacional de consultorios. -->
@@ -168,25 +174,7 @@
   </footer>
 
   <!-- Abre, cierra y restablece el menú de navegación en móvil. -->
-  <script>
-    const menuButton = document.querySelector('.menu-button');
-    const navigation = document.querySelector('#city-nav');
-
-    const closeMenu = () => {
-      navigation.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Abrir menú');
-    };
-
-    menuButton.addEventListener('click', () => {
-      const isOpen = navigation.classList.toggle('is-open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-      menuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-    });
-
-    navigation.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMenu);
-    });
-  </script>
+  <!-- Sistema de menú compartido con el index. -->
+  <script src="../javascript/menu-comun.js"></script>
 </body>
 </html>

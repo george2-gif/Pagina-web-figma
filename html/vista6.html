@@ -6,27 +6,33 @@
   <meta name="description" content="Centros seleccionados de Sanidad con Cristo">
   <title>Centros seleccionados | Sanidad con Cristo</title>
   <link rel="stylesheet" href="../css/vista6.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
-  <!-- Encabezado y navegación principal. -->
-  <header class="site-header">
-    <nav class="navbar" aria-label="Navegación principal">
-      <a class="brand" href="../index.html#inicio" aria-label="Sanidad con Cristo, inicio">
-        <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
-        <span>Sanidad con Cristo</span>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
       </a>
-      <div class="nav-links" id="site-nav">
-        <a href="../index.html#tratamientos">Psicólogos Online</a>
-        <a class="active" href="vista6.html#centros">Centros seleccionados</a>
-        <a href="vista7.html#articulos">Artículos</a>
-        <a href="vista8.html#reserva">Consultorio</a>
-      </div>
-      <div class="nav-actions">
-        <a class="register" href="vista5.html#registro">Registrarse</a>
-        <a class="login" href="vista5.html#login">Iniciar sesión</a>
-      </div>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
     </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
   </header>
 
   <!-- Directorio de centros seleccionados. -->
@@ -122,40 +128,21 @@
     </div>
     <div class="footer-bottom"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span>PAGOS SEGUROS: &nbsp;▣ &nbsp;♜</span></div>
   </footer>
-  <!-- Búsqueda local de centros y control del menú móvil. -->
+  <!-- Búsqueda local de centros. -->
+  <script src="../javascript/menu-comun.js"></script>
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
     const centerSearch = document.querySelector('#center-search');
     const centerSearchInput = document.querySelector('#center-search-input');
     const centerCards = [...document.querySelectorAll('.center-card')];
-    const closeMenu = () => {
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menú');
-      document.body.classList.remove('menu-open');
-    };
-
-    menuToggle?.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      document.body.classList.toggle('menu-open', isOpen);
-    });
-
-    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.navbar')) closeMenu();
-    });
-
-    centerSearch?.addEventListener('submit', (event) => event.preventDefault());
-    centerSearchInput?.addEventListener('input', () => {
+    const filterCenters = () => {
       const query = centerSearchInput.value.trim().toLowerCase();
       centerCards.forEach((card) => {
         card.hidden = query !== '' && !card.textContent.toLowerCase().includes(query);
       });
-    });
+    };
+
+    centerSearch?.addEventListener('submit', (event) => event.preventDefault());
+    centerSearchInput?.addEventListener('input', filterCenters);
   </script>
 </body>
 </html>

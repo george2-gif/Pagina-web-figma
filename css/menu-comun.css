@@ -1,0 +1,266 @@
+/*
+ * Menú compartido: misma barra de navegación del index en todas las vistas.
+ */
+
+/* Evita que el menú fijo tape el inicio de las secciones al navegar por anclas. */
+html {
+  scroll-padding-top: 90px;
+}
+
+/* Solo la barra de navegación principal recibe estilos de menú pegajoso.
+   Los <header> internos (p. ej. .section-heading) quedan como bloques normales. */
+body > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* Respiro mínimo entre el logo, el menú y las acciones */
+  padding: 15px 5%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: none; /* El logo queda fijo a la izquierda, sin estirarse */
+  min-width: 0;
+  color: #00c2b2;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo a:last-child {
+  white-space: nowrap;
+}
+
+.logo-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+#menu-principal {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1; /* Ocupa el espacio restante entre el logo y las acciones */
+}
+
+#menu-principal a {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#menu-principal a:hover {
+  color: #2f67f6;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  flex: none; /* Las acciones se agrupan a la derecha */
+}
+
+.auth-buttons a {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.auth-buttons a:hover {
+  color: #2f67f6;
+}
+
+.btn-login {
+  background-color: #2f67f6;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 24px rgba(47, 103, 246, 0.25);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background: #264dc0;
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid #dbe3ec;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.menu-toggle span:not(.sr-only) {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  background: #1f2430;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fondo oscuro al abrir el menú móvil. */
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open::before {
+  position: fixed;
+  z-index: 4;
+  inset: 0;
+  background: rgba(16, 29, 36, 0.24);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease;
+}
+
+body.menu-open::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ajuste fino en pantallas de escritorio estrechas. */
+@media (max-width: 1300px) {
+  body > header {
+    gap: 24px;
+  }
+
+  #menu-principal {
+    gap: 18px;
+  }
+}
+
+/* Menú móvil.
+   El desborde ocurre por debajo de 1100px, así que el menú hamburguesa
+   entra ahí; entre 1100px y 1300px los enlaces se comprimen con el
+   ajuste fino de arriba. */
+@media (max-width: 1100px) {
+  body > header {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Al abrir el menú la barra crece para contener los enlaces y botones
+     (algunas páginas fijan una altura al header con body > header). */
+  body > header.menu-open {
+    height: auto;
+  }
+
+  #menu-principal,
+  .auth-buttons {
+    display: none;
+  }
+
+  body > header.menu-open #menu-principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid #eef2f7;
+  }
+
+  body > header.menu-open #menu-principal a {
+    padding: 12px 4px;
+    border-bottom: 1px solid #eef2f7;
+  }
+
+  body > header.menu-open .auth-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 4px;
+  }
+
+  body > header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  body > header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  body > header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .auth-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  body > header .logo a:last-child {
+    font-size: 0.9rem;
+  }
+
+  .auth-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+}

@@ -9,32 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/vista7.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
-  <!-- Encabezado y navegación principal. -->
-  <header class="site-header">
-    <nav class="navbar" aria-label="Navegación principal">
-      <a class="brand" href="../index.html#inicio" aria-label="Sanidad con Cristo, inicio">
-        <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
-        <span>Sanidad con Cristo</span>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
       </a>
-
-      <div class="nav-links" id="article-nav">
-        <a href="../index.html#tratamientos">Psicólogos Online</a>
-        <a href="vista6.html#centros">Centros seleccionados</a>
-        <a class="active" href="vista7.html#articulos">Artículos</a>
-        <a href="vista8.html#reserva">Consultorio</a>
-      </div>
-
-      <div class="nav-actions">
-        <a class="register" href="vista5.html#registro">Registrarse</a>
-        <a class="login" href="vista5.html#login">Iniciar sesión</a>
-      </div>
-
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="article-nav">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
     </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
   </header>
 
   <!-- Biblioteca de artículos y recursos. -->
@@ -162,34 +163,14 @@
       <span class="secure-payments">PAGOS SEGUROS: &nbsp;▣ &nbsp;♜</span>
     </div>
   </footer>
-  <!-- Búsqueda, filtros y navegación del menú móvil. -->
+  <!-- Búsqueda y filtros de artículos. -->
+  <script src="../javascript/menu-comun.js"></script>
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
     const searchForm = document.querySelector('.search-form');
     const searchInput = document.querySelector('.search-form input');
     const filters = [...document.querySelectorAll('.filter')];
     const articleCards = [...document.querySelectorAll('.article-card')];
     let selectedCategory = 'todos';
-    const closeMenu = () => {
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menú');
-      document.body.classList.remove('menu-open');
-    };
-
-    menuToggle?.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      document.body.classList.toggle('menu-open', isOpen);
-    });
-
-    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.navbar')) closeMenu();
-    });
 
     const updateArticles = () => {
       const query = searchInput.value.trim().toLowerCase();
