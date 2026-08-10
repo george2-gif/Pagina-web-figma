@@ -8,35 +8,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/Pagina-web-figma/css/encotranndolapaz.css">
+  <link rel="stylesheet" href="../css/encotranndolapaz.css">
 </head>
 <body>
-  <header>
-        <div class="logo">
-            <a href="/">
-                <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
-            </a>
-            <a href="/">Sanidad con Cristo</a>
-        </div>
-        <nav id="menu-principal">
-            <a href="#">Psicólogos Online</a>
-            <a href="#">Centros seleccionados</a>
-            <a href="#">Artículos</a>
-            <a href="#">Consultorio</a>
-        </nav>
-        <div class="auth-buttons">
-            <a href="#">Registrarse</a>
-            <a href="#" class="btn-login">Iniciar sesión</a>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span class="sr-only">Abrir menú</span>
-        </button>
-    </header>
-     
-   
+  <header class="site-header">
+    <nav class="navbar page-width" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Sanidad con Cristo, inicio">
+        <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
+        <span>Sanidad con Cristo</span>
+      </a>
+
+      <div class="nav-links" id="main-nav">
+        <a class="active" href="vista2.html#psicologos">Psicólogos Online</a>
+        <a href="vista6.html#centros">Centros seleccionados</a>
+        <a href="vista7.html#articulos">Artículos</a>
+        <a href="#consultorio">Consultorio</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="register" href="vista5.html#registro">Registrarse</a>
+        <a class="login" href="vista5.html#login">Iniciar sesión</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
   <main id="inicio">
     <section class="hero">
