@@ -81,6 +81,7 @@ h1 {
 /* =========================================
    3. NAVBAR Y HEADER
    ========================================= */
+<<<<<<< HEAD
 header,
 .navbar {
   display: flex;
@@ -93,7 +94,39 @@ header,
   position: sticky;
   top: 0;
   z-index: 100;
+=======
+header, .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 1%;
+    background: var(--color-blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+     max-width: 100%
+   
+>>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
 }
+header {
+    position: fixed !important; /* O sticky, según tengan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff !important; /* Forzamos fondo blanco para que no sea transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Una sombra sutil para separarlo del contenido */
+    z-index: 1000 !important; /* Capa alta para que siempre flote por encima limpiamente */
+    padding: 8px 20px;
+}
+
+/* OBLIGATORIO: Al poner posición fija, debes darle un margen superior a la sección 
+   siguiente (el hero o los tratamientos) para que el menú no tape el inicio del sitio */
+.hero {
+    margin-top: 50px; /* Ajusta los píxeles según la altura que tenga tu menú */
+}
+
 
 .logo {
   font-weight: 700;
@@ -119,12 +152,19 @@ header,
   box-shadow: 0 0 0 4px rgba(42, 226, 214, 0.18);
 }
 
+<<<<<<< HEAD
 nav,
 .menu {
   display: flex;
   align-items: center;
   gap: 25px;
   flex: 1; /* Ocupa el espacio restante entre el logo y las acciones */
+=======
+
+nav, .menu {
+    display: flex;
+    gap: 25px;
+>>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
 }
 
 .menu-toggle {
@@ -164,6 +204,7 @@ nav a:hover,
   color: var(--color-primario);
 }
 
+<<<<<<< HEAD
 .auth-buttons,
 .acciones,
 .nav-right {
@@ -172,6 +213,14 @@ nav a:hover,
   justify-content: flex-end;
   gap: 15px;
   flex: none; /* Las acciones se agrupan a la derecha */
+=======
+.auth-buttons, .acciones, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+     color: #68758b;
+     font-weight: 600;
+>>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
 }
 
 .btn-login {

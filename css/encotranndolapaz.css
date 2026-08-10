@@ -638,6 +638,7 @@ body > header {
   }
 }
 @media (max-width: 520px) {
+HEAD
   .page-width {
     width: calc(100% - 28px);
   }
@@ -710,4 +711,29 @@ body > header {
     align-self: flex-start; 
     margin-top: 10px;
   }
+
+  .page-width { width: calc(100% - 28px); }
+  .brand { font-size: 14px; }
+  .brand-mark { width: 29px; height: 29px; }
+  .hero-content { padding-top: 57px; }
+  .hero h1 { font-size: 27px; }
+  .hero p { padding-inline: 5px; font-size: 10px; }
+  .hero-actions { align-items: stretch; flex-direction: column; width: min(100%, 260px); }
+  .button-primary, .button-outline { width: 100%; }
+  .symptoms-list { grid-template-columns: 1fr; gap: 18px; }
+  .peace-photo { height: 245px; }
+  .treatments-section { padding-top: 40px; }
+  .treatment-grid { display: flex; flex-direction: column; }
+  .treatment-card { min-height: 190px; }
+  .treatment-featured { min-height: 0; }
+  .treatment-featured > img { height: 190px; }
+  .spiritual-card { min-height: 193px; }
+  .breath-card, .groups-card { min-height: 193px; }
+  .contact-banner { padding: 28px 24px; }
+  .footer-main { display: block; }
+  .footer-column { margin-top: 34px; }
+  .regional-column { margin-bottom: 28px; }
+  .regional-links { grid-template-columns: 1fr; row-gap: 10px; }
+  .payments { align-self: flex-end; }
+
 }
