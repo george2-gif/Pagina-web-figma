@@ -173,3 +173,39 @@ function redirigirPorCategoria(textoTitulo) {
         window.location.href = urlDestino;
     }
 }
+/* =======================================================================
+   FUNCIÓN AUXILIAR: REDIRECCIÓN A VISTAS DIFERENTES POR CATEGORÍA
+   ======================================================================= */
+function redirigirPorCategoria(textoTitulo) {
+    const categoria = textoTitulo.trim().toLowerCase();
+    let urlDestino = '';
+
+    // Modifica los nombres de los archivos según cómo los hayas guardado tú y tu compañero:
+    if (categoria === 'depresión') {
+        urlDestino = 'depresion.html'; // Cambia por tu archivo de depresión
+    } 
+    else if (categoria === 'ansiedad') {
+        urlDestino = 'html/encontrandolapaz.html';  // Cambia por tu archivo de ansiedad
+    } 
+    else if (categoria === 'autoestima') {
+        urlDestino = 'autoestima.html'; // Cambia por tu archivo de autoestima
+    } 
+    else if (categoria === 'ludopatía') {
+        urlDestino = 'ludopatia.html';  // Cambia por tu archivo de ludopatía
+    } 
+    else if (categoria === 'bullying') {
+        urlDestino = 'bullying.html';   // Cambia por tu archivo de bullying
+    } 
+    else if (categoria === 'tdah') {
+        urlDestino = 'tdah.html';       // Cambia por tu archivo de TDAH
+    }
+
+    // Si los archivos están dentro de una carpeta llamada por ejemplo "vistas", 
+    // debes ponerle el nombre antes, así: urlDestino = 'vistas/depresion.html';
+
+    // Ejecuta la redirección automática si la ruta existe
+    if (urlDestino !== '') {
+        window.location.href = urlDestino;
+    }
+}
+
