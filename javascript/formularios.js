@@ -36,6 +36,22 @@ authForms.forEach((form) => {
       return;
     }
 
+    localStorage.setItem('isLoggedIn', 'true');
+    if (form.classList.contains('register-form')) {
+      const nameField = form.querySelector('#full-name');
+      const emailField = form.querySelector('#email');
+      if (nameField) localStorage.setItem('userName', nameField.value.trim());
+      if (emailField) localStorage.setItem('userEmail', emailField.value.trim());
+    } else if (form.classList.contains('login-form')) {
+      const emailField = form.querySelector('#login-email');
+      if (emailField) {
+        const email = emailField.value.trim();
+        localStorage.setItem('userEmail', email);
+        const derivedName = email.split('@')[0];
+        localStorage.setItem('userName', derivedName.charAt(0).toUpperCase() + derivedName.slice(1));
+      }
+    }
+
     window.location.href = HOME_URL;
   });
 });

@@ -4,28 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanidad con Cristo - Iniciar Sesión</title>
-  <link rel="stylesheet" href="/css/vista3.css">
+  <link rel="stylesheet" href="../css/vista3.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
 
- <header>
-        <div class="logo">
-            <a href="/">
-                <img src="/Assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
-            </a>
-            <a href="/">Sanidad con Cristo</a>
-        </div>
-        <nav>
-            <a href="#">Psicólogos Online</a>
-            <a href="#">Centros seleccionados</a>
-            <a href="#">Artículos</a>
-            <a href="#">Consultorio</a>
-        </nav>
-        <div class="auth-buttons">
-            <a href="#">Registrarse</a>
-            <a href="/html/vista5.html" class="btn-login">Iniciar sesión</a>
-        </div>
-    </header>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="/html/vista5.html" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
     <!--FIN DEL MENU-->
 
   <main class="main-container">
@@ -43,7 +51,7 @@ de paz</p>
         </p>
         
         <div class="image-card">
-          <img src="/Assets/img/Cuarto.png" alt="Interior pacífico con vista al jardín">
+          <img src="../assets/img/Cuarto.png" alt="Interior pacífico con vista al jardín">
           <p class="quote">"La paz os dejo, mi paz os doy."</p>
         </div>
       </section>
@@ -94,7 +102,7 @@ de paz</p>
             <div class="footer-col">
                 <div class="footer-logo">
                     <span class="icono-logo">
-                        <img src="/Assets/ico/icono principal.svg" alt="Icono Sanidad en Cristo" class="logo-icon">
+                        <img src="../assets/ico/icono principal.svg" alt="Icono Sanidad en Cristo" class="logo-icon">
                     </span>
                     <strong>Sanidad con Cristo</strong>
                 </div>
@@ -117,9 +125,9 @@ de paz</p>
                 </ul>
                 <h3 class="titulo-siguenos">SÍGUENOS:</h3>
                 <div class="redes-sociales">
-                    <a href="#" class="icono-social fb"><img src="/Assets/ico/facebook.svg" alt="Facebook"></a>
-                    <a href="#" class="icono-social tw"><img src="/Assets/ico/twitter.svg" alt="Twitter"></a>
-                    <a href="#" class="icono-social ig"><img src="/Assets/ico/instagram.svg" alt="Instagram"></a>
+                    <a href="#" class="icono-social fb"><img src="../assets/ico/facebook.svg" alt="Facebook"></a>
+                    <a href="#" class="icono-social tw"><img src="../assets/ico/twitter.svg" alt="Twitter"></a>
+                    <a href="#" class="icono-social ig"><img src="../assets/ico/instagram.svg" alt="Instagram"></a>
                 </div>
             </div>
 
@@ -127,19 +135,19 @@ de paz</p>
                 <h3>NUESTRA RED REGIONAL</h3>
                 <div class="grid-red-regional">
                     <div class="item-pais">
-                        <span class="bandera ar"><img src="/Assets/ico/bandera-1.svg" alt="Argentina"></span>
+                        <span class="bandera ar"><img src="../assets/ico/bandera-1.svg" alt="Argentina"></span>
                         <a href="#">SanidadconCristo.com.ar</a>
                     </div>
                     <div class="item-pais">
-                        <span class="bandera cl"><img src="/Assets/ico/bandera-1.svg" alt="Chile"></span>
+                        <span class="bandera cl"><img src="../assets/ico/bandera-1.svg" alt="Chile"></span>
                         <a href="#">PsicologosOnline.cl</a>
                     </div>
                     <div class="item-pais"> 
-                        <span class="bandera mx"><img src="/Assets/ico/bandera-1.svg" alt="Internacional"></span>
+                        <span class="bandera mx"><img src="../assets/ico/bandera-1.svg" alt="Internacional"></span>
                         <a href="#">SanidadconCristo.com</a>
                     </div>
                     <div class="item-pais">
-                        <span class="bandera mx"><img src="/Assets/ico/bandera-1.svg" alt="México"></span>
+                        <span class="bandera mx"><img src="../assets/ico/bandera-1.svg" alt="México"></span>
                         <a href="#">Psico.mx</a>
                     </div>
                 </div>
@@ -150,12 +158,13 @@ de paz</p>
             <p class="copyright">&copy; 2023 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</p>
             <div class="pagos-seguros">
                 <span>PAGOS SEGUROS:</span>
-                <span class="icono-pago"><img src="/Assets/ico/tarjeta.svg" alt="Tarjeta de crédito"></span>
-                <span class="icono-pago"><img src="/Assets/ico/banco.svg" alt="Transferencia bancaria"></span>
+                <span class="icono-pago"><img src="../assets/ico/tarjeta.svg" alt="Tarjeta de crédito"></span>
+                <span class="icono-pago"><img src="../assets/ico/banco.svg" alt="Transferencia bancaria"></span>
             </div>
         </div>
     </footer>
 
-    <script src="/javascript/vistas.js"></script>
+    <script src="../javascript/vistas.js"></script>
+    <script src="../javascript/menu-comun.js"></script>
 </body>
 </html>

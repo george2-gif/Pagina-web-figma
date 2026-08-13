@@ -2,6 +2,21 @@
  * Menú compartido: misma barra de navegación del index en todas las vistas.
  */
 
+/* Optimizaciones globales de responsividad y rotación de pantalla (Portrait / Landscape) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Evita que el menú fijo tape el inicio de las secciones al navegar por anclas. */
 html {
   scroll-padding-top: 90px;
@@ -262,5 +277,21 @@ body.menu-open::before {
   .auth-buttons {
     justify-content: center;
     gap: 10px;
+  }
+}
+
+/* Ajustes especiales para modo horizontal (Landscape) en móviles y tablets */
+@media (orientation: landscape) and (max-height: 750px) {
+  .hero, section {
+    min-height: auto !important;
+  }
+  
+  body > header {
+    padding: 10px 3%;
+  }
+
+  .hero-content, .hero-contenido, .hero-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
 }

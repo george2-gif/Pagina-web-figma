@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agenda tu cita con especialistas en Sanidad con Cristo.">
+  <title>Agendar Cita | Sanidad con Cristo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/vista14.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
+</head>
+<body>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
+
+  <main class="booking-main" id="inicio">
+    <div class="booking-container">
+      <div class="booking-header">
+        <h1>Reserva tu Cita Profesional</h1>
+        <p>Selecciona la fecha, el especialista y el horario que mejor se adapten a tus necesidades para iniciar tu proceso de restauración.</p>
+      </div>
+
+      <form class="booking-form" id="booking-form">
+        <div class="field">
+          <label for="specialist">Especialista / Terapeuta</label>
+          <select id="specialist" required>
+            <option value="">Selecciona un especialista</option>
+            <option value="Dr. Sergio Martínez">Dr. Sergio Martínez - Terapia de Pareja y Familia</option>
+            <option value="Dra. Claudia Rivera">Dra. Claudia Rivera - Psicoterapia Humanista y Depresión</option>
+            <option value="Lic. Roberto Gómez">Lic. Roberto Gómez - Adicciones y Consejería Juvenil</option>
+            <option value="Dra. Elizabeth Ramos">Dra. Elizabeth Ramos - Ansiedad y Depresión</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modality">Modalidad de Atención</label>
+          <select id="modality" required>
+            <option value="Online">Videollamada Online (Virtual)</option>
+            <option value="Presencial">Presencial (Consultorio)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="booking-date">Fecha de la Cita</label>
+          <input type="date" id="booking-date" required>
+        </div>
+
+        <div class="field">
+          <label for="booking-time">Horario Preferido</label>
+          <select id="booking-time" required>
+            <option value="">Selecciona un horario</option>
+            <option value="09:00 AM">09:00 AM - 10:00 AM</option>
+            <option value="11:00 AM">11:00 AM - 12:00 PM</option>
+            <option value="03:00 PM">03:00 PM - 04:00 PM</option>
+            <option value="05:00 PM">05:00 PM - 06:00 PM</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Motivo de consulta o comentarios (Opcional)</label>
+          <textarea id="notes" rows="4" placeholder="Breve descripción de lo que deseas tratar..."></textarea>
+        </div>
+
+        <button type="submit" class="booking-submit">Confirmar y Agendar Cita</button>
+        <div class="success-message" id="success-msg">¡Cita agendada con éxito! Nos pondremos en contacto contigo y con el especialista para enviarte los detalles de acceso.</div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Pie de página institucional. -->
+  <footer class="site-footer" id="consultorio">
+    <div class="footer-container footer-grid">
+      <div class="footer-brand-column">
+         <a class="footer-brand" href="../index.html#inicio"><span class="footer-brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span><span>SanidadconCristo</span></a>
+        <div class="footer-links"><a href="#nosotros">Quiénes somos</a><a href="#legal">Aviso legal y Condiciones Generales de Uso</a><a href="#datos">Protección de Datos</a><a href="#usuarios">Condiciones de servicio para usuarios</a><a href="#profesionales">Condiciones de servicio para profesionales</a></div>
+      </div>
+      <div class="footer-column">
+        <h2>PARA PROFESIONALES</h2>
+        <a href="vista6.html#centros">Añade tu centro</a><a href="vista6.html#centros">Acceso centros</a><a href="vista6.html#centros">Anúnciate</a><a href="#ayuda">¿Necesitas ayuda?</a>
+        <h2 class="follow-title">SÍGUENOS:</h2>
+         <div class="social-links"><a href="#facebook" aria-label="Facebook" class="social-icon social-fb"></a><a href="#twitter" aria-label="Twitter" class="social-icon social-tw"></a><a href="#instagram" aria-label="Instagram" class="social-icon social-ig"></a></div>
+      </div>
+      <div class="footer-column regional">
+        <h2>NUESTRA RED REGIONAL</h2>
+        <div class="regional-grid"><a href="#argentina"><b>⚑</b>SanidadconCristo.com.ar</a><a href="#espana"><b>⚑</b>SanidadconCristo.com</a><a href="#chile"><b>⚑</b>PsicologosOnline.cl</a><a href="#mexico"><b>⚑</b>Psico.mx</a></div>
+      </div>
+    </div>
+    <div class="footer-container footer-bottom"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span class="secure-payments">PAGOS SEGUROS: &nbsp; ▣ &nbsp; ♜</span></div>
+  </footer>
+
+  <script src="../javascript/menu-comun.js"></script>
+  <script>
+    const bookingForm = document.getElementById('booking-form');
+    const successMsg = document.getElementById('success-msg');
+
+    bookingForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      if (!isLoggedIn) {
+        if (confirm('Debes iniciar sesión para confirmar tu cita. ¿Deseas ir a Iniciar Sesión?')) {
+          window.location.href = 'vista5.html#login';
+        }
+        return;
+      }
+      successMsg.style.display = 'block';
+      bookingForm.reset();
+      setTimeout(() => {
+        window.location.href = '../index.html';
+      }, 3500);
+    });
+  </script>
+</body>
+</html>

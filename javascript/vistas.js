@@ -4,31 +4,10 @@
  * cargarse sin errores aunque una sección no esté presente.
  */
 document.addEventListener("DOMContentLoaded", () => {
-    inicializarMenu();
     inicializarRedesSociales();
     inicializarBuscadores();
     inicializarTarjetas();
 });
-
-/* Abre y cierra la navegación principal en pantallas pequeñas. */
-function inicializarMenu() {
-    const header = document.querySelector("header");
-    const menuToggle = document.querySelector(".menu-toggle");
-
-    if (!header || !menuToggle) return;
-
-    menuToggle.addEventListener("click", () => {
-        const menuAbierto = header.classList.toggle("menu-open");
-        menuToggle.setAttribute("aria-expanded", String(menuAbierto));
-    });
-
-    header.querySelectorAll("nav a, .auth-buttons a").forEach((link) => {
-        link.addEventListener("click", () => {
-            header.classList.remove("menu-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        });
-    });
-}
 
 /* Cambia los iconos sociales por su versión de color al pasar el cursor. */
 function inicializarRedesSociales() {

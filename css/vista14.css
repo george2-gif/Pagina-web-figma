@@ -1,0 +1,118 @@
+/* Estilos de la vista para Agendar Cita. */
+:root {
+  --ink: #202326;
+  --text: #3b4748;
+  --teal: #006b64;
+  --teal-bright: #00b5aa;
+  --navy: #47556d;
+  --page: #f5f8fa;
+  --line: #d8e0e3;
+  --footer: #191d1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.booking-main {
+  padding: 60px 20px 100px;
+}
+
+.booking-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 45px 50px;
+  border-radius: 34px;
+  box-shadow: 0 13px 29px rgba(31, 62, 65, 0.08);
+}
+
+.booking-header h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  color: var(--teal);
+  letter-spacing: -0.5px;
+}
+
+.booking-header p {
+  margin: 0 0 30px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.booking-form .field {
+  margin-bottom: 22px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font: inherit;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  outline: none;
+  background: #fafbfc;
+  transition: border-color 0.2s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--teal);
+  background: #fff;
+}
+
+.booking-submit {
+  width: 100%;
+  margin-top: 15px;
+  padding: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--teal);
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 107, 100, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.booking-submit:hover {
+  background: #00544f;
+  transform: translateY(-1px);
+}
+
+.success-message {
+  display: none;
+  margin-top: 25px;
+  padding: 18px;
+  background: #e6f7f6;
+  color: #006b64;
+  border: 1px solid #b3e6e3;
+  border-radius: 14px;
+  font-weight: 600;
+  text-align: center;
+}
