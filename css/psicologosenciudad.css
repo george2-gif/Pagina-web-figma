@@ -40,40 +40,8 @@ input {
   width: min(var(--page), calc(100% - 48px));
   margin-inline: auto;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 /* 2. Encabezado y navegación. */
-.site-header {
-  height: 60px;
-  border-bottom: 1px solid #d9dce6;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(20, 34, 53, 0.06);
-}
-.navbar {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #00aa9e;
-  font-weight: 700;
-  white-space: nowrap;
-  font-size: 16px;
-}
 .brand-mark {
   display: grid;
   place-items: center;
@@ -84,65 +52,11 @@ input {
   background: #00b5aa;
   box-shadow: 0 4px 10px rgba(0, 171, 160, 0.22);
 }
-.brand-mark svg {
-  width: 21px;
-  height: 21px;
-}
 .brand-logo {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  max-width: 725px;
-  margin-left: 8px;
-}
-.nav-link,
-.register-link {
-  color: #405069;
-  font-size: 19px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.nav-link.active {
-  color: #007c79;
-}
-.account-links {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  margin-left: auto;
-}
-.register-link {
-  color: #68758b;
-}
-.login-button {
-  padding: 3px 8px 5px;
-  border-radius: 4px;
-  color: #fff;
-  background: #3977e8;
-  box-shadow: 0 2px 5px rgba(45, 101, 211, 0.2);
-  font-size: 18px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.menu-button {
-  display: none;
-  border: 0;
-  padding: 4px;
-  background: transparent;
-}
-.menu-button span {
-  display: block;
-  width: 23px;
-  height: 2px;
-  margin: 4px;
-  background: var(--navy);
 }
 
 /* 3. Hero y buscador de ciudades. */
@@ -724,19 +638,6 @@ h2 {
 
 /* 8. Ajustes responsive. */
 @media (max-width: 1050px) {
-  .navbar {
-    gap: 18px;
-  }
-  .nav-links {
-    gap: 16px;
-  }
-  .nav-link,
-  .register-link {
-    font-size: 15px;
-  }
-  .login-button {
-    font-size: 15px;
-  }
   .footer-main {
     gap: 35px;
   }
@@ -745,41 +646,6 @@ h2 {
 @media (max-width: 800px) {
   .page-width {
     width: min(100% - 32px, var(--page));
-  }
-  .site-header {
-    height: 64px;
-  }
-  .nav-links,
-  .account-links {
-    display: none;
-  }
-  .nav-links.is-open {
-    position: absolute;
-    z-index: 5;
-    top: 64px;
-    right: 16px;
-    left: 16px;
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 0;
-    max-width: none;
-    margin: 0;
-    padding: 9px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 9px 25px rgba(16, 33, 58, 0.12);
-  }
-  .nav-links.is-open a {
-    padding: 12px;
-    font-size: 14px;
-  }
-  .navbar {
-    justify-content: space-between;
-  }
-  .menu-button {
-    display: block;
   }
   .hero {
     height: auto;
@@ -857,9 +723,6 @@ h2 {
 @media (max-width: 480px) {
   .page-width {
     width: calc(100% - 28px);
-  }
-  .brand {
-    font-size: 14px;
   }
   .brand-mark {
     width: 29px;

@@ -54,32 +54,6 @@ a {
 /* ==========================================================================
    2. Encabezado (Header) y Navegación
    ========================================================================== */
-.site-header {
-    position: relative;
-    z-index: 10; /* Asegura que el menú quede por encima de otros elementos */
-    height: 64px;
-    background: var(--white);
-    border-bottom: 1px solid #eef0f5;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    min-width: 247px;
-    color: #04b2a6;
-    font-size: 16px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.brand-mark,
 .footer-mark {
     display: inline-grid;
     flex: 0 0 auto;
@@ -91,74 +65,11 @@ a {
     border-radius: 50%;
 }
 
-.brand-mark svg {
-    width: 16px;
-    height: 16px;
-}
-
 .brand-logo {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-/* Menú de navegación principal */
-.nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    gap: 22px;
-    color: #35445d;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.nav-menu > a {
-    transition: color 0.2s ease;
-    white-space: nowrap;
-}
-
-.nav-menu > a:hover,
-.register-link:hover {
-    color: var(--teal);
-}
-
-.nav-account {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-left: auto;
-    white-space: nowrap;
-}
-
-.register-link {
-    color: #66758e;
-}
-
-.login-link {
-    padding: 3px 8px;
-    color: white;
-    background: #3979ee;
-    border-radius: 2px;
-}
-
-/* Botón de hamburguesa (oculto en escritorio, visible en móvil) */
-.menu-toggle {
-    display: none;
-    padding: 8px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    margin: 5px 0;
-    background: var(--navy);
 }
 
 /* ==========================================================================
@@ -683,13 +594,6 @@ h1 span {
     .container {
         width: min(100% - 56px, 1440px);
     }
-    .brand {
-        min-width: 210px;
-    }
-    .nav-menu {
-        gap: 13px;
-        font-size: 14px;
-    }
     .understanding-grid {
         gap: 38px;
     }
@@ -700,50 +604,8 @@ h1 span {
 
 /* Tablets pequeñas y móviles en horizontal */
 @media (max-width: 800px) {
-    .site-header {
-        height: 60px;
-    }
     .container {
         width: min(100% - 40px, 640px);
-    }
-    .brand {
-        min-width: 0;
-        font-size: 14px;
-    }
-    .menu-toggle {
-        display: block; /* Muestra el botón de hamburguesa */
-        margin-left: auto;
-    }
-    
-    /* Convierte el menú horizontal en un menú desplegable */
-    .nav-menu {
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        left: 20px;
-        display: none; /* Oculto por defecto, requiere JS para agregar la clase .is-open */
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 8px 16px 16px;
-        color: var(--navy);
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 10px 22px rgba(14, 32, 58, 0.1);
-    }
-    .nav-menu.is-open {
-        display: flex;
-    }
-    .nav-menu > a,
-    .nav-account {
-        padding: 12px 4px;
-    }
-    .nav-account {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 0;
-        padding-bottom: 0;
     }
     
     /* Ajustes del Hero en móviles */

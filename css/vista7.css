@@ -29,28 +29,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-  position: fixed;
-  z-index: 4;
-  inset: 0;
-  background: rgba(16, 29, 36, 0.24);
-  content: "";
-  opacity: 0;
-  pointer-events: none;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: opacity 0.25s ease;
-}
-
-body.menu-open {
-  overflow: hidden;
-}
-
-body.menu-open::before {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -62,26 +40,6 @@ input {
 }
 
 /* 2. Barra superior y navegación. */
-.site-header {
-  position: relative;
-  z-index: 5;
-  height: 58px;
-  background: rgba(250, 251, 252, 0.98);
-  border-bottom: 1px solid #d9dfe2;
-  box-shadow: 0 2px 5px rgba(22, 39, 45, 0.16);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 37px;
-  width: min(100%, 1400px);
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 42px;
-}
-
-.brand,
 .footer-brand {
   display: inline-flex;
   align-items: center;
@@ -89,11 +47,6 @@ input {
   gap: 9px;
   font-weight: 700;
   white-space: nowrap;
-}
-
-.brand {
-  color: #00aa9f;
-  font-size: 16px;
 }
 
 .brand-mark {
@@ -107,87 +60,11 @@ input {
   border-radius: 50%;
 }
 
-.brand-mark svg {
-  width: 21px;
-  height: 21px;
-}
-
 .brand-logo {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  gap: 25px;
-}
-
-.nav-links a,
-.register {
-  color: var(--navy);
-  font-size: 19px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.nav-links a:hover,
-.register:hover {
-  color: var(--teal);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.login {
-  padding: 5px 8px 6px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  white-space: nowrap;
-  background: #3f78ed;
-  border-radius: 4px;
-}
-
-.login:hover {
-  background: #2866df;
-}
-
-.menu-toggle {
-  display: none;
-  padding: 5px;
-  background: transparent;
-  border: 0;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  margin: 4px;
-  background: var(--navy);
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.menu-toggle[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.menu-toggle[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* 3. Encabezado de recursos. */
@@ -557,11 +434,6 @@ input {
   height: 27px;
 }
 
-.footer-brand .brand-mark svg {
-  width: 17px;
-  height: 17px;
-}
-
 .footer-brand-column p {
   margin: 0;
   font-size: 10px;
@@ -646,21 +518,6 @@ input {
 
 /* 8. Ajustes responsive. */
 @media (max-width: 1180px) {
-  .navbar {
-    gap: 22px;
-    padding: 0 25px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-links a,
-  .register,
-  .login {
-    font-size: 15px;
-  }
-
   .resource-search {
     gap: 13px;
   }
@@ -672,38 +529,6 @@ input {
 }
 
 @media (max-width: 850px) {
-  .nav-links,
-  .nav-actions {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav-links.is-open {
-    position: absolute;
-    top: calc(100% + 5px);
-    right: 16px;
-    left: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 16px;
-    background: #fff;
-    border: 1px solid #dce4e5;
-    border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(22, 41, 44, 0.15);
-  }
-
-  .nav-links.is-open a {
-    display: block;
-    padding: 5px;
-    text-align: center;
-  }
-
   .resource-search {
     flex-direction: column;
     align-items: stretch;
@@ -747,18 +572,6 @@ input {
 }
 
 @media (max-width: 560px) {
-  .site-header {
-    height: 62px;
-  }
-
-  .navbar {
-    padding: 0 18px;
-  }
-
-  .brand {
-    font-size: 14px;
-  }
-
   .brand-mark {
     width: 29px;
     height: 29px;

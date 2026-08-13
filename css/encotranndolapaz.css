@@ -39,20 +39,12 @@ button {
 }
 
 /* 2. Encabezado y navegación. */
-/* CORRECCIÓN: body > header asegura que SOLO el menú principal se quede pegado arriba */
+/* CORRECCIÓN: body > header asegura que SOLO el menú principal se quede pegado arriba
+   (la barra principal y sus clases se estilizan en menu-comun.css, que se carga después). */
 body > header {
-  position: sticky;
-  top: 0;
-  z-index: 9999; 
   height: 75px; 
   border-bottom: 1px solid #e1e4ec;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(20, 34, 53, 0.05);
 }
-
-/* 2. Encabezado y navegación.
-   La barra principal y sus clases (.logo, #menu-principal, .auth-buttons,
-   .btn-login, .menu-toggle) se estilizan en menu-comun.css. */
 
 /* 3. Hero y acciones principales. */
 .hero {
@@ -713,7 +705,6 @@ HEAD
   }
 
   .page-width { width: calc(100% - 28px); }
-  .brand { font-size: 14px; }
   .brand-mark { width: 29px; height: 29px; }
   .hero-content { padding-top: 57px; }
   .hero h1 { font-size: 27px; }

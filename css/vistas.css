@@ -81,7 +81,6 @@ h1 {
 /* =========================================
    3. NAVBAR Y HEADER
    ========================================= */
-<<<<<<< HEAD
 header,
 .navbar {
   display: flex;
@@ -94,21 +93,6 @@ header,
   position: sticky;
   top: 0;
   z-index: 100;
-=======
-header, .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 1%;
-    background: var(--color-blanco);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-     max-width: 100%
-   
->>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
 }
 header {
     position: fixed !important; /* O sticky, según tengan */
@@ -144,27 +128,13 @@ header {
   white-space: nowrap;
 }
 
-.logo-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2ae2d6, #1a76f8);
-  box-shadow: 0 0 0 4px rgba(42, 226, 214, 0.18);
-}
-
-<<<<<<< HEAD
 nav,
 .menu {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 35px;
   flex: 1; /* Ocupa el espacio restante entre el logo y las acciones */
-=======
-
-nav, .menu {
-    display: flex;
-    gap: 25px;
->>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
+  justify-content: center;
 }
 
 .menu-toggle {
@@ -189,8 +159,7 @@ nav, .menu {
     opacity 0.2s ease;
 }
 
-nav a,
-.menu a {
+nav a {
   font-size: 0.9rem;
   color: var(--color-texto-suave);
   font-weight: 500;
@@ -199,12 +168,10 @@ nav a,
     opacity 0.2s ease;
 }
 
-nav a:hover,
-.menu a:hover {
+nav a:hover {
   color: var(--color-primario);
 }
 
-<<<<<<< HEAD
 .auth-buttons,
 .acciones,
 .nav-right {
@@ -213,14 +180,6 @@ nav a:hover,
   justify-content: flex-end;
   gap: 15px;
   flex: none; /* Las acciones se agrupan a la derecha */
-=======
-.auth-buttons, .acciones, .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-     color: #68758b;
-     font-weight: 600;
->>>>>>> 6050d0e0942df5fee36c817665dccff9dd1a7b52
 }
 
 .btn-login {
@@ -458,7 +417,6 @@ nav a:hover,
 /* El menú debe aparecer por encima de las secciones que siguen al buscador. */
 header,
 .hero,
-.main-header,
 [class*="hero"],
 [class*="header"] {
   position: relative;
@@ -1020,20 +978,17 @@ h3 + p {
    ========================================= */
 /* Ajuste fino en pantallas de escritorio estrechas. */
 @media (max-width: 1300px) {
-  header,
-  .navbar {
+  header {
     gap: 24px;
   }
 
-  nav,
-  .menu {
-    gap: 18px;
+  nav {
+    gap: 30px;
   }
 }
 
 @media (max-width: 980px) {
-  header,
-  .navbar {
+  header {
     padding-inline: 4%;
   }
 
@@ -1064,8 +1019,7 @@ h3 + p {
    entra ahí; entre 1100px y 1300px los enlaces se comprimen con el
    ajuste fino de arriba. */
 @media (max-width: 1100px) {
-  header,
-  .navbar {
+  header {
     flex-wrap: wrap;
     row-gap: 12px;
   }
@@ -1076,21 +1030,16 @@ h3 + p {
   }
 
   /* Al abrir el menú la barra crece para contener enlaces y botones. */
-  header.menu-open,
-  .navbar.menu-open {
+  header.menu-open {
     height: auto;
   }
 
   nav,
-  .menu,
-  .auth-buttons,
-  .acciones,
-  .nav-right {
+  .auth-buttons {
     display: none;
   }
 
-  header.menu-open nav,
-  header.menu-open .menu {
+  header.menu-open nav {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
@@ -1099,8 +1048,7 @@ h3 + p {
     border-top: 1px solid #eef2f7;
   }
 
-  header.menu-open nav a,
-  header.menu-open .menu a {
+  header.menu-open nav a {
     padding: 12px 4px;
     border-bottom: 1px solid #eef2f7;
   }
@@ -1130,8 +1078,7 @@ h3 + p {
 }
 
 @media (max-width: 768px) {
-  header,
-  .navbar {
+  header {
     padding: 12px 20px;
   }
 
@@ -1289,10 +1236,6 @@ h3 + p {
   .footer-col h3 {
     margin-bottom: 14px;
   }
-
-  .footer-grid {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 380px) {
@@ -1307,12 +1250,6 @@ h3 + p {
   .auth-buttons {
     justify-content: center;
     gap: 10px;
-  }
-}
-
-@media (min-width: 901px) {
-  header {
-    position: sticky;
   }
 }
 

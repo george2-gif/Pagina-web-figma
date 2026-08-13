@@ -150,22 +150,6 @@ function inicializarTarjetas() {
     });
 }
 
-/* Construye la URL de resultados correspondiente a una categoría. */
-function redirigirPorCategoria(title) {
-    const categories = {
-        depresión: "depresion",
-        ansiedad: "ansiedad",
-        autoestima: "autoestima",
-        ludopatía: "ludopatia",
-        bullying: "bullying",
-        tdah: "tdah",
-    };
-    const category = categories[title.trim().toLowerCase()];
-
-    if (!category) return;
-
-    window.location.href = `html/vista9.html?especialidad=${category}`;
-}
 /* =======================================================================
    FUNCIÓN AUXILIAR: REDIRECCIÓN A VISTAS DIFERENTES POR CATEGORÍA
    ======================================================================= */

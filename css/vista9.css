@@ -30,26 +30,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-  position: fixed;
-  z-index: 4;
-  inset: 0;
-  background: rgba(16, 29, 36, 0.24);
-  content: "";
-  opacity: 0;
-  pointer-events: none;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: opacity 0.25s ease;
-}
-body.menu-open {
-  overflow: hidden;
-}
-body.menu-open::before {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -70,25 +50,6 @@ img {
 }
 
 /* 2. Encabezado y navegación. */
-.site-header {
-  position: relative;
-  z-index: 5;
-  background: #fff;
-  border-bottom: 1px solid #d8dddf;
-  box-shadow: 0 2px 5px rgba(31, 43, 47, 0.22);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  width: min(100%, 1808px);
-  min-height: 72px;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
-.brand,
 .footer-brand {
   display: inline-flex;
   align-items: center;
@@ -100,7 +61,6 @@ img {
   white-space: nowrap;
 }
 
-.brand-mark,
 .footer-brand-mark {
   display: inline-flex;
   align-items: center;
@@ -112,88 +72,11 @@ img {
   border-radius: 50%;
 }
 
-.brand-mark svg {
-  width: 26px;
-  height: 26px;
-}
-
 .brand-logo {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex: 1;
-  gap: 24px;
-}
-
-.nav-links a,
-.register {
-  color: var(--navy);
-  font-size: 26px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.nav-links a:first-child {
-  color: #00766f;
-}
-.nav-links a:hover,
-.register:hover {
-  color: var(--teal-bright);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.login {
-  padding: 6px 10px 7px;
-  color: #fff;
-  font-size: 26px;
-  font-weight: 700;
-  white-space: nowrap;
-  background: #3f78ee;
-  border-radius: 5px;
-}
-
-.login:hover {
-  background: #2865dc;
-}
-
-.menu-toggle {
-  display: none;
-  padding: 5px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  margin: 5px 0;
-  background: var(--ink);
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-.menu-toggle[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.menu-toggle[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* 3. Encabezado del directorio y filtros. */
@@ -635,10 +518,6 @@ img {
   width: 33px;
   height: 33px;
 }
-.footer-brand-mark svg {
-  width: 20px;
-  height: 20px;
-}
 .footer-links,
 .footer-column {
   display: flex;
@@ -729,15 +608,6 @@ img {
 
 /* 7. Ajustes responsive. */
 @media (max-width: 1500px) {
-  .navbar {
-    padding-inline: 34px;
-    gap: 22px;
-  }
-  .nav-links a,
-  .register,
-  .login {
-    font-size: 20px;
-  }
   .directory-layout {
     grid-template-columns: 285px minmax(0, 1fr);
     gap: 34px;
@@ -751,54 +621,6 @@ img {
   .container,
   .footer-container {
     width: min(calc(100% - 40px), 760px);
-  }
-  .navbar {
-    min-height: 68px;
-    padding: 0 20px;
-  }
-  .brand {
-    font-size: 17px;
-  }
-  .brand-mark {
-    width: 35px;
-    height: 35px;
-  }
-  .nav-links,
-  .nav-actions {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-  .nav-links.is-open {
-    position: absolute;
-    top: 68px;
-    right: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 9px 20px;
-    background: #fff;
-    border: 1px solid var(--line);
-    box-shadow: 0 8px 18px rgba(25, 38, 42, 0.14);
-  }
-  .nav-links.is-open a {
-    padding: 12px 0;
-    font-size: 16px;
-  }
-  .nav-links.is-open + .nav-actions {
-    position: absolute;
-    top: 276px;
-    right: 40px;
-    display: flex;
-    z-index: 2;
-  }
-  .nav-links.is-open + .nav-actions .register,
-  .nav-links.is-open + .nav-actions .login {
-    font-size: 15px;
   }
   .directory {
     padding-top: 40px;
