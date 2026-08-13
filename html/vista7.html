@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artículos y recursos para la salud mental y espiritual.">
+  <title>Artículos y recursos | Sanidad con Cristo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/vista7.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
+</head>
+<body>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
+
+  <!-- Biblioteca de artículos y recursos. -->
+  <main id="inicio">
+    <section class="intro" id="articulos">
+      <p class="eyebrow">RECURSOS PARA EL ALMA</p>
+      <h1>Claridad Mental, <span>Paz<br>Espiritual</span></h1>
+      <p class="intro-copy">Explora nuestra biblioteca de recursos diseñados para integrar la excelencia<br class="desktop-only"> psicológica con los principios de la fe cristiana. Un refugio para tu crecimiento<br class="desktop-only"> personal.</p>
+    </section>
+
+    <section class="resource-search" aria-label="Buscar artículos">
+      <form class="search-form" action="#articulos" method="get">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        <input type="search" name="buscar" placeholder="Buscar artículos por tema..." aria-label="Buscar artículos por tema">
+      </form>
+      <div class="filters" aria-label="Filtrar por categoría">
+        <span class="filter-label">Filtrar por:</span>
+        <button class="filter active" type="button">Todos</button>
+        <button class="filter" type="button">Ansiedad</button>
+        <button class="filter" type="button">Matrimonio</button>
+        <button class="filter" type="button">Fe y Ciencia</button>
+        <button class="filter" type="button">Duelo</button>
+      </div>
+    </section>
+
+    <section class="articles" aria-label="Artículos destacados">
+      <div class="article-grid">
+        <article class="article-card featured-card" data-category="fe y ciencia">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Montañas reflejadas en un lago tranquilo">
+          <div class="featured-content">
+            <div class="article-meta"><span class="badge">DESTACADO</span><span class="dot">•</span><span>FE Y CIENCIA</span></div>
+            <h2>Integrando la<br class="desktop-only"> Oración y la Terapia<br class="desktop-only"> Cognitiva</h2>
+            <p>Descubre cómo los últimos avances en neurociencia respaldan las prácticas espirituales milenarias para combatir el estrés y encontrar equilibrio.</p>
+            <a class="read-link" href="#leer">Leer artículo completo <span aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="article-card side-card" data-category="matrimonio">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Dos personas compartiendo una taza de café">
+          <div class="card-content">
+            <p class="category">MATRIMONIO</p>
+            <h2>Comunicación Redentora<br class="desktop-only"> en la Pareja</h2>
+            <p class="excerpt">Herramientas prácticas para transformar el conflicto en una oportunidad de conexión.</p>
+            <a class="outline-button" href="#leer">Leer más</a>
+          </div>
+        </article>
+
+        <article class="article-card standard-card" data-category="ansiedad">
+          <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Biblia abierta sobre un escritorio luminoso">
+          <div class="card-content">
+            <p class="category">ANSIEDAD</p>
+            <h2>Venciendo el Afán con<br class="desktop-only"> Promesas Eternas</h2>
+            <p class="excerpt">Cómo gestionar la ansiedad diaria mediante el anclaje en la identidad y la fe.</p>
+            <a class="outline-button" href="encontrandolapaz.html#inicio">Ver tratamiento</a>
+          </div>
+        </article>
+
+        <article class="article-card standard-card" data-category="duelo">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Luz del atardecer sobre el océano">
+          <div class="card-content">
+            <p class="category">DUELO</p>
+            <h2>Sanando las Heridas del<br class="desktop-only"> Corazón</h2>
+            <p class="excerpt">Un recorrido compasivo por las etapas del duelo desde una perspectiva clínica y espiritual.</p>
+            <a class="outline-button" href="#leer">Leer más</a>
+          </div>
+        </article>
+
+        <article class="article-card standard-card" data-category="crecimiento">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Mujer leyendo en una biblioteca">
+          <div class="card-content">
+            <p class="category">CRECIMIENTO</p>
+            <h2>El Poder de los Hábitos<br class="desktop-only"> Saludables</h2>
+            <p class="excerpt">Por qué la disciplina espiritual y mental son la base de una vida equilibrada y plena.</p>
+            <a class="outline-button" href="#leer">Leer más</a>
+          </div>
+        </article>
+      </div>
+
+      <nav class="pagination" aria-label="Paginación de artículos">
+        <a href="#anterior" aria-label="Página anterior">&#8249;</a>
+        <a class="current" href="#pagina-1" aria-current="page">1</a>
+        <a href="#pagina-2">2</a>
+        <a href="#pagina-3">3</a>
+        <span>...</span>
+        <a href="#pagina-12">12</a>
+        <a href="#siguiente" aria-label="Página siguiente">&#8250;</a>
+      </nav>
+    </section>
+  </main>
+
+  <!-- Pie de página institucional. -->
+  <footer class="site-footer" id="consultorio">
+    <div class="footer-top">
+      <div class="footer-brand-column">
+         <a class="footer-brand" href="../index.html#inicio">
+           <span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span>
+          <span>SanidadconCristo</span>
+        </a>
+        <p>Quiénes somos<br>Aviso legal y Condiciones Generales de Uso<br>Protección de Datos<br>Condiciones de servicio para usuarios<br>Condiciones de servicio para profesionales</p>
+      </div>
+
+      <div class="footer-column professionals">
+        <h2>PARA PROFESIONALES</h2>
+        <a href="vista6.html#centros">Añade tu centro</a>
+        <a href="vista6.html#centros">Acceso centros</a>
+        <a href="vista6.html#centros">Anúnciate</a>
+        <a href="vista8.html#reserva">¿Necesitas ayuda?</a>
+        <h2 class="social-title">SÍGUENOS:</h2>
+        <div class="socials"><a href="#facebook" aria-label="Facebook" class="social-icon social-fb"></a><a href="#twitter" aria-label="Twitter" class="social-icon social-tw"></a><a href="#instagram" aria-label="Instagram" class="social-icon social-ig"></a></div>
+      </div>
+
+      <div class="footer-column regional">
+        <h2>NUESTRA RED REGIONAL</h2>
+        <div class="regional-grid">
+          <a href="vista6.html#centros"><b>⚑</b>SanidadconCristo.com.ar</a>
+          <a href="vista6.html#centros"><b>⚑</b>SanidadconCristo.com</a>
+          <a href="vista6.html#centros"><b>⚑</b>PsicologosOnline.cl</a>
+          <a href="vista6.html#centros"><b>⚑</b>Psico.mx</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span>
+      <span class="secure-payments">PAGOS SEGUROS: &nbsp;▣ &nbsp;♜</span>
+    </div>
+  </footer>
+  <!-- Búsqueda y filtros de artículos. -->
+  <script src="../javascript/menu-comun.js"></script>
+  <script>
+    const searchForm = document.querySelector('.search-form');
+    const searchInput = document.querySelector('.search-form input');
+    const filters = [...document.querySelectorAll('.filter')];
+    const articleCards = [...document.querySelectorAll('.article-card')];
+    let selectedCategory = 'todos';
+
+    const updateArticles = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      articleCards.forEach((card) => {
+        const matchesCategory = selectedCategory === 'todos' || card.dataset.category === selectedCategory;
+        const matchesSearch = query === '' || card.textContent.toLowerCase().includes(query);
+        card.hidden = !matchesCategory || !matchesSearch;
+      });
+    };
+
+    searchForm.addEventListener('submit', (event) => event.preventDefault());
+    searchInput.addEventListener('input', updateArticles);
+    filters.forEach((filter) => {
+      filter.addEventListener('click', () => {
+        selectedCategory = filter.textContent.trim().toLowerCase();
+        filters.forEach((item) => item.classList.toggle('active', item === filter));
+        updateArticles();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+/* Estilos de la página de tratamiento para la ansiedad. */
+
+/* 1. Variables y estilos base. */
+:root {
+  --navy: #10213a;
+  --body: #424b5c;
+  --teal: #008d84;
+  --light-teal: #e4f4f2;
+  --hero: #f7f8fd;
+  --treatments: #f7f8fd;
+  --footer: #191d20;
+  --page: 1200px; 
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: var(--body);
+  background: #fff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px; 
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+.page-width {
+  width: min(var(--page), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* 2. Encabezado y navegación. */
+/* CORRECCIÓN: body > header asegura que SOLO el menú principal se quede pegado arriba
+   (la barra principal y sus clases se estilizan en menu-comun.css, que se carga después). */
+body > header {
+  height: 75px; 
+  border-bottom: 1px solid #e1e4ec;
+}
+
+/* 3. Hero y acciones principales. */
+.hero {
+  height: 500px; 
+  background: var(--hero);
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 130px; 
+  text-align: center;
+}
+.eyebrow {
+  padding: 6px 18px; 
+  border-radius: 20px;
+  color: #78a2e0;
+  background: #dce8ff;
+  font-size: 13px; 
+  font-weight: 600;
+  letter-spacing: 0.15px;
+}
+.hero h1 {
+  margin: 28px 0 14px;
+  color: var(--teal);
+  font-size: 44px; 
+  line-height: 1.1;
+  letter-spacing: -1px;
+  font-weight: 750;
+}
+.hero p {
+  margin: 0;
+  color: #4d5565;
+  font-size: 17px; 
+  line-height: 1.6;
+  max-width: 800px; 
+}
+.hero-actions {
+  display: flex;
+  gap: 16px; 
+  margin-top: 35px; 
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; 
+  border-radius: 6px;
+  font-size: 15px; 
+  font-weight: 500;
+  padding: 0 24px; 
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.button:hover,
+.banner-button:hover {
+  transform: translateY(-2px); 
+}
+.button-primary {
+  gap: 10px; 
+  min-width: 250px; 
+  color: #fff;
+  background: var(--teal);
+  box-shadow: 0 5px 10px rgba(0, 141, 132, 0.12);
+}
+.button-primary svg {
+  width: 18px; 
+  height: 18px;
+}
+.button-outline {
+  min-width: 140px; 
+  border: 2px solid #3977e8; 
+  color: #1261c8;
+  background: transparent;
+}
+
+/* 4. Información sobre la ansiedad. */
+.anxiety-section {
+  min-height: 450px; 
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 60px; 
+  align-items: center;
+  padding-top: 60px; 
+  padding-bottom: 60px; 
+}
+.anxiety-copy {
+  padding-left: 1px;
+}
+.anxiety-copy h2 {
+  margin: 0 0 24px;
+  color: #14233a;
+  font-size: 24px; 
+  font-weight: 600;
+}
+.anxiety-copy p {
+  max-width: 580px; 
+  margin: 0 0 20px;
+  color: #4d5565;
+  font-size: 16px; 
+  line-height: 1.62;
+}
+.symptoms-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px; 
+  margin-top: 35px; 
+}
+.symptom {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px; 
+  color: #15233b;
+  line-height: 1.4;
+}
+.check-circle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px; 
+  height: 28px; 
+  border: 2px solid #b8e3de;
+  border-radius: 50%;
+  color: #008d84;
+  background: #e8f7f5;
+  font-size: 15px; 
+  font-weight: 700;
+}
+.symptom strong,
+.symptom small {
+  display: block;
+}
+.symptom strong {
+  font-size: 15px; 
+}
+.symptom small {
+  font-size: 13px; 
+  letter-spacing: 0.05px;
+  color: #5d6472;
+}
+.peace-photo {
+  position: relative;
+  height: 380px; 
+  margin: 0;
+  overflow: visible;
+  border-radius: 12px; 
+}
+.peace-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.peace-photo figcaption {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  min-width: 160px; 
+  padding: 22px 20px 18px; 
+  border-radius: 12px;
+  color: #fff;
+  background: var(--teal);
+  box-shadow: 0 7px 15px rgba(0, 89, 84, 0.25);
+}
+.peace-photo figcaption strong {
+  display: block;
+  font-size: 14px; 
+  line-height: 1.35;
+}
+.peace-photo figcaption small {
+  display: block;
+  margin-top: 12px;
+  color: #b7e9e4;
+  font-size: 10px; 
+  letter-spacing: 0.7px;
+}
+
+/* 5. Tratamientos especializados. */
+.treatments-section {
+  padding: 65px 0 100px; 
+  background: var(--treatments);
+}
+/* Los <header> internos, como el título de sección, deben ser bloques
+   normales: nunca menús pegajosos con fondo, sombra ni z-index flotante. */
+.section-heading {
+  display: block;
+  position: static;
+  z-index: auto;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+}
+.section-heading h2 {
+  margin: 0;
+  color: #1b2c45;
+  font-size: 26px; 
+  font-weight: 600;
+}
+.section-heading p {
+  margin: 18px 0 50px;
+  color: #5d6472;
+  font-size: 16px; 
+}
+.treatment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 240px; 
+  gap: 20px; 
+  max-width: 900px; 
+  margin: 0 auto;
+}
+.treatment-card {
+  overflow: hidden;
+  border-radius: 12px; 
+}
+.treatment-featured {
+  grid-row: span 2;
+  color: #4c5870;
+  background: #e1ebff;
+}
+.treatment-featured > img {
+  display: block;
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+}
+.card-content {
+  padding: 30px 32px; 
+}
+.treatment-featured .card-content {
+  height: calc(100% - 250px);
+  padding-top: 32px;
+}
+.treatment-card h3 {
+  margin: 0 0 16px;
+  color: #075fc8;
+  font-size: 20px; 
+  font-weight: 600;
+}
+.treatment-card p {
+  margin: 0;
+  font-size: 15px; 
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+}
+.treatment-featured a {
+  display: inline-block;
+  margin-top: 32px;
+  color: #075fc8;
+  font-size: 15px; 
+  font-weight: 600;
+}
+.treatment-featured a span {
+  margin-left: 6px;
+  font-size: 20px; 
+  font-weight: 400;
+  vertical-align: -1px;
+}
+.spiritual-card {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  color: #192e4a;
+  background: #dce8ff;
+}
+.spiritual-card .card-content {
+  padding: 69px 32px 20px; 
+}
+.spiritual-card h3 {
+  color: #1b2e49;
+  font-weight: 600;
+}
+.spiritual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.breath-card,
+.groups-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 32px; 
+  color: #063f4e;
+}
+.breath-card {
+  background: #5be8dc;
+}
+.groups-card {
+  background: #626cc9;
+  color: #fff;
+}
+.breath-card svg,
+.groups-card svg {
+  width: 32px; 
+  height: 32px;
+}
+.breath-card h3,
+.groups-card h3 {
+  margin-bottom: 12px;
+  color: inherit;
+  font-size: 20px; 
+  font-weight: 600;
+}
+.breath-card p,
+.groups-card p {
+  max-width: 180px; 
+  font-size: 14px; 
+  line-height: 1.45;
+}
+
+/* 6. Banner de contacto. */
+.contact-banner {
+  min-height: 180px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px; 
+  margin: 100px auto 0; 
+  padding: 40px 50px; 
+  border-radius: 12px;
+  color: #fff;
+  background: var(--teal);
+}
+.contact-banner h2 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 22px; 
+  font-weight: 600;
+}
+.contact-banner p {
+  margin: 0;
+  color: #dbf4f1;
+  font-size: 16px; 
+  line-height: 1.55;
+}
+.banner-action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px; 
+}
+.banner-button {
+  display: grid;
+  place-items: center;
+  width: 180px; 
+  height: 55px; 
+  border-radius: 8px;
+  color: var(--teal);
+  background: #f7f9ff;
+  box-shadow: 0 5px 8px rgba(0, 73, 69, 0.15);
+  font-size: 15px; 
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.banner-action small {
+  color: #b5e2de;
+  font-size: 12px; 
+}
+
+/* 7. Pie de página. */
+.site-footer {
+  padding-top: 60px; 
+  color: #8b98aa;
+  background: var(--footer);
+}
+.footer-main {
+  min-height: 250px; 
+  display: grid;
+  grid-template-columns: 1.2fr 1.05fr 1.75fr;
+  gap: 85px; 
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f8f8f8;
+  font-size: 20px; 
+  font-weight: 700;
+}
+.footer-brand .brand-mark {
+  width: 30px; 
+  height: 30px; 
+  font-size: 15px;
+  box-shadow: none;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-top: 24px;
+}
+.footer-main a {
+  font-size: 14px; 
+  line-height: 1.4;
+}
+.footer-main a:hover {
+  color: #fff;
+}
+.footer-column h3 {
+  margin: 2px 0 18px;
+  color: #fff;
+  font-size: 12px; 
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-column > a {
+  display: block;
+  margin-bottom: 12px;
+}
+.social-title {
+  margin-top: 30px !important;
+  margin-bottom: 16px !important;
+}
+.socials {
+  display: flex;
+  gap: 12px; 
+}
+.social-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #1d2a3e;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.social-fb {
+  background-image: url('../assets/ico/facebook.svg');
+}
+.social-fb:hover {
+  background-image: url('../assets/ico/facebook-color.svg');
+  background-color: #1877f2;
+}
+.social-tw {
+  background-image: url('../assets/ico/twitter.svg');
+}
+.social-tw:hover {
+  background-image: url('../assets/ico/twitter-color.svg');
+  background-color: #1da1f2;
+}
+.social-ig {
+  background-image: url('../assets/ico/instagram.svg');
+}
+.social-ig:hover {
+  background-image: url('../assets/ico/instagram-color.svg');
+  background-color: #e1306c;
+}
+.regional-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 16px;
+}
+.regional-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+.regional-links b {
+  display: grid;
+  place-items: center;
+  width: 32px; 
+  height: 32px; 
+  border-radius: 50%;
+  color: #8b98aa;
+  background: #1d2a3e;
+  font-size: 14px; 
+  font-weight: 400;
+}
+.regional-links b img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  border-top: 1px solid #2a2f33;
+  color: #91a0b3;
+  font-size: 11px; 
+  letter-spacing: 0.75px;
+  margin-top: 20px;
+}
+.payments {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.payments b {
+  display: grid;
+  place-items: center;
+  color: #788596;
+  font-size: 22px; 
+  font-weight: 400;
+}
+.payments img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* 8. Ajustes responsive. */
+@media (max-width: 1050px) {
+  .footer-main {
+    gap: 45px; 
+  }
+}
+@media (max-width: 800px) {
+  .page-width {
+    width: min(calc(100% - 32px), var(--page));
+  }
+  /* CORRECCIÓN TAMBIÉN AQUÍ PARA MÓVILES */
+  body > header {
+    height: 70px; 
+  }
+
+  .hero {
+    height: auto;
+    min-height: 420px; 
+  }
+  .hero-content {
+    padding: 85px 0 70px;
+  }
+  .hero h1 {
+    font-size: 36px; 
+  }
+  .hero p {
+    font-size: 15px; 
+  }
+  .desktop-only {
+    display: none;
+  }
+  .anxiety-section {
+    grid-template-columns: 1fr;
+    gap: 50px; 
+    padding-top: 50px;
+  }
+  .anxiety-copy p {
+    max-width: none;
+  }
+  .peace-photo {
+    width: min(100%, 570px);
+    height: 340px; 
+    margin-inline: auto;
+  }
+  .treatment-grid {
+    grid-template-rows: auto;
+  }
+  .treatment-featured {
+    grid-row: auto;
+  }
+  .treatment-featured > img {
+    height: 240px; 
+  }
+  .treatment-featured .card-content {
+    height: auto;
+  }
+  .contact-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 70px;
+  }
+  .banner-action {
+    align-items: flex-start;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 35px;
+  }
+  .footer-brand-column,
+  .regional-column {
+    grid-column: 1 / -1;
+  }
+  .site-footer {
+    padding-top: 45px;
+  }
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 0;
+  }
+}
+@media (max-width: 520px) {
+HEAD
+  .page-width {
+    width: calc(100% - 28px);
+  }
+  .hero-content {
+    padding-top: 65px;
+  }
+  .hero h1 {
+    font-size: 32px; 
+  }
+  .hero p {
+    padding-inline: 5px;
+    font-size: 14px; 
+  }
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: min(100%, 280px); 
+  }
+  .button-primary,
+  .button-outline {
+    width: 100%;
+  }
+  .symptoms-list {
+    grid-template-columns: 1fr;
+    gap: 22px; 
+  }
+  .peace-photo {
+    height: 280px; 
+  }
+  .treatments-section {
+    padding-top: 50px;
+  }
+  .treatment-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .treatment-card {
+    min-height: 220px; 
+  }
+  .treatment-featured {
+    min-height: 0;
+  }
+  .treatment-featured > img {
+    height: 220px;
+  }
+  .spiritual-card {
+    min-height: 220px;
+  }
+  .breath-card,
+  .groups-card {
+    min-height: 220px;
+  }
+  .contact-banner {
+    padding: 34px 28px;
+  }
+  .footer-main {
+    display: block;
+  }
+  .footer-column {
+    margin-top: 40px;
+  }
+  .regional-column {
+    margin-bottom: 35px;
+  }
+  .regional-links {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+  .payments {
+    align-self: flex-start; 
+    margin-top: 10px;
+  }
+
+  .page-width { width: calc(100% - 28px); }
+  .brand-mark { width: 29px; height: 29px; }
+  .hero-content { padding-top: 57px; }
+  .hero h1 { font-size: 27px; }
+  .hero p { padding-inline: 5px; font-size: 10px; }
+  .hero-actions { align-items: stretch; flex-direction: column; width: min(100%, 260px); }
+  .button-primary, .button-outline { width: 100%; }
+  .symptoms-list { grid-template-columns: 1fr; gap: 18px; }
+  .peace-photo { height: 245px; }
+  .treatments-section { padding-top: 40px; }
+  .treatment-grid { display: flex; flex-direction: column; }
+  .treatment-card { min-height: 190px; }
+  .treatment-featured { min-height: 0; }
+  .treatment-featured > img { height: 190px; }
+  .spiritual-card { min-height: 193px; }
+  .breath-card, .groups-card { min-height: 193px; }
+  .contact-banner { padding: 28px 24px; }
+  .footer-main { display: block; }
+  .footer-column { margin-top: 34px; }
+  .regional-column { margin-bottom: 28px; }
+  .regional-links { grid-template-columns: 1fr; row-gap: 10px; }
+  .payments { align-self: flex-end; }
+
+}

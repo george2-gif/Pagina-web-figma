@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encuentra psicólogos y consultorios cerca de ti.">
+  <title>Psicólogos en tu ciudad | Sanidad con Cristo</title>
+  <link rel="stylesheet" href="../css/psicologosenciudad.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
+</head>
+<body>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
+
+  <!-- Buscador y directorio nacional de consultorios. -->
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner page-width">
+        <h1>Encuentra Psicólogos<br>en tu <span>Ciudad</span></h1>
+        <p>Nuestros especialistas espirituales y psicólogos clínicos están presentes en todo<br class="desktop-only"> el país para brindarte el apoyo que necesitas cerca de tu hogar.</p>
+        <form class="search-box" action="https://www.google.com/maps/search/" method="get" target="_blank">
+          <label class="sr-only" for="city-search">Busca tu ciudad</label>
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.2 15.2 4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input id="city-search" name="query" type="search" placeholder="Busca tu ciudad...">
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="locations-section page-width" id="presencia">
+      <div class="section-heading">
+        <div>
+          <h2>Presencia Nacional</h2>
+          <p>Selecciona tu ubicación para ver los consultorios disponibles.</p>
+        </div>
+        <div class="filter-list" aria-label="Filtrar por región">
+          <button class="filter active" type="button">Todos</button>
+          <button class="filter" type="button">Zona Central</button>
+          <button class="filter" type="button">Zona Occidental</button>
+          <button class="filter" type="button">Zona Oriental</button>
+        </div>
+      </div>
+
+      <div class="locations-layout">
+        <div class="city-grid">
+          <a class="city-card" href="https://www.google.com/maps/search/San+Salvador+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>San Salvador</h3><p>12 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+          <a class="city-card" href="https://www.google.com/maps/search/Santa+Ana+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>Santa Ana</h3><p>8 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+          <a class="city-card" href="https://www.google.com/maps/search/San+Miguel+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>San Miguel</h3><p>6 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+          <a class="city-card" href="https://www.google.com/maps/search/Sonsonate+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>Sonsonate</h3><p>4 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+          <a class="city-card" href="https://www.google.com/maps/search/Santa+Tecla+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>Santa Tecla</h3><p>7 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+          <a class="city-card" href="https://www.google.com/maps/search/La+Libertad+El+Salvador" target="_blank" rel="noopener">
+            <span class="city-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h5V5h4v4h5v11M3 20h18M8 12h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M11 5h2M11 2h2v3h-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+            <h3>La Libertad</h3><p>5 Consultorios</p><span class="card-link">Ver psicólogos <b>→</b></span>
+          </a>
+        </div>
+
+        <aside class="map-card">
+          <h2>Mapa de Cobertura</h2>
+          <p>Contamos con centros de atención<br class="desktop-only"> estratégica en los 14 departamentos.<br class="desktop-only"> Elige el más cercano a tu ubicación.</p>
+          <div class="map-illustration" aria-label="Mapa de El Salvador con centros de atención" role="img">
+            <div class="map-heading"><span>Directorio de Ciudades</span><small>Sanidad con Cristo</small></div>
+            <span class="map-compass" aria-hidden="true">N</span>
+            <svg viewBox="0 0 420 170" aria-hidden="true">
+              <defs>
+                <linearGradient id="landFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f9fc"/><stop offset="1" stop-color="#c9e1ef"/></linearGradient>
+                <filter id="landShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#8eabc0" flood-opacity=".32"/></filter>
+              </defs>
+              <path class="map-coast-shadow" d="M21 88 31 67l22-9 17-15 26 4 18-13 25 7 19-12 25 9 25-11 26 10 25-8 24 13 28-4 22 13 26-1 23 13 24 1 20 13-8 18-25 4-17 13-27-5-17 15-25-6-20 12-25-11-24 8-18-13-24 7-17-14-22 3-14-13-24 0-16-15-20 3Z"/>
+              <path class="country" filter="url(#landShadow)" d="M21 82 31 62l22-8 17-14 26 4 18-13 25 7 19-12 25 9 25-11 26 10 25-8 24 13 28-4 22 13 26-1 23 13 24 1 20 13-8 18-25 4-17 13-27-5-17 15-25-6-20 12-25-11-24 8-18-13-24 7-17-14-22 3-14-13-24 0-16-15-20 3Z"/>
+              <g class="department-lines">
+                <path d="M63 56 76 78l-5 28M88 45l11 31-4 35M116 34l10 37-5 34M145 29l7 37 2 41M174 35l-4 34 9 39M204 26l-5 42 10 42M233 36l-5 32 10 44M262 29l-3 42 11 40M290 40l-4 38 9 35M318 39l-5 36 14 34M346 51l-8 29 12 31M374 58l-10 27 4 23"/>
+                <path d="m26 74 49 5 42-3 47 5 44-4 45 5 46-6 48 4 40-3 35 9M42 94l44-8 46 8 44-7 50 8 42-9 44 6 46-10 37 5M59 65l42 8 47-5 42 8 46-7 42 7 46-4 37 8"/>
+              </g>
+              <g class="map-labels">
+                <a class="map-label-link" href="https://www.google.com/maps/search/Ahuachapan+El+Salvador" target="_blank" rel="noopener"><text x="33" y="73">Ahuachapán</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/Santa+Ana+El+Salvador" target="_blank" rel="noopener"><text x="102" y="46">Santa Ana</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/Sonsonate+El+Salvador" target="_blank" rel="noopener"><text x="72" y="110">Sonsonate</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/La+Libertad+El+Salvador" target="_blank" rel="noopener"><text x="128" y="119">La Libertad</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/San+Salvador+El+Salvador" target="_blank" rel="noopener"><text x="173" y="103">San Salvador</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/Chalatenango+El+Salvador" target="_blank" rel="noopener"><text x="177" y="50">Chalatenango</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/La+Union+El+Salvador" target="_blank" rel="noopener"><text x="321" y="53">La Unión</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/Morazan+El+Salvador" target="_blank" rel="noopener"><text x="334" y="77">Morazán</text></a>
+                <a class="map-label-link" href="https://www.google.com/maps/search/San+Miguel+El+Salvador" target="_blank" rel="noopener"><text x="289" y="104">San Miguel</text></a>
+              </g>
+              <path class="route" d="M44 78c42-12 70 12 108-3s64 12 96-2 70 10 123-4"/>
+              <a class="map-marker" href="https://www.google.com/maps/search/Santa+Ana+El+Salvador" target="_blank" rel="noopener" aria-label="Ver Santa Ana"><g transform="translate(112 60)"><path d="M0-8c-5 0-8 4-8 8 0 6 8 14 8 14S8 6 8 0c0-4-3-8-8-8Z"/><circle cy="0" r="3"/></g></a>
+              <a class="map-marker" href="https://www.google.com/maps/search/San+Salvador+El+Salvador" target="_blank" rel="noopener" aria-label="Ver San Salvador"><g transform="translate(205 86)"><path d="M0-8c-5 0-8 4-8 8 0 6 8 14 8 14S8 6 8 0c0-4-3-8-8-8Z"/><circle cy="0" r="3"/></g></a>
+              <a class="map-marker" href="https://www.google.com/maps/search/Sonsonate+El+Salvador" target="_blank" rel="noopener" aria-label="Ver Sonsonate"><g transform="translate(126 96)"><path d="M0-8c-5 0-8 4-8 8 0 6 8 14 8 14S8 6 8 0c0-4-3-8-8-8Z"/><circle cy="0" r="3"/></g></a>
+              <a class="map-marker" href="https://www.google.com/maps/search/San+Miguel+El+Salvador" target="_blank" rel="noopener" aria-label="Ver San Miguel"><g transform="translate(295 88)"><path d="M0-8c-5 0-8 4-8 8 0 6 8 14 8 14S8 6 8 0c0-4-3-8-8-8Z"/><circle cy="0" r="3"/></g></a>
+              <a class="map-marker" href="https://www.google.com/maps/search/La+Libertad+El+Salvador" target="_blank" rel="noopener" aria-label="Ver La Libertad"><g transform="translate(177 108)"><path d="M0-8c-5 0-8 4-8 8 0 6 8 14 8 14S8 6 8 0c0-4-3-8-8-8Z"/><circle cy="0" r="3"/></g></a>
+            </svg>
+            <div class="map-footer"><span><i></i> Centros disponibles</span><span class="map-scale"><b></b>50 km</span></div>
+          </div>
+          <a class="location-button" href="https://www.google.com/maps/search/El+Salvador" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 4-7.1 16-2.7-6.2L4 11.1 20 4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Explorar mapa de El Salvador</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="other-locations page-width">
+      <h2>Otras localidades</h2>
+      <div class="other-grid">
+        <a href="#ahuachapan">Ahuachapán</a><a href="#ilobasco">Ilobasco</a><a href="#zacatecoluca">Zacatecoluca</a><a href="#usulutan">Usulután</a><a href="#san-vicente">San Vicente</a><a href="#chalatenango">Chalatenango</a>
+        <a href="#cojutepeque">Cojutepeque</a><a href="#gotera">Gotera</a><a href="#la-union">La Unión</a><a href="#quezaltepeque">Quezaltepeque</a><a href="#apopa">Apopa</a><a href="#soyapango">Soyapango</a>
+      </div>
+    </section>
+
+    <section class="online-callout page-width" id="consultorio">
+      <div class="callout-cross" aria-hidden="true">✚</div>
+      <div class="callout-content">
+        <h2>¿No encuentras tu ciudad?</h2>
+        <p>Ofrecemos terapias psicológicas online para que puedas recibir sanidad desde cualquier<br class="desktop-only"> lugar del mundo con la misma calidez y profesionalismo.</p>
+         <a class="callout-button" href="encontrandolapaz.html#inicio">Explorar Psicología Online</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página institucional. -->
+  <footer class="site-footer" id="articulos">
+    <div class="footer-main page-width">
+      <div class="footer-brand-column">
+         <a class="footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span> SanidadconCristo</a>
+        <div class="footer-links">
+           <a href="#articulos">Quiénes somos</a><a href="#articulos">Aviso legal y Condiciones Generales de Uso</a><a href="#articulos">Protección de Datos</a><a href="#articulos">Condiciones de servicio para usuarios</a><a href="#articulos">Condiciones de servicio para profesionales</a>
+        </div>
+      </div>
+      <div class="footer-column">
+         <h3>Para profesionales</h3><a href="vista6.html#centros">Añade tu centro</a><a href="vista6.html#centros">Acceso centros</a><a href="vista6.html#centros">Anúnciate</a><a href="#articulos">¿Necesitas ayuda?</a>
+         <h3 class="social-title">Síguenos:</h3><div class="socials"><a href="#facebook" aria-label="Facebook" class="social-icon social-fb"></a><a href="#twitter" aria-label="Twitter" class="social-icon social-tw"></a><a href="#instagram" aria-label="Instagram" class="social-icon social-ig"></a></div>
+      </div>
+      <div class="footer-column regional-column">
+        <h3>Nuestra red regional</h3>
+         <div class="regional-links"><a href="#articulos"><span>⚑</span>SanidadconCristo.com.ar</a><a href="#articulos"><span>⚑</span>SanidadconCristo.com</a><a href="#articulos"><span>⚑</span>PsicologosOnline.cl</a><a href="#articulos"><span>⚑</span>Psico.mx</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom page-width"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span class="payments">PAGOS SEGUROS: <b>▤</b><b>♜</b></span></div>
+  </footer>
+
+  <!-- Abre, cierra y restablece el menú de navegación en móvil. -->
+  <!-- Sistema de menú compartido con el index. -->
+  <script src="../javascript/menu-comun.js"></script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+ /*1. VARIABLES Y RESET
+   ========================================= */
+:root {
+  /* Colores Principales */
+  --color-primario: #2f67f6;
+  --color-primario-hover: #264dc0;
+  --color-turquesa: #00c2b2;
+  --color-turquesa-hover: #00a597;
+  --color-azul-heros: #3b82f6;
+
+  /* Fondo y Textos */
+  --color-fondo: #ffffff;
+  --color-oscuro-bg: #1a1c1e;
+  --color-texto: #1f2430;
+  --color-texto-suave: #6b7280;
+  --color-blanco: #ffffff;
+
+  /* Decoraciones */
+  --color-linea: rgba(32, 44, 71, 0.1);
+  --sombra-suave: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================
+   2. ESTILOS BASE
+   ========================================= */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   3. NAVBAR Y HEADER
+   ========================================= */
+header,
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* Respiro mínimo entre el logo, el menú y las acciones */
+  padding: 15px 5%;
+  background: var(--color-blanco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header {
+    position: fixed !important; /* O sticky, según tengan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff !important; /* Forzamos fondo blanco para que no sea transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Una sombra sutil para separarlo del contenido */
+    z-index: 1000 !important; /* Capa alta para que siempre flote por encima limpiamente */
+    padding: 8px 20px;
+}
+
+/* OBLIGATORIO: Al poner posición fija, debes darle un margen superior a la sección 
+   siguiente (el hero o los tratamientos) para que el menú no tape el inicio del sitio */
+.hero {
+    margin-top: 50px; /* Ajusta los píxeles según la altura que tenga tu menú */
+}
+
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-turquesa);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: none; /* El logo queda fijo a la izquierda, sin estirarse */
+  cursor: pointer;
+  min-width: 0;
+}
+
+.logo a:last-child {
+  white-space: nowrap;
+}
+
+nav,
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex: 1; /* Ocupa el espacio restante entre el logo y las acciones */
+  justify-content: center;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid #dbe3ec;
+  border-radius: 10px;
+  background: var(--color-blanco);
+  cursor: pointer;
+}
+
+.menu-toggle span:not(.sr-only) {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--color-texto);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  font-weight: 500;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--color-primario);
+}
+
+.auth-buttons,
+.acciones,
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  flex: none; /* Las acciones se agrupan a la derecha */
+}
+
+.btn-login {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 24px rgba(47, 103, 246, 0.25);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background: var(--color-primario-hover);
+  transform: translateY(-1px);
+}
+
+.mision-section {
+  background: #f8f9fa;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Título */
+.titulo-mision {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.badge {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.titulo-mision h2 {
+  font-size: 2.5rem;
+  margin: 15px 0;
+}
+.titulo-mision p {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;       /* El 0 auto centra el bloque completo horizontalmente */
+  text-align: center;   /* Centra las líneas de texto dentro del párrafo */
+}
+.mision-subtitulo {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pilares */
+/* =========================================
+   SECCIÓN NUESTROS PILARES (ESTILO EXACTO)
+   ========================================= */
+
+/* Encabezado de la sección */
+.pilares {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pilares h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1c1e;
+  margin-bottom: 12px;
+}
+
+.pilares > p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grid de Tarjetas */
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Estilo de cada Tarjeta (Card) */
+.pilar {
+  background: #ffffff;
+  padding: 40px 28px;
+  border-radius: 24px; /* Bordes bien redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Sombra muy sutil */
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  
+  /* Centrado vertical perfecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contenedor del Ícono (Cuadro redondeado) */
+.pilar .icono {
+  width: 64px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.pilar .icono img {
+  width: 40px;
+  height: 40x;
+  object-fit: contain;
+}
+
+/* Colores pastel individuales para cada ícono */
+.pilar:nth-child(1) .icono {
+  background-color: #a7f3d0; /* Menta/Verde pastel */
+}
+
+.pilar:nth-child(2) .icono,
+.pilar:nth-child(3) .icono {
+  background-color: #dbeafe; /* Azul pastel */
+}
+
+/* Título de la tarjeta */
+.pilar h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+/* Texto descriptivo */
+.pilar p {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Historia */
+.historia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.historia-img img {
+  width: 100%;
+  border-radius: 15px;
+}
+.historia-texto h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.historia-texto p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* CTA */
+.cta {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+}
+.cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.botones-cta {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.btn-principal {
+  background: #10b981;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-secundario {
+  background: white;
+  color: #10b981;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #10b981;
+}
+
+.sitio-footer {
+    background-color: #1A1C1E;
+    color: #94A3B8;
+    padding: 80px 40px 60px 40px;
+    font-family: sans-serif;
+    font-size: 1.05rem;
+}
+
+.footer-superior {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 40px;
+    padding-bottom: 60px;
+    gap: 80px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col.col-ancha {
+    flex: 2;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.icono-logo {
+    background-color: #00ced1;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+.footer-col .titulo-siguenos {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 12px;
+}
+
+.icono-social {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    color: #121417;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.icono-social svg{
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; 
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.icono-social:hover {
+    background-color: transparent;
+    transform: translateY(-2px);
+}
+.icono-social:hover img {
+  width: 24px;
+  height: 24px;
+}
+
+.grid-red-regional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.item-pais {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-pais a {
+    color: #94a3b8;
+    font-size: 0.82rem;
+    text-decoration: none;
+}
+
+.item-pais a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.bandera {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.footer-inferior {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.copyright {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    color: #94A3B8;
+    margin: 0;
+    font-weight: 500;
+}
+
+.pagos-seguros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.icono-pago {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN (Corregido)
+   ========================================= */
+@media (max-width: 980px) {
+    .search-box {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .search-box .divider {
+        display: none;
+    }
+
+    .search-box button, .btn-search {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    nav, .menu, .auth-buttons, .acciones, .nav-right {
+        display: none;
+    }
+
+    .grid-tratamientos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-ciudades {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .footer-superior {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .grid-red-regional {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inferior {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr;
+    }
+
+    .card.card-large {
+        grid-column: auto;
+        height: 250px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+    }
+}

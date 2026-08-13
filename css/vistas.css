@@ -1,0 +1,1264 @@
+/* =========================================
+   1. VARIABLES Y RESET
+   ========================================= */
+:root {
+  /* Colores Principales */
+  --color-primario: #2f67f6;
+  --color-primario-hover: #264dc0;
+  --color-turquesa: #00c2b2;
+  --color-turquesa-hover: #00a597;
+  --color-azul-heros: #3b82f6;
+
+  /* Fondo y Textos */
+  --color-fondo: #ffffff;
+  --color-oscuro-bg: #1a1c1e;
+  --color-texto: #1f2430;
+  --color-texto-suave: #6b7280;
+  --color-blanco: #ffffff;
+
+  /* Decoraciones */
+  --color-linea: rgba(32, 44, 71, 0.1);
+  --sombra-suave: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================
+   2. ESTILOS BASE
+   ========================================= */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   3. NAVBAR Y HEADER
+   ========================================= */
+header,
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* Respiro mínimo entre el logo, el menú y las acciones */
+  padding: 15px 5%;
+  background: var(--color-blanco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header {
+    position: fixed !important; /* O sticky, según tengan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff !important; /* Forzamos fondo blanco para que no sea transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Una sombra sutil para separarlo del contenido */
+    z-index: 1000 !important; /* Capa alta para que siempre flote por encima limpiamente */
+    padding: 8px 20px;
+}
+
+/* OBLIGATORIO: Al poner posición fija, debes darle un margen superior a la sección 
+   siguiente (el hero o los tratamientos) para que el menú no tape el inicio del sitio */
+.hero {
+    margin-top: 50px; /* Ajusta los píxeles según la altura que tenga tu menú */
+}
+
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-turquesa);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: none; /* El logo queda fijo a la izquierda, sin estirarse */
+  cursor: pointer;
+  min-width: 0;
+}
+
+.logo a:last-child {
+  white-space: nowrap;
+}
+
+nav,
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex: 1; /* Ocupa el espacio restante entre el logo y las acciones */
+  justify-content: center;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid #dbe3ec;
+  border-radius: 10px;
+  background: var(--color-blanco);
+  cursor: pointer;
+}
+
+.menu-toggle span:not(.sr-only) {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--color-texto);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  font-weight: 500;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--color-primario);
+}
+
+.auth-buttons,
+.acciones,
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  flex: none; /* Las acciones se agrupan a la derecha */
+}
+
+.btn-login {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 24px rgba(47, 103, 246, 0.25);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background: var(--color-primario-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   4. SECCIÓN HERO
+   ========================================= */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 40px 20px;
+  background-color: #eef3f5;
+}
+
+.hero > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 2;
+}
+
+.hero h1,
+.hero p,
+.hero .search-box,
+.hero-content,
+.hero-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+}
+
+.hero-contenido {
+  width: 100%;
+}
+
+.hero h1 {
+  color: #0f172a;
+  font-size: clamp(1.3rem, 4.5vw, 3.2rem);
+  text-transform: uppercase;
+  font-weight: 650;
+  line-height: 1.15;
+  max-width: 750px;
+  margin: 40px auto 12px;
+}
+
+.hero h1 span {
+  color: var(--color-azul-heros);
+}
+
+.hero p {
+  font-size: clamp(0.85rem, 2vw, 1.2rem);
+  margin-bottom: 30px;
+  color: var(--color-azul-heros);
+  font-weight: 600;
+}
+
+.hero-extra {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+.hero-extra h3 {
+  color: #1e293b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.hero-extra p {
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* =========================================
+   5. BUSCADOR
+   ========================================= */
+.search-box {
+  display: flex;
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--color-blanco);
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 8px 10px 8px 20px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.field-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.search-field input {
+  flex: 1;
+  border: none;
+  padding: 12px 10px;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+  background: transparent;
+  color: var(--color-texto);
+}
+
+.search-field input::placeholder {
+  color: #9ca3af;
+}
+
+.search-box .divider {
+  width: 1px;
+  background: #e5e7eb;
+  height: 32px;
+  margin: 0 15px;
+}
+
+.search-box button,
+.btn-search {
+  background-color: var(--color-azul-heros);
+  color: var(--color-blanco);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.search-box button:hover,
+.btn-search:hover {
+  background: var(--color-primario-hover);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 300;
+  display: none;
+  width: 100%;
+  max-height: 220px;
+  margin: 0;
+  padding: 12px;
+  overflow-y: auto;
+  list-style: none;
+  background: var(--color-blanco);
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu li {
+  display: block;
+  width: 100%;
+  margin: 0 0 2px;
+  padding: 10px 16px;
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-menu li:hover {
+  color: var(--color-azul-heros);
+  background-color: #f3f4f6;
+}
+
+.dropdown-menu.show-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* El menú debe aparecer por encima de las secciones que siguen al buscador. */
+header,
+.hero,
+[class*="hero"],
+[class*="header"] {
+  position: relative;
+  z-index: 300;
+  overflow: visible;
+}
+
+/* Mantiene el contenido secundario detrás del menú desplegable. */
+.search-box ~ *,
+h3:has(+ p),
+h3 + p {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * El estado se añade desde JavaScript. La clase `show-menu` concentra toda
+ * la lógica visual para evitar reglas duplicadas y sobrescritas.
+ */
+.dropdown-menu li[hidden] {
+  display: none;
+}
+
+/* =========================================
+   6. GRID DE TRATAMIENTOS
+   ========================================= */
+.tratamientos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  overflow: visible;
+  text-align: center;
+}
+
+.tratamientos-header h2 {
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 1.9rem;
+  font-weight: 650;
+}
+
+.tratamientos-header p {
+  margin-bottom: 30px;
+  color: #64748b;
+  font-size: 1.2rem;
+}
+
+.grid-tratamientos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+  overflow: visible;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 190px;
+  padding: 24px;
+  overflow: hidden;
+  color: var(--color-blanco);
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.25));
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.card .card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.card h3 {
+  color: var(--color-blanco);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.grid-tratamientos > .card-center {
+  height: 280px;
+}
+
+.card.card-large {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  grid-column: span 2;
+  height: 350px;
+  gap: 12px;
+  cursor: default;
+}
+
+.card-large .card-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.grid-tratamientos .card-large .card-content h3 {
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  text-transform: none;
+}
+
+.card-large p {
+  margin-bottom: 12px;
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.card-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-center .card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-tratamiento {
+  display: inline-block;
+  padding: 10px 18px;
+  color: var(--color-blanco);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-turquesa);
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-tratamiento:hover {
+  background-color: var(--color-turquesa-hover);
+}
+
+/* Efectos de pulsación de las tarjetas y del botón principal. */
+.grid-tratamientos .card:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+  transition: transform 0.1s ease;
+}
+
+.btn-tratamiento:active {
+  transform: scale(0.94) translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease;
+}
+
+/* =========================================
+   7. SECCIÓN ENCUENTRA TU CIUDAD
+   ========================================= */
+.ciudades {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8fafc;
+}
+
+.ciudades h2 {
+  max-width: 450px;
+  margin-bottom: 30px;
+  color: #0f172a;
+  font-size: 1.9rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.ciudades p {
+  margin: 0 0 30px;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.grid-ciudades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+.grid-ciudades .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 0 16px;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.grid-ciudades .pill:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.ciudades .ver-mas {
+  color: var(--color-turquesa, #00ced1);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ciudades .ver-mas:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+/* =========================================
+   8. SECCIÓN SOBRE NOSOTROS Y CITA
+   ========================================= */
+.sobre-nosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-nosotros h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.sobre-descripcion {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto 16px auto;
+}
+
+.link-quienes {
+  color: var(--color-turquesa, #00ced1);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.link-quienes:hover {
+  text-decoration: underline;
+}
+
+.caja-cita {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 750px;
+  box-sizing: border-box;
+}
+
+.texto-cita {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+  margin: 0 0 16px 0;
+}
+
+.autor-cita {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3b82f6;
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+/* =========================================
+   9. BANNER DE AVISO LEGAL
+   ========================================= */
+.banner-aviso {
+  background-color: var(--color-turquesa, #00ced1);
+  padding: 24px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner-aviso p {
+  color: var(--color-blanco, #ffffff);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.link-aviso {
+  color: var(--color-blanco, #ffffff);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s ease,
+    text-decoration 0.2s ease;
+}
+
+.link-aviso:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* =========================================
+   10. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.sitio-footer {
+  background-color: #1a1c1e;
+  color: #94a3b8;
+  padding: 60px 40px 30px 40px;
+  font-family: sans-serif;
+}
+
+.footer-superior {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-col.col-ancha {
+  flex: 2;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.icono-logo {
+  background-color: #00ced1;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.footer-col h3 {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.footer-col .titulo-siguenos {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+}
+
+.icono-social {
+  width: 38px;
+  height: 38px;
+  background-color: #1d2a3e;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.icono-social img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.icono-social:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icono-social.fb:hover {
+  background-color: #1877f2;
+}
+
+.icono-social.tw:hover {
+  background-color: #1da1f2;
+}
+
+.icono-social.ig:hover {
+  background-color: #e1306c;
+}
+
+.grid-red-regional {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.item-pais {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-pais a {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.item-pais a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.bandera {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.footer-inferior {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.copyright {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.pagos-seguros {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.icono-pago {
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+   ========================================= */
+/* Ajuste fino en pantallas de escritorio estrechas. */
+@media (max-width: 1300px) {
+  header {
+    gap: 24px;
+  }
+
+  nav {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 980px) {
+  header {
+    padding-inline: 4%;
+  }
+
+  .search-box {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 15px;
+    gap: 4px;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .search-box .divider {
+    display: none;
+  }
+
+  .search-box button,
+  .btn-search {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Menú móvil.
+   El desborde ocurre por debajo de 1100px, así que el menú hamburguesa
+   entra ahí; entre 1100px y 1300px los enlaces se comprimen con el
+   ajuste fino de arriba. */
+@media (max-width: 1100px) {
+  header {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Al abrir el menú la barra crece para contener enlaces y botones. */
+  header.menu-open {
+    height: auto;
+  }
+
+  nav,
+  .auth-buttons {
+    display: none;
+  }
+
+  header.menu-open nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid #eef2f7;
+  }
+
+  header.menu-open nav a {
+    padding: 12px 4px;
+    border-bottom: 1px solid #eef2f7;
+  }
+
+  header.menu-open .auth-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 4px;
+  }
+
+  header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .grid-tratamientos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 56px 16px 48px;
+  }
+
+  .hero h1 {
+    margin-top: 0;
+    font-size: clamp(1.55rem, 7vw, 2.4rem);
+  }
+
+  .hero p {
+    max-width: 34rem;
+    margin-bottom: 22px;
+  }
+
+  .hero-extra {
+    margin-top: 22px;
+  }
+
+  .hero-extra p {
+    line-height: 1.5;
+  }
+
+  .tratamientos,
+  .ciudades,
+  .sobre-nosotros {
+    padding: 44px 16px;
+  }
+
+  .tratamientos-header h2,
+  .ciudades h2 {
+    font-size: clamp(1.45rem, 5vw, 1.9rem);
+  }
+
+  .tratamientos-header p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .grid-ciudades {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .footer-superior {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .grid-red-regional {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inferior {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .sitio-footer {
+    padding: 44px 20px 24px;
+  }
+
+  .footer-superior {
+    gap: 28px;
+  }
+
+  .pagos-seguros {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .auth-buttons {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    padding: 12px;
+  }
+
+  .search-field input {
+    min-width: 0;
+    padding: 11px 6px;
+    font-size: 0.9rem;
+  }
+
+  .search-box button,
+  .btn-search {
+    min-height: 46px;
+    margin-top: 8px;
+  }
+
+  .dropdown-menu {
+    max-height: 190px;
+  }
+
+  .grid-tratamientos {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 12px;
+  }
+
+  .card.card-large {
+    grid-column: auto;
+    height: 250px;
+  }
+
+  .grid-tratamientos > .card-center {
+    height: 210px;
+  }
+
+  .card {
+    height: 175px;
+    padding: 20px;
+  }
+
+  .grid-tratamientos .card-large .card-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn-tratamiento {
+    max-width: 100%;
+    font-size: 0.68rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .caja-cita {
+    padding: 24px 16px;
+  }
+
+  .texto-cita {
+    font-size: 1rem;
+  }
+
+  .banner-aviso {
+    padding-inline: 16px;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  header .logo a:last-child {
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 1.45rem;
+  }
+
+  .auth-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

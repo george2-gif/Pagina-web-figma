@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encuentra psicólogos cristianos disponibles en San Salvador.">
+  <title>Psicólogos en San Salvador | Sanidad con Cristo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/vista10.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
+</head>
+<body>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
+  <header>
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
+
+  <!-- Directorio de psicólogos en San Salvador. -->
+  <main class="directory" id="inicio">
+    <div class="container">
+      <div class="breadcrumb" aria-label="Migas de pan">
+        <a href="../index.html#inicio">INICIO</a><span aria-hidden="true">›</span><a href="vista8.html#reserva">CONSULTORIO</a><span aria-hidden="true">›</span><strong>SAN MIGUEL</strong>
+      </div>
+
+      <header class="directory-intro">
+        <p>Psicólogos disponibles en San Miguel</p>
+        <h1>Encuentra apoyo profesional con base cristiana cerca de ti.</h1>
+      </header>
+
+      <div class="directory-layout">
+        <aside class="filters" aria-label="Filtros de búsqueda">
+          <h2>Especialidad</h2>
+          <label class="check-option"><input type="checkbox" name="especialidad" value="ansiedad"><span class="fake-check" aria-hidden="true"></span><span>Ansiedad y Depresión</span></label>
+          <label class="check-option"><input type="checkbox" name="especialidad" value="pareja"><span class="fake-check" aria-hidden="true"></span><span>Terapia de Pareja</span></label>
+          <label class="check-option"><input type="checkbox" name="especialidad" value="juvenil"><span class="fake-check" aria-hidden="true"></span><span>Juvenil e Infantil</span></label>
+          <label class="check-option"><input type="checkbox" name="especialidad" value="duelo"><span class="fake-check" aria-hidden="true"></span><span>Duelos y Pérdidas</span></label>
+
+          <fieldset class="filter-group price-filter">
+            <legend>Rango de Precio</legend>
+            <div class="price-slider" style="--max-position: 100%;">
+              <span class="price-track" aria-hidden="true"></span>
+              <input class="price-range price-max" type="range" min="20" max="100" step="5" value="100" aria-label="Precio máximo" aria-valuetext="$100+">
+            </div>
+            <div class="price-labels"><strong>$20</strong><strong data-price-max>$100+</strong></div>
+          </fieldset>
+
+          <fieldset class="filter-group modality-filter">
+            <legend>Modalidad</legend>
+            <div class="pill-options">
+              <label><input type="radio" name="modalidad" checked><span>Presencial</span></label>
+              <label><input type="radio" name="modalidad"><span>Online</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter-group availability-filter">
+            <legend>Disponibilidad</legend>
+            <label class="radio-option"><input type="radio" name="disponibilidad"><span class="fake-radio" aria-hidden="true"></span><span>Esta semana</span></label>
+            <label class="radio-option"><input type="radio" name="disponibilidad"><span class="fake-radio" aria-hidden="true"></span><span>Fines de semana</span></label>
+          </fieldset>
+        </aside>
+
+        <section class="profiles" aria-label="Psicólogos disponibles">
+          <article class="profile-card">
+            <div class="profile-photo-wrap">
+              <img src="/Assets/img/Dr. Fernando Ayala.png" alt="Dr. Carlos Mendoza">
+              <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificado</span>
+            </div>
+            <div class="profile-content">
+              <h2>Dr. Fernando Ayala</h2>
+              <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19s-7-4.4-7-9.2C5 7.6 6.7 6 8.8 6c1.4 0 2.5.7 3.2 1.8C12.7 6.7 13.8 6 15.2 6 17.3 6 19 7.6 19 9.8 19 14.6 12 19 12 19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Terapia de Adultos y Ansiedad</p>
+              <p class="profile-description">Especialista en procesos de sanación emocianal integrando principios biblicos y psicología clínica de vanguardia para adultos.</p>
+              <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
+            </div>
+            <div class="profile-price"><strong>$35.00</strong><span>POR SESIÓN</span></div>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-photo-wrap">
+              <img src="/Assets/img/Dra. Gabriela Zelaya.png" alt="Dra. Elena Guandique">
+              <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificada</span>
+            </div>
+            <div class="profile-content">
+              <h2>Dra. Gabriela Zelaya</h2>
+              <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5c1.2 1.4 5.8 1.4 7 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Psicología Infantil y Familiar</p>
+              <p class="profile-description">Dedicada al bienestar de los más pequeños con un enfoque lúdico y espiritual, fortaleciendo el núcleo familiar en San Miguel.</p>
+              <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
+            </div>
+            <div class="profile-price"><strong>$40.00</strong><span>POR SESIÓN</span></div>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-photo-wrap">
+              <img src="/Assets/img/Jorge.png" alt="Dr. Mauricio Rivas">
+              <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificado</span>
+            </div>
+            <div class="profile-content">
+              <h2>Lic. Jorge Portillo</h2>
+              <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 10h14M8 19v-5M16 19v-5M5 7v3M19 7v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="5" r="2" fill="currentColor"/><circle cx="19" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg>Superación de Adicciones</p>
+              <p class="profile-description">Acompañamiento especializado en la liberación de dependencias a través de la renovación mental y el apoyo espiritual constante.</p>
+              <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
+            </div>
+            <div class="profile-price"><strong>$40.00</strong><span>POR SESIÓN</span></div>
+          </article>
+
+          <nav class="pagination" aria-label="Paginación de psicólogos">
+            <a href="vista9.html#inicio" aria-label="Página anterior">‹</a><a href="vista9.html#inicio">1</a><a class="current" href="vista10.html#inicio" aria-current="page">2</a><a href="#pagina-3">3</a><a href="vista9.html#inicio" aria-label="Página siguiente">›</a>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página institucional. -->
+  <footer class="site-footer" id="consultorio">
+    <div class="footer-container footer-grid">
+      <div class="footer-brand-column">
+         <a class="footer-brand" href="../index.html#inicio"><span class="footer-brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span><span>SanidadconCristo</span></a>
+        <div class="footer-links"><a href="#nosotros">Quiénes somos</a><a href="#legal">Aviso legal y Condiciones Generales de Uso</a><a href="#datos">Protección de Datos</a><a href="#usuarios">Condiciones de servicio para usuarios</a><a href="#profesionales">Condiciones de servicio para profesionales</a></div>
+      </div>
+      <div class="footer-column">
+        <h2>PARA PROFESIONALES</h2>
+        <a href="vista6.html#centros">Añade tu centro</a><a href="vista6.html#centros">Acceso centros</a><a href="vista6.html#centros">Anúnciate</a><a href="#ayuda">¿Necesitas ayuda?</a>
+        <h2 class="follow-title">SÍGUENOS:</h2>
+         <div class="social-links"><a href="#facebook" aria-label="Facebook" class="social-icon social-fb"></a><a href="#twitter" aria-label="Twitter" class="social-icon social-tw"></a><a href="#instagram" aria-label="Instagram" class="social-icon social-ig"></a></div>
+      </div>
+      <div class="footer-column regional">
+        <h2>NUESTRA RED REGIONAL</h2>
+        <div class="regional-grid"><a href="#argentina"><b>⚑</b>SanidadconCristo.com.ar</a><a href="#espana"><b>⚑</b>SanidadconCristo.com</a><a href="#chile"><b>⚑</b>PsicologosOnline.cl</a><a href="#mexico"><b>⚑</b>Psico.mx</a></div>
+      </div>
+    </div>
+    <div class="footer-container footer-bottom"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span class="secure-payments">PAGOS SEGUROS: &nbsp; ▣ &nbsp; ♜</span></div>
+  </footer>
+
+  <!-- Control del rango de precios. -->
+  <script src="../javascript/menu-comun.js"></script>
+  <script src="../javascript/precio-slider.js"></script>
+</body>
+</html>
