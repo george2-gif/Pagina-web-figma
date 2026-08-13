@@ -3,8 +3,8 @@
    ========================================= */
 :root {
     /* Colores Principales */
-    --color-primario: #2f67f6;
-    --color-primario-hover: #264dc0;
+    --color-primario: #38bdf8;
+    --color-primario-hover: #0ea5e9;
     --color-turquesa: #00C2B2;
     --color-turquesa-hover: #00a597;
     --color-azul-heros: #3b82f6;
@@ -67,7 +67,7 @@ header, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 15px 5% 15px 0;
     background: var(--color-blanco);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -344,7 +344,7 @@ header, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 15px 5% 15px 0;
     background: var(--color-blanco);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;

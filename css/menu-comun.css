@@ -29,7 +29,7 @@ body > header {
   justify-content: space-between;
   align-items: center;
   gap: 40px; /* Respiro mínimo entre el logo, el menú y las acciones */
-  padding: 15px 5%;
+  padding: 15px 5% 15px 0;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -108,20 +108,21 @@ body > header {
 }
 
 .btn-login {
-  background-color: #2f67f6;
+  background-color: #38bdf8;
   color: #ffffff;
   padding: 10px 16px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 14px;
-  box-shadow: 0 10px 24px rgba(47, 103, 246, 0.25);
+  box-shadow: 0 10px 24px rgba(56, 189, 248, 0.25);
   transition:
     background 0.2s ease,
     transform 0.2s ease;
 }
 
 .btn-login:hover {
-  background: #264dc0;
+  background: #0ea5e9;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
