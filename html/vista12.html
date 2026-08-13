@@ -8,33 +8,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/vista12.css">
+  <link rel="stylesheet" href="../css/vista10.css">
+  <link rel="stylesheet" href="../css/menu-comun.css">
 </head>
 <body>
+  <!-- Encabezado y navegación principal: mismo menú que el index. -->
   <header>
-        <div class="logo">
-            <a href="/">
-                <img src="/Assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
-            </a>
-            <a href="/">Sanidad con Cristo</a>
-        </div>
-        <nav>
-            <a href="#">Psicólogos Online</a>
-            <a href="#">Centros seleccionados</a>
-            <a href="#">Artículos</a>
-            <a href="#">Consultorio</a>
-        </nav>
-        <div class="auth-buttons">
-            <a href="#">Registrarse</a>
-            <a href="#" class="btn-login">Iniciar sesión</a>
-        </div>
-    </header>
-    <!--FIN DEL MENU-->
+    <div class="logo">
+      <a href="../index.html" aria-label="Sanidad con Cristo, inicio">
+        <img src="../assets/ico/icono principal.svg" alt="Icono de Sanidad en Cristo" class="logo-icon">
+      </a>
+      <a href="../index.html">Sanidad con Cristo</a>
+    </div>
+    <nav id="menu-principal">
+      <a href="vista9.html#inicio">Psicólogos Online</a>
+      <a href="vista6.html#centros">Centros seleccionados</a>
+      <a href="vista7.html#articulos">Artículos</a>
+      <a href="vista8.html#reserva">Consultorio</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="vista5.html#registro">Registrarse</a>
+      <a href="vista5.html#login" class="btn-login">Iniciar sesión</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+  </header>
 
+  <!-- Directorio de psicólogos en San Salvador. -->
   <main class="directory" id="inicio">
     <div class="container">
       <div class="breadcrumb" aria-label="Migas de pan">
-        <a href="vista2.html#inicio">INICIO</a><span aria-hidden="true">›</span><a href="vista2.html#consultorio">CONSULTORIO</a><span aria-hidden="true">›</span><strong>LA LIBERTAD</strong>
+        <a href="../index.html#inicio">INICIO</a><span aria-hidden="true">›</span><a href="vista8.html#reserva">CONSULTORIO</a><span aria-hidden="true">›</span><strong>LA LIBERTAD</strong>
       </div>
 
       <header class="directory-intro">
@@ -77,13 +85,13 @@
         <section class="profiles" aria-label="Psicólogos disponibles">
           <article class="profile-card">
             <div class="profile-photo-wrap">
-              <img src="/Assets/img/Elena.png" alt="Dra. Elena Vásquez">
+              <img src="/Assets/img/Elena.png" alt="Dr. Carlos Mendoza">
               <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificado</span>
             </div>
             <div class="profile-content">
               <h2>Dra. Elena Vásquez</h2>
               <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19s-7-4.4-7-9.2C5 7.6 6.7 6 8.8 6c1.4 0 2.5.7 3.2 1.8C12.7 6.7 13.8 6 15.2 6 17.3 6 19 7.6 19 9.8 19 14.6 12 19 12 19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Terapia de Pareja y Familia</p>
-              <p class="profile-description">Terapia de pareja y familia con enfoque bíblico y sistémico. Fortalecemos la comunicación, resolvemos conflictos y restauramos la confianza.</p>
+              <p class="profile-description">Especialista en procesos de sanación emocianal integrando principios biblicos y psicología clínica de vanguardia para adultos.</p>
               <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
             </div>
             <div class="profile-price"><strong>$35.00</strong><span>POR SESIÓN</span></div>
@@ -91,13 +99,13 @@
 
           <article class="profile-card">
             <div class="profile-photo-wrap">
-              <img src="/Assets/img/Muricio.png" alt="Lic. Mauricio Rivera">
+              <img src="/Assets/img/Muricio.png" alt="Dra. Elena Guandique">
               <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificada</span>
             </div>
             <div class="profile-content">
               <h2>Lic. Mauricio Rivera</h2>
-              <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5c1.2 1.4 5.8 1.4 7 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Duelo y Resiliencia</p>
-              <p class="profile-description">Acompañamiento en duelo y pérdida. Psicología clínica integrada con principios cristianos para tu sanación emocional y resiliencia.</p>
+              <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5c1.2 1.4 5.8 1.4 7 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Duelo y Reciliencia</p>
+              <p class="profile-description">Dedicada al bienestar de los más pequeños con un enfoque lúdico y espiritual, fortaleciendo el núcleo familiar en La Libertad.</p>
               <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
             </div>
             <div class="profile-price"><strong>$40.00</strong><span>POR SESIÓN</span></div>
@@ -105,13 +113,13 @@
 
           <article class="profile-card">
             <div class="profile-photo-wrap">
-              <img src="/Assets/img/Antonio.png" alt="Dr. Antonio Solis">
+              <img src="/Assets/img/Antonio.png" alt="Dr. Mauricio Rivas">
               <span class="verified"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="m4.8 8 2.1 2.1 4.3-4.3" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Verificado</span>
             </div>
             <div class="profile-content">
               <h2>Dr. Antonio Solis</h2>
               <p class="specialty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 10h14M8 19v-5M16 19v-5M5 7v3M19 7v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="5" r="2" fill="currentColor"/><circle cx="19" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="4" r="2" fill="currentColor"/></svg>Psicología Deportiva y Ansiedad</p>
-              <p class="profile-description">Dios restaura cuerpo, mente y espíritu. Te ayudo a vencer ansiedad, dependencias y a dar tu mejor versión en el deporte.</p>
+              <p class="profile-description">Acompañamiento especializado en la liberación de dependencias a través de la renovación mental y el apoyo espiritual constante.</p>
               <div class="profile-actions"><a class="primary-button" href="vista5.html#registro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Agendar Cita</a><a class="secondary-button" href="#perfil">Ver Perfil</a></div>
             </div>
             <div class="profile-price"><strong>$30.00</strong><span>POR SESIÓN</span></div>
@@ -125,75 +133,29 @@
     </div>
   </main>
 
-  <footer class="sitio-footer">
-        <div class="footer-superior">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <span class="icono-logo">
-                        <img src="/Assets/ico/icono principal.svg" alt="Icono Sanidad en Cristo" class="logo-icon">
-                    </span>
-                    <strong>Sanidad con Cristo</strong>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Aviso legal y Condiciones Generales de Uso</a></li>
-                    <li><a href="#">Protección de Datos</a></li>
-                    <li><a href="#">Condiciones de servicio para usuarios</a></li>
-                    <li><a href="#">Condiciones de servicio para profesionales</a></li>
-                </ul>
-            </div>
+  <!-- Pie de página institucional. -->
+  <footer class="site-footer" id="consultorio">
+    <div class="footer-container footer-grid">
+      <div class="footer-brand-column">
+         <a class="footer-brand" href="../index.html#inicio"><span class="footer-brand-mark" aria-hidden="true"><img class="brand-logo" src="../assets/ico/icono principal.svg" alt=""></span><span>SanidadconCristo</span></a>
+        <div class="footer-links"><a href="#nosotros">Quiénes somos</a><a href="#legal">Aviso legal y Condiciones Generales de Uso</a><a href="#datos">Protección de Datos</a><a href="#usuarios">Condiciones de servicio para usuarios</a><a href="#profesionales">Condiciones de servicio para profesionales</a></div>
+      </div>
+      <div class="footer-column">
+        <h2>PARA PROFESIONALES</h2>
+        <a href="vista6.html#centros">Añade tu centro</a><a href="vista6.html#centros">Acceso centros</a><a href="vista6.html#centros">Anúnciate</a><a href="#ayuda">¿Necesitas ayuda?</a>
+        <h2 class="follow-title">SÍGUENOS:</h2>
+         <div class="social-links"><a href="#facebook" aria-label="Facebook" class="social-icon social-fb"></a><a href="#twitter" aria-label="Twitter" class="social-icon social-tw"></a><a href="#instagram" aria-label="Instagram" class="social-icon social-ig"></a></div>
+      </div>
+      <div class="footer-column regional">
+        <h2>NUESTRA RED REGIONAL</h2>
+        <div class="regional-grid"><a href="#argentina"><b>⚑</b>SanidadconCristo.com.ar</a><a href="#espana"><b>⚑</b>SanidadconCristo.com</a><a href="#chile"><b>⚑</b>PsicologosOnline.cl</a><a href="#mexico"><b>⚑</b>Psico.mx</a></div>
+      </div>
+    </div>
+    <div class="footer-container footer-bottom"><span>© 2025 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</span><span class="secure-payments">PAGOS SEGUROS: &nbsp; ▣ &nbsp; ♜</span></div>
+  </footer>
 
-            <div class="footer-col">
-                <h3>PARA PROFESIONALES</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Añade tu centro</a></li>
-                    <li><a href="#">Acceso centros</a></li>
-                    <li><a href="#">Anúnciate</a></li>
-                    <li><a href="#">¿Necesitas ayuda?</a></li>
-                </ul>
-                <h3 class="titulo-siguenos">SÍGUENOS:</h3>
-                <div class="redes-sociales">
-                    <a href="#" class="icono-social fb"><img src="/Assets/ico/facebook.svg" alt="Facebook"></a>
-                    <a href="#" class="icono-social tw"><img src="/Assets/ico/twitter.svg" alt="Twitter"></a>
-                    <a href="#" class="icono-social ig"><img src="/Assets/ico/instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
-
-            <div class="footer-col col-ancha">
-                <h3>NUESTRA RED REGIONAL</h3>
-                <div class="grid-red-regional">
-                    <div class="item-pais">
-                        <span class="bandera ar"><img src="/Assets/ico/bandera-1.svg" alt="Argentina"></span>
-                        <a href="#">SanidadconCristo.com.ar</a>
-                    </div>
-                    <div class="item-pais">
-                        <span class="bandera cl"><img src="/Assets/ico/bandera-1.svg" alt="Chile"></span>
-                        <a href="#">PsicologosOnline.cl</a>
-                    </div>
-                    <div class="item-pais"> 
-                        <span class="bandera mx"><img src="/Assets/ico/bandera-1.svg" alt="Internacional"></span>
-                        <a href="#">SanidadconCristo.com</a>
-                    </div>
-                    <div class="item-pais">
-                        <span class="bandera mx"><img src="/Assets/ico/bandera-1.svg" alt="México"></span>
-                        <a href="#">Psico.mx</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-inferior">
-            <p class="copyright">&copy; 2023 - 2026 SANIDADCONCRISTO. TODOS LOS DERECHOS RESERVADOS. ACTUALIZADO: MARCH 2026</p>
-            <div class="pagos-seguros">
-                <span>PAGOS SEGUROS:</span>
-                <span class="icono-pago"><img src="/Assets/ico/tarjeta.svg" alt="Tarjeta de crédito"></span>
-                <span class="icono-pago"><img src="/Assets/ico/banco.svg" alt="Transferencia bancaria"></span>
-            </div>
-        </div>
-    </footer>
-    <script src="/javascript/formularios.js"></script>
-    <script src="/javascript/menu-comun.js"></script>
-    <script src="/javascript/precio-slider.js"></script>
-    <script src="/javascript/vistas.js"></script>
+  <!-- Control del rango de precios. -->
+  <script src="../javascript/menu-comun.js"></script>
+  <script src="../javascript/precio-slider.js"></script>
 </body>
 </html>
