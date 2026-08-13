@@ -233,34 +233,104 @@ nav a:hover {
 .titulo-mision p {
   color: #666;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto;       /* El 0 auto centra el bloque completo horizontalmente */
+  text-align: center;   /* Centra las líneas de texto dentro del párrafo */
+}
+.mision-subtitulo {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Pilares */
-.pilares h3 {
+/* =========================================
+   SECCIÓN NUESTROS PILARES (ESTILO EXACTO)
+   ========================================= */
+
+/* Encabezado de la sección */
+.pilares {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
+
+.pilares h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1c1e;
+  margin-bottom: 12px;
+}
+
+.pilares > p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grid de Tarjetas */
 .pilares-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
+
+/* Estilo de cada Tarjeta (Card) */
 .pilar {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  background: #ffffff;
+  padding: 40px 28px;
+  border-radius: 24px; /* Bordes bien redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Sombra muy sutil */
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  
+  /* Centrado vertical perfecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
+
+/* Contenedor del Ícono (Cuadro redondeado) */
 .pilar .icono {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  width: 64px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
 }
+
+.pilar .icono img {
+  width: 40px;
+  height: 40x;
+  object-fit: contain;
+}
+
+/* Colores pastel individuales para cada ícono */
+.pilar:nth-child(1) .icono {
+  background-color: #a7f3d0; /* Menta/Verde pastel */
+}
+
+.pilar:nth-child(2) .icono,
+.pilar:nth-child(3) .icono {
+  background-color: #dbeafe; /* Azul pastel */
+}
+
+/* Título de la tarjeta */
 .pilar h4 {
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+/* Texto descriptivo */
+.pilar p {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Historia */
