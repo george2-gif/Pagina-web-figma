@@ -136,30 +136,25 @@ function redirigirPorCategoria(textoTitulo) {
     const categoria = textoTitulo.trim().toLowerCase();
     let urlDestino = '';
 
-    // Modifica los nombres de los archivos según cómo los hayas guardado tú y tu compañero:
-    if (categoria === 'depresión') {
-        urlDestino = 'depresion.html'; // Cambia por tu archivo de depresión
+    if (categoria === 'depresión' || categoria === 'depresion') {
+        urlDestino = 'html/tratamienntodepresiion.html';
     } 
     else if (categoria === 'ansiedad') {
-        urlDestino = 'html/encontrandolapaz.html';  // Cambia por tu archivo de ansiedad
+        urlDestino = 'html/encontrandolapaz.html';
     } 
     else if (categoria === 'autoestima') {
-        urlDestino = 'autoestima.html'; // Cambia por tu archivo de autoestima
+        urlDestino = 'html/vista9.html?especialidad=autoestima';
     } 
-    else if (categoria === 'ludopatía') {
-        urlDestino = 'ludopatia.html';  // Cambia por tu archivo de ludopatía
+    else if (categoria === 'ludopatía' || categoria === 'ludopatia') {
+        urlDestino = 'html/vista9.html?especialidad=ludopatia';
     } 
     else if (categoria === 'bullying') {
-        urlDestino = 'bullying.html';   // Cambia por tu archivo de bullying
+        urlDestino = 'html/vista9.html?especialidad=bullying';
     } 
     else if (categoria === 'tdah') {
-        urlDestino = 'tdah.html';       // Cambia por tu archivo de TDAH
+        urlDestino = 'html/vista9.html?especialidad=tdah';
     }
 
-    // Si los archivos están dentro de una carpeta llamada por ejemplo "vistas", 
-    // debes ponerle el nombre antes, así: urlDestino = 'vistas/depresion.html';
-
-    // Ejecuta la redirección automática si la ruta existe
     if (urlDestino !== '') {
         window.location.href = urlDestino;
     }

@@ -183,7 +183,7 @@ nav a:hover {
 }
 
 .btn-login {
-  background-color: var(--color-primario);
+  background-color: var(--color-azul-heros);
   color: var(--color-blanco);
   padding: 10px 16px;
   border-radius: 999px;
@@ -196,7 +196,7 @@ nav a:hover {
 }
 
 .btn-login:hover {
-  background: var(--color-primario-hover);
+  background: var(--color-blanco);
   transform: translateY(-1px);
 }
 

@@ -109,7 +109,7 @@ body > header {
 
 .btn-login {
   background-color: #38bdf8;
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 10px 16px;
   border-radius: 999px;
   font-weight: 700;
@@ -122,7 +122,7 @@ body > header {
 
 .btn-login:hover {
   background: #0ea5e9;
-  color: #ffffff;
+  color: #ffffff !important;
   transform: translateY(-1px);
 }
 
